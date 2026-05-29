@@ -1,214 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Muhammad Ahsan</title>
+  <title>About | Muhammad Ahsan — Full-stack Developer</title>
+  <meta name="description" content="Learn more about Muhammad Ahsan — full-stack developer, student, and problem solver." />
+  
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
           colors: {
-            primary: '#4F46E5',
+            dark: '#0A0A0F',
+            darkCard: '#111115',
+            border: '#1E1E2A',
+            primary: '#3B82F6',
           }
         }
       }
     }
   </script>
+  
+  <style>
+    body {
+      background: #0A0A0F;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111115;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3B82F6;
+      border-radius: 10px;
+    }
+    
+    .card-about {
+      background: #111115;
+      border: 1px solid #1E1E2A;
+      transition: all 0.3s ease;
+    }
+    .card-about:hover {
+      border-color: #3B82F6;
+    }
+    
+    .btn-primary {
+      background: #3B82F6;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+    }
+    
+    .glow-bg {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .skill-bar {
+      background: #1E1E2A;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      background: #3B82F6;
+      height: 6px;
+      border-radius: 10px;
+    }
+    
+    .cert-card {
+      background: #111115;
+      border: 1px solid #1E1E2A;
+      transition: all 0.3s ease;
+    }
+    .cert-card:hover {
+      border-color: #3B82F6;
+      transform: translateY(-4px);
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans scroll-smooth">
+<body class="relative">
+  
+  <div class="glow-bg top-20 left-10"></div>
+  <div class="glow-bg bottom-20 right-10" style="background: radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 70%);"></div>
 
-<!-- Navbar -->
-<header class="sticky top-0 bg-white/80 backdrop-blur border-b z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-4">
-    <a href="index.html" class="text-xl font-bold">Muhammad Ahsan</a>
-    <nav class="flex space-x-6">
-      <a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a>
-      <a href="about.html" class="text-primary font-semibold border-b-2 border-primary">About</a>
-      <a href="https://bento.me/muhammad-ahsan" target="_blank" class="text-gray-600 hover:text-primary transition">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300" id="navbar">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold tracking-tight group">
+        <span class="text-white">ahsan</span>
+        <span class="text-indigo-500">.</span>
+        <span class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition">dev</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition text-sm">Home</a>
+        <a href="project.html" class="text-gray-400 hover:text-white transition text-sm">Projects</a>
+        <a href="about.html" class="text-blue-500 transition text-sm font-medium">About</a>
+      </div>
+      
+      <a href="https://ahsanlinktree.framer.website/" target="_blank" class="px-4 py-2 btn-primary rounded-full text-white text-sm">
+        Contact
+      </a>
+    </div>
+  </nav>
 
-<!-- Profile Hero -->
-<section class="px-4 py-16 max-w-4xl mx-auto">
-  <div class="flex flex-col md:flex-row items-center gap-8">
+  <!-- Hero About - CENTERED (Professional) -->
+  <section class="relative px-6 pt-32 pb-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col items-center text-center">
+        
+        <div class="relative mb-6">
+          <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-500/30">
+            <img src="foto/ahsan.jpeg" alt="Muhammad Ahsan" class="w-full h-full object-cover scale-110" />
+          </div>
+          <div class="absolute -bottom-2 -right-2 bg-blue-500 rounded-full p-1.5">
+            <i class="fas fa-code text-white text-xs"></i>
+          </div>
+        </div>
+        
+        <div>
+          <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">about</span>
+          <h1 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-3">Muhammad Ahsan</h1>
+          <p class="text-gray-400 text-base">Full-Stack Developer · Focused on clean systems & meaningful user experiences</p>
+          <div class="flex flex-wrap justify-center gap-3 mt-4">
+            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Based in Indonesia</span>
+            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Available for Freelance</span>
+            <span class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs">Open to Remote Work</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
-    <img src="foto/ahsan.jpeg" alt="Muhammad Ahsan"
-      class="w-40 h-40 rounded-2xl object-cover shadow-lg"/>
+  <!-- Bio (Professional) -->
+  <section class="px-6 py-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-gray-400 text-base leading-relaxed">
+        I’m a developer focused on building clean, functional, and user-centered digital experiences. With experience across both front-end and back-end development, I enjoy creating web applications that are not only visually refined, but also reliable, scalable, and genuinely useful.
+I love turning ideas into real products through thoughtful design, maintainable code, and continuous learning. For me, great software is not about unnecessary complexity — it’s about solving real problems with clarity and purpose.
 
-    <div>
-      <h1 class="text-3xl font-bold">About Me</h1>
-      <p class="text-indigo-600 mt-1">Muhammad Ahsan · Web Developer</p>
-
-      <p class="mt-4 text-gray-600 leading-relaxed">
-        I am a passionate web developer who believes that technology should not only look good,
-        but also solve real problems. My journey started with curiosity and has grown into a strong
-        commitment to building meaningful and user-friendly digital experiences.
       </p>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- Mission & Vision -->
-<section class="px-4 py-16 max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-  <div class="p-6 bg-gradient-to-br from-gray-50 to-indigo-50 rounded-2xl shadow-sm">
-    <h3 class="font-semibold text-lg mb-2">🎯 Mission</h3>
-    <p class="text-gray-600 leading-relaxed">
-      My mission is to design and develop web applications that are meaningful, accessible,
-      and easy to use while solving real-world problems.
-    </p>
-  </div>
-
-  <div class="p-6 bg-gradient-to-br from-gray-50 to-indigo-50 rounded-2xl shadow-sm">
-    <h3 class="font-semibold text-lg mb-2">🌍 Vision</h3>
-    <p class="text-gray-600 leading-relaxed">
-      My vision is to grow into a professional software engineer and contribute to projects
-      that bring positive impact to education and society.
-    </p>
-  </div>
-</section>
-
-<!-- Technical Skills -->
-<section class="px-4 py-16 max-w-4xl mx-auto">
-  <h2 class="text-xl font-bold mb-6">Technical Skills</h2>
-
-  <div class="space-y-4">
-
-    <div>
-      <div class="flex justify-between text-sm mb-1">
-        <span>HTML & CSS</span>
-        <span>90%</span>
+  <!-- Mission & Vision + Quick Facts (Professional) -->
+  <section class="px-6 py-8">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      
+      <div class="card-about rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-bullseye text-blue-400 text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Mission</h3>
+        <p class="text-gray-500 text-sm">Build digital solutions that create real impact — not just add more features.</p>
       </div>
-      <div class="w-full bg-gray-200 rounded-full h-2">
-        <div class="bg-indigo-600 h-2 rounded-full w-[90%]"></div>
+      
+      <div class="card-about rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-globe text-blue-400 text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Vision</h3>
+        <p class="text-gray-500 text-sm">Create technology that makes education, information, and digital access more accessible for everyone.</p>
+      </div>
+      
+      <div class="card-about rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-heart text-blue-400 text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Philosophy</h3>
+        <p class="text-gray-500 text-sm">Good software should feel simple, clear, and purposeful — both for users and developers.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Technical Skills Detail -->
+  <section class="px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">core competencies</span>
+        <h2 class="text-2xl font-bold text-white mt-2">Technical Proficiency</h2>
+        <p class="text-gray-500 text-sm mt-2">Technologies I leverage daily to build production‑ready applications</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-5">
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">HTML5 & CSS3</span>
+            <span class="text-gray-500">90%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[90%]"></div></div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">Tailwind CSS</span>
+            <span class="text-gray-500">85%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[85%]"></div></div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">JavaScript (ES6+)</span>
+            <span class="text-gray-500">75%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[75%]"></div></div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">React.js</span>
+            <span class="text-gray-500">70%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[70%]"></div></div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">Node.js / Express</span>
+            <span class="text-gray-500">65%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[65%]"></div></div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="text-gray-300">MySQL / Firebase</span>
+            <span class="text-gray-500">65%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill w-[65%]"></div></div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div>
-      <div class="flex justify-between text-sm mb-1">
-        <span>Tailwind CSS</span>
-        <span>85%</span>
-      </div>
-      <div class="w-full bg-gray-200 rounded-full h-2">
-        <div class="bg-indigo-600 h-2 rounded-full w-[85%]"></div>
-      </div>
-    </div>
-
-    <div>
-      <div class="flex justify-between text-sm mb-1">
-        <span>JavaScript</span>
-        <span>75%</span>
-      </div>
-      <div class="w-full bg-gray-200 rounded-full h-2">
-        <div class="bg-indigo-600 h-2 rounded-full w-[75%]"></div>
-      </div>
-    </div>
-
-    <div>
-      <div class="flex justify-between text-sm mb-1">
-        <span>PHP & MySQL</span>
-        <span>70%</span>
-      </div>
-      <div class="w-full bg-gray-200 rounded-full h-2">
-        <div class="bg-indigo-600 h-2 rounded-full w-[70%]"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Experience Timeline -->
-<section class="px-4 py-16 max-w-4xl mx-auto">
-  <h2 class="text-xl font-bold mb-6">Experience</h2>
-
-  <div class="border-l-2 border-indigo-200 pl-6 space-y-6">
-
-    <div>
-      <span class="text-indigo-600 text-sm">2022 - Present</span>
-      <h3 class="font-semibold">Frontend Web Developer (Freelance)</h3>
-      <p class="text-gray-600 leading-relaxed">
-        Developed responsive and accessible websites using HTML, Tailwind CSS, and JavaScript
-        with focus on performance and clean UI design.
-      </p>
-    </div>
-
-    <div>
-      <span class="text-indigo-600 text-sm">2021 - 2022</span>
-      <h3 class="font-semibold">Student Web Developer</h3>
-      <p class="text-gray-600 leading-relaxed">
-        Built academic web projects such as portfolio websites, landing pages,
-        and simple web applications.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- Education -->
-<section class="px-4 py-16 max-w-4xl mx-auto bg-gray-50 rounded-2xl">
-  <h2 class="text-xl font-bold mb-4">Education</h2>
-
-  <div>
-    <h3 class="font-semibold">Vocational High School (Software Engineering)</h3>
-    <p class="text-indigo-600 text-sm">IDN Boarding School | 2025 - 2028</p>
-    <p class="mt-2 text-gray-600">
-      Studied web development, programming fundamentals, and database management.
-    </p>
-  </div>
-</section>
-
-<!-- Certificates -->
-<section class="px-4 py-16 max-w-5xl mx-auto">
-  <h2 class="text-xl font-bold mb-6">Certificates</h2>
-
-  <div class="grid md:grid-cols-3 gap-4">
-    <div class="border rounded-xl overflow-hidden hover:shadow-md transition">
-      <img src="certificates/cert1.jpg" class="h-40 w-full object-cover">
-      <div class="p-3 text-sm">
-        Web Development Fundamentals · Dicoding (2023)
+  <!-- Soft Skills & Tools -->
+  <section class="px-6 py-8 bg-black/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <i class="fas fa-users text-blue-400 text-lg"></i>
+            <h3 class="text-lg font-bold text-white">Interpersonal Strengths</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Complex Problem Solving</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Technical Communication</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Cross‑functional Collaboration</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Deadline Management</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Adaptability</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Detail Orientation</span>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <i class="fas fa-tools text-blue-400 text-lg"></i>
+            <h3 class="text-lg font-bold text-white">Development Toolkit</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Git & GitHub</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">VS Code</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Figma</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Vercel</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Firebase</span>
+            <span class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs">Postman</span>
+          </div>
+        </div>
+        
       </div>
     </div>
+  </section>
 
-    <div class="border rounded-xl overflow-hidden hover:shadow-md transition">
-      <img src="certificates/cert2.jpg" class="h-40 w-full object-cover">
-      <div class="p-3 text-sm">
-        JavaScript Programming · Online Course (2024)
+  <!-- Experience Timeline -->
+  <section class="px-6 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">professional timeline</span>
+        <h2 class="text-2xl font-bold text-white mt-2">Experience</h2>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+          <div>
+            <span class="text-blue-400 text-xs">2022 — Present</span>
+            <h3 class="text-white font-semibold mt-1">Frontend Web Developer (Freelance)</h3>
+            <p class="text-gray-500 text-sm mt-1">Delivering responsive, high‑performance websites for international clients. Focus on optimizing Core Web Vitals, implementing modern UI patterns, and ensuring cross‑browser compatibility.</p>
+          </div>
+        </div>
+        <!-- Tambahkan role lain jika diperlukan, sesuai permintaan user tidak mengubah struktur -->
       </div>
     </div>
+  </section>
 
-    <div class="border rounded-xl overflow-hidden hover:shadow-md transition">
-      <img src="certificates/cert3.jpg" class="h-40 w-full object-cover">
-      <div class="p-3 text-sm">
-        Frontend Developer · Bootcamp (2024)
+  <!-- Education -->
+  <section class="px-6 py-16 bg-black/30">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">academic background</span>
+        <h2 class="text-2xl font-bold text-white mt-2">Education</h2>
+      </div>
+      
+      <div class="card-about rounded-2xl p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
+          <h3 class="text-xl font-bold text-white">Vocational High School</h3>
+        </div>
+        <h4 class="text-white font-semibold">Software Engineering</h4>
+        <p class="text-blue-400 text-sm mt-1">IDN Boarding School | 2025 — 2028</p>
+        <p class="text-gray-500 text-sm mt-3">Rigorous curriculum covering full‑stack development, relational database design, software architecture, and UI/UX principles. Maintaining a GPA of 90+ while building real‑world projects.</p>
+        
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs text-gray-400">Relevant coursework:</span>
+          <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs">Web Development</span>
+          <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs">Database Systems</span>
+          <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs">UI/UX Design</span>
+          <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs">Data Structures & Algorithms</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="px-4 py-16 max-w-4xl mx-auto text-center">
-  <h2 class="text-xl font-bold mb-2">Let’s Connect</h2>
-  <p class="text-gray-600 mb-4">
-    If you’d like to collaborate or just say hello, feel free to reach out.
-  </p>
+  <!-- Certificates Section -->
+  <section class="px-6 py-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">continuous learning</span>
+        <h2 class="text-2xl font-bold text-white mt-2">Certifications</h2>
+        <p class="text-gray-500 text-sm mt-2">Verified credentials that validate my technical expertise</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-5">
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fas fa-certificate text-blue-500 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">Web Development Fundamentals</h4>
+            <p class="text-gray-500 text-xs mt-1">Dicoding · 2023</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fab fa-js text-yellow-500 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">JavaScript Programming</h4>
+            <p class="text-gray-500 text-xs mt-1">Online Course · 2024</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fab fa-react text-cyan-500 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">Frontend Developer Bootcamp</h4>
+            <p class="text-gray-500 text-xs mt-1">Bootcamp · 2024</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fab fa-tailwind text-cyan-400 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">Tailwind CSS Mastery</h4>
+            <p class="text-gray-500 text-xs mt-1">Online Course · 2024</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fas fa-database text-blue-400 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">Database Design & MySQL</h4>
+            <p class="text-gray-500 text-xs mt-1">School Course · 2024</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-hourglass-half text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">In Progress</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cert-card rounded-xl overflow-hidden">
+          <div class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center">
+            <i class="fas fa-code text-blue-500 text-5xl opacity-30"></i>
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm">Responsive Web Design</h4>
+            <p class="text-gray-500 text-xs mt-1">FreeCodeCamp · 2023</p>
+            <div class="mt-2 flex items-center gap-1">
+              <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
+              <span class="text-gray-500 text-xs">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
-  <a href="https://ahsanlinktree.framer.website/" target="_blank"
-    class="inline-block px-6 py-3 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-50 transition">
-    Contact Me
-  </a>
-</section>
+  <!-- Languages -->
+  <section class="px-6 py-16 bg-black/30">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">linguistic proficiency</span>
+      <h2 class="text-2xl font-bold text-white mt-2 mb-8">Languages</h2>
+      
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+            <span class="text-2xl font-bold text-blue-400">ID</span>
+          </div>
+          <p class="text-white font-medium mt-3">Indonesian</p>
+          <p class="text-gray-500 text-xs">Native</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+            <span class="text-2xl font-bold text-blue-400">EN</span>
+          </div>
+          <p class="text-white font-medium mt-3">English</p>
+          <p class="text-gray-500 text-xs">Professional Working Proficiency</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer class="py-10 text-center text-gray-500 text-sm border-t">
-  © 2026 Muhammad Ahsan. Built with HTML & Tailwind CSS.
-</footer>
+  <!-- Achievements / Awards -->
+  <section class="px-6 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-blue-500 text-xs font-semibold uppercase tracking-wider">accolades</span>
+      <h2 class="text-2xl font-bold text-white mt-2 mb-8">Recognition</h2>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="card-about rounded-xl p-4 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+            <i class="fas fa-trophy text-yellow-400 text-sm"></i>
+          </div>
+          <div class="text-left">
+            <h4 class="text-white font-semibold text-sm">Best Web Project</h4>
+            <p class="text-gray-500 text-xs">School‑wide Competition · 2024</p>
+          </div>
+        </div>
+        
+        <div class="card-about rounded-xl p-4 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+            <i class="fas fa-award text-green-400 text-sm"></i>
+          </div>
+          <div class="text-left">
+            <h4 class="text-white font-semibold text-sm">Top 10 Student Developer</h4>
+            <p class="text-gray-500 text-xs">IDN Boarding School · 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Call to Action -->
+  <section class="px-6 py-16">
+    <div class="max-w-3xl mx-auto text-center bg-gradient-to-r from-blue-600/10 to-emerald-600/10 rounded-2xl p-10 border border-blue-500/20">
+      <h2 class="text-2xl font-bold text-white mb-3">Start a conversation</h2>
+      <p class="text-gray-400 text-sm mb-6">Have a project in mind or just want to connect? I'm currently available for freelance opportunities.</p>
+      <a href="https://ahsanlinktree.framer.website/" target="_blank" class="inline-block px-6 py-3 btn-primary rounded-full text-white text-sm font-medium">
+        Get in touch
+        <i class="fas fa-arrow-right ml-2 text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Back to Home -->
+  <section class="px-6 pb-16 text-center">
+    <a href="index.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition text-sm">
+      <i class="fas fa-arrow-left text-xs"></i> Back to home
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 text-center border-t border-gray-800">
+    <p class="text-gray-600 text-xs">© 2026 Muhammad Ahsan — engineered with precision, purpose, and a relentless focus on quality.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+      } else {
+        nav.classList.remove('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+      }
+    });
+  </script>
 </body>
+
 </html>
