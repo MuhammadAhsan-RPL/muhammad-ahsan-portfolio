@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Edge Digital | Muhammad Ahsan — Full-stack Developer</title>
+    <meta
+      name="description"
+      content="Corporate website for digital agency — increased qualified leads by 40%."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #0a0a0f;
+        font-family: "Inter", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #111115;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 10px;
+      }
+      .card-detail {
+        background: #111115;
+        border: 1px solid #1e1e2a;
+        border-radius: 1.5rem;
+      }
+      .btn-primary {
+        background: #3b82f6;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+      }
+      .badge-tech {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 20px;
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      .glow-bg {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <!-- Custom Cursor -->
+    <link rel="stylesheet" href="./cursor.css" />
+    <script src="./cursor.js" defer></script>
+
+    <!-- Animations Premium -->
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./animations.js" defer></script>
+
+    <div class="glow-bg top-20 left-10"></div>
+    <div
+      class="glow-bg bottom-20 right-10"
+      style="
+        background: radial-gradient(
+          circle,
+          rgba(16, 185, 129, 0.05) 0%,
+          transparent 70%
+        );
+      "
+    ></div>
+
+    <!-- ========== NAVBAR PREMIUM RESPONSIVE ========== -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="text-xl sm:text-2xl font-bold text-white shrink-0"
+          >
+            ahsan<span class="text-blue-500">.</span
+            ><span class="text-gray-500 text-xs sm:text-sm ml-0.5 sm:ml-1"
+              >dev</span
+            >
+          </a>
+
+          <!-- Desktop Menu (hidden di HP) -->
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <a
+              href="../main/index.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Home</a
+            >
+            <a
+              href="../allprojects/project.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Projects</a
+            >
+            <a
+              href="../about/about.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >About</a
+            >
+            <a
+              href="https://github.com/MuhammadAhsan-RPL"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition"
+            >
+              <i class="fab fa-github text-lg"></i>
+            </a>
+          </div>
+
+          <!-- Contact Button Desktop -->
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="hidden md:inline-block px-4 lg:px-5 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
+          >
+            Contact
+          </a>
+
+          <!-- Mobile Menu Button (Hamburger) -->
+          <button
+            id="menuToggleMobile"
+            class="md:hidden text-white text-2xl focus:outline-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Panel (Slide from right) -->
+      <div
+        id="mobileMenuPanel"
+        class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      >
+        <!-- Header mobile menu -->
+        <div
+          class="flex justify-between items-center p-5 border-b border-gray-800"
+        >
+          <span class="text-white font-bold text-lg">Menu</span>
+          <button
+            id="closeMenuMobile"
+            class="text-gray-400 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="flex flex-col p-5 gap-4">
+          <a
+            href="../main/index.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-home w-5 text-gray-500"></i>
+            <span>Home</span>
+          </a>
+          <a
+            href="../allprojects/project.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-folder w-5 text-gray-500"></i>
+            <span>Projects</span>
+          </a>
+          <a
+            href="../about/about.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-user w-5 text-gray-500"></i>
+            <span>About</span>
+          </a>
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            class="flex items-center gap-3 text-gray-300 hover:text-white transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fab fa-github w-5 text-gray-500"></i>
+            <span>GitHub</span>
+          </a>
+
+          <div class="my-3 h-px bg-gray-800"></div>
+
+          <!-- Contact Button di Mobile Menu -->
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-primary rounded-full text-white text-sm font-medium"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>Contact Me</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Overlay untuk mobile menu -->
+      <div
+        id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      ></div>
+    </nav>
+
+    <style>
+      /* Fix untuk mobile menu */
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
+      }
+    </style>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuToggleBtn = document.getElementById("menuToggleMobile");
+      const menuPanel = document.getElementById("mobileMenuPanel");
+      const menuOverlay = document.getElementById("mobileMenuOverlay");
+      const closeMenuBtn = document.getElementById("closeMenuMobile");
+
+      function openMobileMenu() {
+        menuPanel.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("opacity-0", "invisible");
+        menuOverlay.classList.add("opacity-100", "visible");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMobileMenu() {
+        menuPanel.classList.add("translate-x-full");
+        menuOverlay.classList.add("opacity-0", "invisible");
+        menuOverlay.classList.remove("opacity-100", "visible");
+        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
+      }
+
+      if (menuToggleBtn)
+        menuToggleBtn.addEventListener("click", openMobileMenu);
+      if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
+
+      // Tutup menu saat resize ke desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMobileMenu();
+        }
+      });
+    </script>
+
+    <section class="relative pt-32 pb-12 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span
+          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
+          >project deep dive</span
+        >
+        <h1 class="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+          Prime Edge Digital
+        </h1>
+        <div class="flex flex-wrap justify-center gap-2 mt-4">
+          <span
+            class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
+            >Frontend</span
+          >
+          <span
+            class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
+            >Independent</span
+          >
+          <span
+            class="bg-orange-500/10 text-orange-400 px-3 py-1 rounded-full text-xs"
+            >Corporate</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-24">
+      <div class="max-w-4xl mx-auto">
+        <div class="rounded-2xl overflow-hidden border border-gray-800 mb-10">
+          <img
+            src="../foto/primeEdge.png"
+            alt="Prime Edge Digital"
+            class="w-full"
+            onerror="
+              this.src =
+                'https://placehold.co/1200x600/1a1a2e/3B82F6?text=Prime+Edge'
+            "
+          />
+        </div>
+
+        <div class="card-detail p-6 md:p-8 space-y-6 mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Overview</h2>
+            <p class="text-gray-400 leading-relaxed">
+              Prime Edge Digital is a corporate website built for a digital
+              agency to strengthen its online presence and showcase its
+              services, projects, and expertise. The project focuses on creating
+              a modern, professional, and conversion-oriented user experience.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">The Challenge</h2>
+            <p class="text-gray-400 leading-relaxed">
+              The goal was to create a website that presents the agency's
+              capabilities in a clear and engaging way while building trust with
+              potential clients and partners.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">The Solution</h2>
+            <p class="text-gray-400 leading-relaxed">
+              I designed and developed a responsive website with a strong focus
+              on visual hierarchy, clear messaging, and user experience. The
+              site highlights services, portfolio projects, and client-focused
+              content through a clean and modern interface.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Key Features</h2>
+            <ul
+              class="text-gray-400 leading-relaxed list-disc list-inside space-y-1"
+            >
+              <li>Modern corporate website design</li>
+              <li>Project showcase</li>
+              <li>Client testimonial section</li>
+              <li>Strategic call-to-action placement</li>
+              <li>Responsive design across all devices</li>
+              <li>Optimized structure for usability and performance</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">What I Learned</h2>
+            <p class="text-gray-400 leading-relaxed">
+              This project helped me better understand how design decisions
+              influence user perception and engagement. I spent a significant
+              amount of time refining layouts, improving content hierarchy, and
+              creating a more professional visual experience. Through this
+              process, I strengthened my frontend development skills and learned
+              how to balance aesthetics, usability, and business goals within a
+              real-world website project.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-3">Tech Stack</h2>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-tech">HTML5</span>
+              <span class="badge-tech">CSS3</span>
+              <span class="badge-tech">JavaScript</span>
+              <span class="badge-tech">Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a
+              href="https://prime-edge-digital.vercel.app/"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium"
+            >
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a
+              href="https://github.com/MuhammadAhsan-RPL/Prime-Edge-Digital"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium"
+            >
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="project.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+          >
+            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-8 px-6 text-center border-t border-gray-800">
+      <p class="text-gray-500 text-xs">
+        © 2026 Muhammad Ahsan — built with intention, iteration, and attention
+        to detail.
+      </p>
+    </footer>
+  </body>
+</html>

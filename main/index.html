@@ -1,0 +1,1728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Custom Cursor -->
+    <link rel="stylesheet" href="./cursor.css" />
+    <script src="./cursor.js" defer></script>
+
+    <!-- Animations Premium -->
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./animations.js" defer></script>
+
+    <!-- ========== TITLE & META TAGS UNTUK SEO ========== -->
+    <title>Muhammad Ahsan | Full-stack Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Muhammad Ahsan is a Junior Software Developer from Indonesia who builds modern web applications, explores new technologies, and gains experience through real-world projects and continuous learning."
+    />
+    <meta
+      name="keywords"
+      content="Muhammad Ahsan, junior software developer, software developer portfolio, web developer, Laravel developer, JavaScript developer, Indonesia developer, web applications"
+    />
+    <meta name="author" content="Muhammad Ahsan" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- ========== OPEN GRAPH (untuk social media sharing) ========== -->
+    <meta property="og:title" content="Muhammad Ahsan | Full-stack Developer" />
+    <meta
+      property="og:description"
+      content="Building high-performance web applications that solve real business problems. Available for freelance worldwide."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Muhammad Ahsan | Full-stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional full-stack developer crafting digital excellence that scales."
+    />
+
+    <!-- ========== STRUCTURED DATA (Schema.org untuk ranking lebih baik) ========== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Ahsan",
+        "alternateName": "Ahsan",
+        "jobTitle": "Full-stack Developer",
+        "description": "Professional full-stack developer specializing in high-performance web applications and HIPAA-compliant platforms.",
+        "url": "https://muhammadahsan.dev",
+        "sameAs": [
+          "https://github.com/MuhammadAhsan-RPL",
+          "https://www.linkedin.com/in/muhammad-ahsan-al-afghani-sofware-developer/",
+          "https://www.instagram.com/asanalfgn/"
+        ],
+        "knowsAbout": [
+          "React.js",
+          "Node.js",
+          "JavaScript",
+          "Tailwind CSS",
+          "MySQL",
+          "Firebase",
+          "Full-stack Development",
+          "Web Application Development",
+          "HIPAA Compliance",
+          "API Development"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full-stack Developer",
+          "occupationLocation": {
+            "@type": "Country",
+            "name": "Indonesia"
+          }
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Muhammad Ahsan Portfolio",
+        "url": "https://muhammadahsan.dev",
+        "description": "Professional portfolio of Muhammad Ahsan - Full-stack Developer",
+        "inLanguage": "en-US"
+      }
+    </script>
+
+    <!-- ========== CANONICAL URL ========== -->
+    <link rel="canonical" href="https://muhammadahsan.dev" />
+
+    <!-- ========== Tailwind CSS ========== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ========== Google Fonts Premium ========== -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ========== Font Awesome Icons ========== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ========== GSAP Animations ========== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              "sv-bg": "#05050A",
+              "sv-surface": "#0A0A10",
+              "sv-card": "#0F0F17",
+              "sv-border": "#1A1A24",
+              "sv-primary": "#6366F1",
+              "sv-primary-light": "#818CF8",
+              "sv-secondary": "#14B8A6",
+              "sv-muted": "#6B7280",
+            },
+            animation: {
+              "pulse-glow": "pulseGlow 2s ease-in-out infinite",
+              "spin-slow": "spin 20s linear infinite",
+              "spin-reverse": "spin 25s linear infinite reverse",
+            },
+            keyframes: {
+              pulseGlow: {
+                "0%,100%": { boxShadow: "0 0 20px rgba(99,102,241,0.3)" },
+                "50%": { boxShadow: "0 0 40px rgba(99,102,241,0.6)" },
+              },
+              spin: {
+                from: { transform: "rotate(0deg)" },
+                to: { transform: "rotate(360deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #05050a;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a10;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #6366f1, #14b8a6);
+        border-radius: 10px;
+      }
+
+      /* Glass Morphism Premium */
+      .glass-premium {
+        background: rgba(15, 15, 23, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(99, 102, 241, 0.15);
+      }
+
+      /* Gradient Text */
+      .gradient-text-premium {
+        background: linear-gradient(
+          135deg,
+          #6366f1 0%,
+          #14b8a6 50%,
+          #818cf8 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Card Premium */
+      .card-premium-sv {
+        background: linear-gradient(135deg, #0f0f17 0%, #0a0a10 100%);
+        border: 1px solid #1a1a24;
+        transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-premium-sv::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(99, 102, 241, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .card-premium-sv:hover::before {
+        left: 100%;
+      }
+
+      .card-premium-sv:hover {
+        transform: translateY(-8px);
+        border-color: #6366f1;
+        box-shadow: 0 25px 40px -20px rgba(99, 102, 241, 0.4);
+      }
+
+      /* Button Premium */
+      .btn-premium {
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .btn-premium::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .btn-premium:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn-premium:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.5);
+      }
+
+      .btn-outline-sv {
+        border: 1.5px solid #6366f1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-sv:hover {
+        background: rgba(99, 102, 241, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Glow */
+      .hero-glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.25) 0%,
+          rgba(20, 184, 166, 0.1) 50%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      /* Grid Pattern */
+      .grid-pattern-sv {
+        background-image:
+          linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+
+      /* Marquee */
+      .marquee {
+        animation: marquee 25s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="grid-pattern-sv">
+    <!-- ========== SPLASH SCREEN PREMIUM ========== -->
+    <div
+      id="splashScreen"
+      class="fixed inset-0 z-[9999] bg-[#0A0A0F] flex items-center justify-center"
+    >
+      <!-- Background animasi -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[100px] animate-pulse"
+        ></div>
+        <div
+          class="absolute -top-20 -right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-[80px] animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute -bottom-20 -left-20 w-80 h-80 bg-emerald-500/20 rounded-full blur-[80px] animate-pulse"
+          style="animation-delay: 2s"
+        ></div>
+      </div>
+
+      <!-- Konten CENTER - pakai flex column dan items-center -->
+      <div
+        class="relative z-10 flex flex-col items-center justify-center w-full max-w-md mx-auto px-6"
+      >
+        <!-- Logo dengan border animasi -->
+        <div class="relative w-28 h-28 mb-6">
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-spin-slow opacity-75"
+          ></div>
+          <div
+            class="absolute inset-[3px] rounded-full bg-[#0A0A0F] flex items-center justify-center"
+          >
+            <span
+              class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              >MA</span
+            >
+          </div>
+        </div>
+
+        <!-- Nama -->
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-2 text-center opacity-0 animate-slideUp"
+          style="animation-delay: 0.2s"
+        >
+          <span
+            class="bg-gradient-to-r from-white via-blue-400 to-purple-400 bg-clip-text text-transparent"
+            >Muhammad Ahsan</span
+          >
+        </h1>
+
+        <!-- Role -->
+        <p
+          class="text-gray-400 text-sm md:text-base text-center opacity-0 animate-slideUp"
+          style="animation-delay: 0.4s"
+        >
+          Full-stack Developer
+        </p>
+
+        <!-- Loading bar - CENTERED -->
+        <div
+          class="w-48 sm:w-56 md:w-64 mx-auto mt-8 opacity-0 animate-slideUp"
+          style="animation-delay: 0.6s"
+        >
+          <div class="h-[3px] bg-gray-800 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full animate-loadingBar"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Loading text -->
+        <p
+          class="text-gray-600 text-xs mt-3 text-center opacity-0 animate-fadeIn"
+          style="animation-delay: 0.8s"
+        >
+          Loading amazing things...
+        </p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes loadingBar {
+        0% {
+          width: 0%;
+        }
+        20% {
+          width: 25%;
+        }
+        50% {
+          width: 55%;
+        }
+        75% {
+          width: 80%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-slideUp {
+        animation: slideUp 0.6s ease-out forwards;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      .animate-loadingBar {
+        animation: loadingBar 2s ease-out forwards;
+      }
+      .animate-spin-slow {
+        animation: spin-slow 3s linear infinite;
+      }
+    </style>
+
+    <script>
+      setTimeout(() => {
+        const splash = document.getElementById("splashScreen");
+        splash.style.transition = "opacity 0.8s ease, visibility 0.8s ease";
+        splash.style.opacity = "0";
+        splash.style.visibility = "hidden";
+        setTimeout(() => {
+          splash.style.display = "none";
+        }, 800);
+      }, 2800);
+    </script>
+
+    <style>
+      /* Animasi untuk splash screen */
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes loadingBar {
+        0% {
+          width: 0%;
+        }
+        20% {
+          width: 25%;
+        }
+        50% {
+          width: 55%;
+        }
+        75% {
+          width: 80%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-slideUp {
+        animation: slideUp 0.6s ease-out forwards;
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .animate-loadingBar {
+        animation: loadingBar 2s ease-in-out forwards;
+      }
+
+      .animate-spin-slow {
+        animation: spin-slow 3s linear infinite;
+      }
+    </style>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 py-4 px-4 sm:px-6 transition-all duration-500 bg-black/80 backdrop-blur-md border-b border-gray-800"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a
+          href="#"
+          class="text-xl sm:text-2xl font-bold tracking-tight group shrink-0"
+        >
+          <span class="text-white">ahsan</span>
+          <span class="text-indigo-500">.</span>
+          <span
+            class="text-xs sm:text-sm text-gray-500 font-normal ml-0.5 sm:ml-1 group-hover:text-indigo-400 transition"
+            >dev</span
+          >
+        </a>
+
+        <!-- Desktop Menu (hidden di HP) -->
+        <div class="hidden md:flex items-center gap-6 lg:gap-10">
+          <a
+            href="#home"
+            class="text-gray-400 hover:text-white transition text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="#work"
+            class="text-gray-400 hover:text-white transition text-sm font-medium"
+            >Work</a
+          >
+          <a
+            href="#expertise"
+            class="text-gray-400 hover:text-white transition text-sm font-medium"
+            >Expertise</a
+          >
+          <a
+            href="#testimonials"
+            class="text-gray-400 hover:text-white transition text-sm font-medium"
+            >Clients</a
+          >
+        </div>
+
+        <!-- Desktop Contact Button -->
+        <a
+          href="#contact"
+          class="hidden md:inline-block px-4 lg:px-5 py-2 btn-premium rounded-full text-white text-sm font-medium hover:scale-105 transition"
+        >
+          Let's talk
+        </a>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button
+          id="mobileMenuToggle"
+          class="md:hidden text-white text-2xl focus:outline-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Panel (Slide from right) -->
+      <div
+        id="mobileMenuPanel"
+        class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      >
+        <!-- Header Mobile Menu -->
+        <div
+          class="flex justify-between items-center p-5 border-b border-gray-800"
+        >
+          <span class="text-white font-bold text-lg">Menu</span>
+          <button
+            id="closeMobileMenu"
+            class="text-gray-400 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Menu Items Mobile -->
+        <div class="flex flex-col p-5 gap-3">
+          <a
+            href="#home"
+            class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-base py-2.5 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-home w-5 text-blue-500"></i>
+            <span>Home</span>
+          </a>
+          <a
+            href="#work"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2.5 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-briefcase w-5 text-gray-500"></i>
+            <span>Work</span>
+          </a>
+          <a
+            href="#expertise"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2.5 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-code w-5 text-gray-500"></i>
+            <span>Expertise</span>
+          </a>
+          <a
+            href="#testimonials"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2.5 px-3 rounded-lg hover:bg-white/5"
+          >
+            <i class="fas fa-star w-5 text-gray-500"></i>
+            <span>Clients</span>
+          </a>
+
+          <div class="my-3 h-px bg-gray-800"></div>
+
+          <!-- Contact Button di Mobile -->
+          <a
+            href="#contact"
+            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-premium rounded-full text-white text-sm font-medium"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>Let's talk</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Overlay untuk Mobile Menu -->
+      <div
+        id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      ></div>
+    </nav>
+
+    <style>
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
+      }
+    </style>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("mobileMenuToggle");
+      const menuPanel = document.getElementById("mobileMenuPanel");
+      const menuOverlay = document.getElementById("mobileMenuOverlay");
+      const closeMenuBtn = document.getElementById("closeMobileMenu");
+
+      function openMenu() {
+        menuPanel.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("opacity-0", "invisible");
+        menuOverlay.classList.add("opacity-100", "visible");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMenu() {
+        menuPanel.classList.add("translate-x-full");
+        menuOverlay.classList.add("opacity-0", "invisible");
+        menuOverlay.classList.remove("opacity-100", "visible");
+        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
+      }
+
+      if (menuToggle) menuToggle.addEventListener("click", openMenu);
+      if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+
+      // ✨ TAMBAHAN: Tutup menu saat klik link di dalam menu ✨
+      const mobileLinks = document.querySelectorAll("#mobileMenuPanel a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+
+      // Tutup menu saat resize ke desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
+    </script>
+
+    <!-- ========== HERO SECTION - BALANCED & NATURAL ========== -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center px-6 overflow-hidden pt-20"
+    >
+      <div class="hero-glow top-20 -left-20"></div>
+      <div
+        class="hero-glow bottom-20 -right-20"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(20, 184, 166, 0.2) 0%,
+            rgba(99, 102, 241, 0.05) 50%,
+            transparent 70%
+          );
+        "
+      ></div>
+
+      <div class="max-w-6xl mx-auto w-full relative z-10">
+        <div
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+        >
+          <!-- Left Content -->
+          <div class="lg:w-[55%]">
+            <div class="inline-flex items-center gap-3 mb-5">
+              <div
+                class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+              ></div>
+              <span class="text-gray-400 text-sm"
+                >Full-Stack Developer · Product Builder · Open to
+                Collaboration</span
+              >
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-5"
+            >
+              <span class="text-white">Hey, I'm</span>
+              <span class="gradient-text-premium whitespace-nowrap"
+                >Muhammad Ahsan</span
+              >
+              <span class="text-white block mt-1"
+                >I build things that work</span
+              >
+            </h1>
+
+            <p class="text-gray-400 text-base leading-relaxed mb-7 max-w-lg">
+              Full-Stack Developer focused on building reliable web
+              applications, continuous learning, and delivering meaningful
+              digital solutions.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-10">
+              <a
+                href="/about/about.html"
+                class="px-6 py-2.5 btn-premium rounded-full text-white text-sm font-medium"
+              >
+                Get to know me
+                <i class="fas fa-arrow-right ml-2 text-xs"></i>
+              </a>
+              <a
+                href="#work"
+                class="px-6 py-2.5 btn-outline-sv rounded-full text-indigo-400 text-sm font-medium"
+              >
+                See my work
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap gap-8">
+              <div>
+                <div class="text-2xl font-bold text-white">6+</div>
+                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+                  PROJECTS BULIT
+                </div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white">3</div>
+                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+                  REAL-WORLD PROJECTS
+                </div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white">4+</div>
+                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+                  YEARS CODING
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Profile -->
+          <div class="lg:w-[40%] flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div
+                  class="w-[310px] h-[310px] border border-indigo-500/20 rounded-full animate-spin-slow"
+                ></div>
+                <div
+                  class="absolute w-[280px] h-[280px] border border-emerald-500/15 rounded-full animate-spin-reverse"
+                ></div>
+              </div>
+
+              <div class="relative z-10">
+                <div
+                  class="w-60 h-60 rounded-full overflow-hidden border-2 border-indigo-500/30 shadow-2xl"
+                >
+                  <img
+                    src="../foto/ahsan.jpeg"
+                    alt="Muhammad Ahsan"
+                    class="w-full h-full object-cover scale-110"
+                  />
+                </div>
+                <div
+                  class="absolute -bottom-3 -right-3 bg-gradient-to-r from-indigo-600 to-emerald-600 rounded-full px-2.5 py-1 shadow-lg"
+                >
+                  <i class="fas fa-code text-white text-xs"></i>
+                  <span class="text-white text-[10px] ml-1">Full-stack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
+      >
+        <div
+          class="w-6 h-10 border-2 border-indigo-500/30 rounded-full flex justify-center"
+        >
+          <div
+            class="w-1 h-2 bg-indigo-500 rounded-full mt-2 animate-bounce"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS MARQUEE - PREMIUM VERSION ========== -->
+    <div
+      class="overflow-hidden py-6 border-y border-blue-500/10 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent"
+    >
+      <div class="flex marquee whitespace-nowrap">
+        <!-- Marquee Item 1 - Left to Right -->
+        <div class="flex gap-10 mx-8">
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-code text-blue-400 text-base group-hover:text-blue-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-blue-400 transition"
+              >FULL-STACK DEVELOPMENT</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-globe text-emerald-400 text-base group-hover:text-emerald-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-emerald-400 transition"
+              >WEB APPLICATIONS</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-chart-line text-purple-400 text-base group-hover:text-purple-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-purple-400 transition"
+              >SCALABLE SYSTEMS</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-users text-pink-400 text-base group-hover:text-pink-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-pink-400 transition"
+              >USER-CENTERED DESIGN</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-puzzle-piece text-orange-400 text-base group-hover:text-orange-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-orange-400 transition"
+              >PROBLEM SOLVING</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-graduation-cap text-cyan-400 text-base group-hover:text-cyan-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-cyan-400 transition"
+              >CONTINUOUS LEARNING</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+        </div>
+
+        <!-- Duplicate for seamless loop -->
+        <div class="flex gap-10 mx-8">
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-code text-blue-400 text-base group-hover:text-blue-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-blue-400 transition"
+              >FULL-STACK DEVELOPMENT</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-globe text-emerald-400 text-base group-hover:text-emerald-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-emerald-400 transition"
+              >WEB APPLICATIONS</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-chart-line text-purple-400 text-base group-hover:text-purple-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-purple-400 transition"
+              >SCALABLE SYSTEMS</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-users text-pink-400 text-base group-hover:text-pink-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-pink-400 transition"
+              >USER-CENTERED DESIGN</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-puzzle-piece text-orange-400 text-base group-hover:text-orange-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-orange-400 transition"
+              >PROBLEM SOLVING</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+          <span class="text-sm flex items-center gap-3 group cursor-pointer">
+            <i
+              class="fas fa-graduation-cap text-cyan-400 text-base group-hover:text-cyan-300 transition"
+            ></i>
+            <span
+              class="text-gray-300 font-medium tracking-wide group-hover:text-cyan-400 transition"
+              >CONTINUOUS LEARNING</span
+            >
+            <i class="fas fa-asterisk text-blue-500/40 text-[8px] mx-1"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FEATURED WORK SECTION ========== -->
+    <section id="work" class="py-28 px-6 relative overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- Header with accent line -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-4">
+            <div class="w-8 h-px bg-blue-500"></div>
+            <span
+              class="text-blue-500 text-xs font-semibold uppercase tracking-[0.2em]"
+              >featured work</span
+            >
+            <div class="w-8 h-px bg-blue-500"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Projects
+            <span
+              class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+              >I'm proud of</span
+            >
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto text-base">
+            A few things I've built that actually help people.
+          </p>
+        </div>
+
+        <!-- Projects Grid with enhanced cards -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Project 1 - OneSchool -->
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
+            <!-- Glow effect on hover -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            ></div>
+
+            <a href="../project/oneschool.html" class="block">
+              <div class="relative h-56 overflow-hidden">
+                <img
+                  src="../foto/ERepor.png"
+                  alt="OneSchool E-Report"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                ></div>
+                <!-- Live badge floating -->
+                <div class="absolute top-4 right-4">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 backdrop-blur-sm"
+                    >Live</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="text-[11px] font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full"
+                    >Full-stack</span
+                  >
+                  <span
+                    class="text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full"
+                    >School Project</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                >
+                  OneSchool E-Report
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Real‑time school reporting. Helped cut response time from days
+                  to hours.
+                </p>
+                <div
+                  class="mt-5 flex items-center text-blue-400 text-sm font-medium group-hover:gap-3 transition-all duration-300"
+                >
+                  <span class="relative inline-flex items-center">
+                    See details
+                    <svg
+                      class="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all duration-300 group-hover:w-full"
+                      aria-hidden="true"
+                    ></svg>
+                  </span>
+                  <i
+                    class="fas fa-arrow-right text-xs transition-all duration-300 group-hover:translate-x-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2 - Psychology -->
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            ></div>
+
+            <a href="../project/psychology.html" class="block">
+              <div class="relative h-56 overflow-hidden">
+                <img
+                  src="../foto/Psikolog.png"
+                  alt="M-Ahsan Psychology"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                ></div>
+                <div class="absolute top-4 right-4">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 backdrop-blur-sm"
+                    >Live</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="text-[11px] font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full"
+                    >Frontend</span
+                  >
+                  <span
+                    class="text-[11px] font-medium text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full"
+                    >HIPAA</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                >
+                  M‑Ahsan Psychology
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Secure therapy platform. Built for real psychologists in the
+                  US.
+                </p>
+                <div
+                  class="mt-5 flex items-center text-blue-400 text-sm font-medium group-hover:gap-3 transition-all duration-300"
+                >
+                  <span class="relative inline-flex items-center">
+                    See details
+                    <svg
+                      class="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all duration-300 group-hover:w-full"
+                      aria-hidden="true"
+                    ></svg>
+                  </span>
+                  <i
+                    class="fas fa-arrow-right text-xs transition-all duration-300 group-hover:translate-x-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3 - Prime Edge -->
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            ></div>
+
+            <a href="../project/primeedge.html" class="block">
+              <div class="relative h-56 overflow-hidden">
+                <img
+                  src="../foto/primeEdge .png"
+                  alt="Prime Edge Digital"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                ></div>
+                <div class="absolute top-4 right-4">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 backdrop-blur-sm"
+                    >Live</span
+                  >
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    class="text-[11px] font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full"
+                    >Corporate</span
+                  >
+                  <span
+                    class="text-[11px] font-medium text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full"
+                    >+40% Leads</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                >
+                  Prime Edge Digital
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Agency website that actually brought in more clients.
+                </p>
+                <div
+                  class="mt-5 flex items-center text-blue-400 text-sm font-medium group-hover:gap-3 transition-all duration-300"
+                >
+                  <span class="relative inline-flex items-center">
+                    See details
+                    <svg
+                      class="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all duration-300 group-hover:w-full"
+                      aria-hidden="true"
+                    ></svg>
+                  </span>
+                  <i
+                    class="fas fa-arrow-right text-xs transition-all duration-300 group-hover:translate-x-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- View all button - more premium -->
+        <div class="text-center mt-14">
+          <a
+            href="../allprojects/project.html"
+            class="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600/10 to-transparent border border-blue-500/30 hover:border-blue-400 hover:bg-blue-500/10 transition-all duration-300 text-sm font-medium text-blue-400 hover:text-blue-300"
+          >
+            <span>Explore all projects</span>
+            <i
+              class="fas fa-arrow-right text-xs transition-all duration-300 group-hover:translate-x-1 group-hover:-rotate-12"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW I WORK SECTION (formerly Expertise) ========== -->
+    <section id="expertise" class="py-24 px-6 bg-black/30">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
+              >how i work</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-6">
+              I listen first,<br />then <span class="text-blue-500">build</span>
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Before writing a single line of code, I make sure I understand
+              what you actually need. Because good code isn't just about
+              technology — it's about solving the right problem.
+            </p>
+
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-comment text-blue-400 text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold">Clear communication</h4>
+                  <p class="text-gray-500 text-sm">
+                    I explain things in plain English. No buzzwords, no jargon.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-blue-400 text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold">Respect deadlines</h4>
+                  <p class="text-gray-500 text-sm">
+                    If I say I'll deliver, I deliver. Simple as that.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-headset text-blue-400 text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold">Support after launch</h4>
+                  <p class="text-gray-500 text-sm">
+                    I don't disappear after the site is live. I'm still here to
+                    help.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-premium rounded-2xl p-8">
+            <div class="flex gap-1 mb-6">
+              <i
+                class="fas fa-quote-left text-blue-500 text-2xl opacity-50"
+              ></i>
+            </div>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+              "Good code is code that other people can understand. Not just
+              machines. I learned this from building projects and breaking
+              things — then fixing them again."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-lg">MA</span>
+              </div>
+              <div>
+                <div class="text-white font-semibold">Muhammad Ahsan</div>
+                <div class="text-gray-500 text-sm">
+                  Junior full-stack developer
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+        <!-- ========== TESTIMONIALS SECTION - PREMIUM ========== -->
+    <section id="testimonials" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-4">
+            <div class="w-8 h-px bg-blue-500"></div>
+            <span class="text-blue-500 text-xs font-semibold uppercase tracking-[0.2em]">kind words</span>
+            <div class="w-8 h-px bg-blue-500"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            What <span class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">people say</span>
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            From clients, teachers, and fellow developers I've worked with
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <!-- Testimonial 1 - Mr.Dion -->
+          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
+            <!-- Quote icon background -->
+            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+              <i class="fas fa-quote-right text-6xl text-white"></i>
+            </div>
+            
+            <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            
+            <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
+              "What stands out most about Ahsan is his dedication to continuous improvement. He is always exploring new technologies and applying them to real projects."
+            </p>
+            
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+              <!-- Avatar dengan gradient -->
+              <div class="relative">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                  <span class="text-white font-bold text-sm">D</span>
+                </div>
+                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">Mr. Dion</div>
+                <div class="text-gray-500 text-xs">Software Development Teacher | IDN Boarding School</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 - M.Sahel -->
+          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+              <i class="fas fa-quote-right text-6xl text-white"></i>
+            </div>
+            
+            <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            
+            <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
+              "Working with Ahsan was always productive. He communicates clearly, accepts feedback professionally, and remains focused on delivering high-quality results."
+            </p>
+            
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+              <div class="relative">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                  <span class="text-white font-bold text-sm">S</span>
+                </div>
+                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">M. Sahel</div>
+                <div class="text-gray-500 text-xs">Project Collaborator | Al-Hidayah Foundation Team</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 - Fellow Students -->
+          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
+            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+              <i class="fas fa-quote-right text-6xl text-white"></i>
+            </div>
+            
+            <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            
+            <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
+              "Ahsan brings both creativity and technical thinking to every project. He is always open to feedback and eager to explore better solutions."
+            </p>
+            
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+              <div class="relative">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                  <span class="text-white font-bold text-sm">FS</span>
+                </div>
+                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">Fellow Students</div>
+                <div class="text-gray-500 text-xs">Student Developer | IDN Boarding School</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="glass-premium rounded-3xl p-8 md:p-12">
+          <div class="text-center mb-10">
+            <span
+              class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
+              >get in touch</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">
+              Let's work together
+            </h2>
+            <p class="text-gray-500">
+              I'm currently open for freelance and remote work.
+            </p>
+          </div>
+
+          <form id="contactForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="w-full bg-sv-card border border-sv-border rounded-xl px-5 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  class="w-full bg-sv-card border border-sv-border rounded-xl px-5 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+            </div>
+            <div>
+              <textarea
+                rows="4"
+                placeholder="Tell me about your project or idea..."
+                class="w-full bg-sv-card border border-sv-border rounded-xl px-5 py-3.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full btn-premium py-3.5 rounded-xl text-white font-medium"
+            >
+              Send message
+              <i class="fas fa-arrow-right ml-2 text-xs"></i>
+            </button>
+          </form>
+
+          <div
+            class="flex justify-center gap-8 mt-8 pt-6 border-t border-sv-border"
+          >
+            <a
+              href="https://github.com/MuhammadAhsan-RPL"
+              target="_blank"
+              class="text-gray-500 hover:text-blue-400 transition text-xl"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/muhammad-ahsan-al-afghani-sofware-developer/"
+              target="_blank"
+              class="text-gray-500 hover:text-blue-400 transition text-xl"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://wa.me/6281514421495"
+              target="_blank"
+              class="text-gray-500 hover:text-emerald-400 transition text-xl"
+              aria-label="WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/asanalfgn/"
+              target="_blank"
+              class="text-gray-500 hover:text-pink-400 transition text-xl"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <div class="text-center mt-5">
+            <a
+              href="cv/Muhammad-Ahsan-CV.pdf"
+              download
+              class="inline-flex items-center gap-2 text-gray-500 hover:text-blue-400 transition text-sm"
+            >
+              <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-12 px-6 border-t border-blue-500/10">
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div>
+            <a href="#" class="text-xl font-bold text-white"
+              >ahsan<span class="text-blue-500">.</span
+              ><span class="text-gray-500 text-sm ml-1">dev</span></a
+            >
+            <p class="text-gray-600 text-xs mt-2">
+              Building things that work since 2022
+            </p>
+          </div>
+
+          <div class="flex gap-8">
+            <a
+              href="#home"
+              class="text-gray-500 hover:text-blue-400 transition text-xs"
+              >Home</a
+            >
+            <a
+              href="#work"
+              class="text-gray-500 hover:text-blue-400 transition text-xs"
+              >Work</a
+            >
+            <a
+              href="#expertise"
+              class="text-gray-500 hover:text-blue-400 transition text-xs"
+              >How I work</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-500 hover:text-blue-400 transition text-xs"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div class="text-center mt-8 pt-6 border-t border-sv-border">
+          <p class="text-gray-600 text-xs">
+            © 2026 Muhammad Ahsan — crafted with coffee, curiosity, and a lot of
+            debugging.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========== FIREBASE ========== -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyADNZtmZ5OvHl2PANxl8-yTNlJRGy1SSJs",
+        authDomain: "portofolio-website-ahsan.firebaseapp.com",
+        projectId: "portofolio-website-ahsan",
+        storageBucket: "portofolio-website-ahsan.firebasestorage.app",
+        messagingSenderId: "210421348858",
+        appId: "1:210421348858:web:2d1cd7ca623ed385f9cc43",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const form = document.getElementById("contactForm");
+
+      function showToast(message) {
+        const toast = document.createElement("div");
+        toast.className =
+          "fixed bottom-8 right-8 bg-gradient-to-r from-indigo-600 to-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl z-50 text-sm";
+        toast.innerHTML = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 5000);
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = form.querySelector('input[placeholder="Your name"]').value;
+        const email = form.querySelector(
+          'input[placeholder="Email address"]',
+        ).value;
+        const message = form.querySelector("textarea").value;
+
+        if (!name || !email || !message) {
+          showToast("Please fill all fields!");
+          return;
+        }
+
+        try {
+          await addDoc(collection(db, "work_together"), {
+            name,
+            email,
+            message,
+            createdAt: serverTimestamp(),
+          });
+          form.reset();
+          showToast("✨ Message sent! I'll respond within 24 hours.");
+        } catch (err) {
+          console.error(err);
+          showToast("Something went wrong. Please try again 🙏");
+        }
+      });
+    </script>
+
+    <!-- ========== GSAP ANIMATIONS ========== -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "glass-premium",
+            "border-b",
+            "border-indigo-500/10",
+          );
+        } else {
+          nav.classList.remove(
+            "glass-premium",
+            "border-b",
+            "border-indigo-500/10",
+          );
+        }
+      });
+
+      // Fade animations
+      gsap.utils.toArray("section").forEach((section, i) => {
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+      });
+
+      // Hero text animation
+      gsap.from("h1 span", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        ease: "back.out(1.2)",
+      });
+    </script>
+
+    <style>
+      .animate-spin-slow {
+        animation: spin 20s linear infinite;
+      }
+      .animate-spin-reverse {
+        animation: spin-reverse 25s linear infinite;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spin-reverse {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </body>
+</html>
