@@ -1,168 +1,90 @@
-// ========== ANIMATIONS PREMIUM - FULL PACKAGE ==========
-
+// ========== ANIMATIONS RINGAN (Tidak ganggu cursor) ==========
 (function() {
   
-  // 1. FADE IN UP ON SCROLL (menggunakan Intersection Observer)
+  // 1. Fade In Up saat scroll
   function initFadeInUp() {
-    const fadeElements = document.querySelectorAll(
-      '.card-project, .glass-premium, .card-about, .cert-card, ' +
-      'section > div > .text-center, .hero-glow + div > div, ' +
-      '.grid > div, .flex-col.md\\:flex-row, .stats-card'
-    );
+    const elements = document.querySelectorAll('.card-project, .glass-premium, section > div > .text-center');
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('fade-up');
+          entry.target.style.opacity = '0';
+          entry.target.style.transform = 'translateY(30px)';
+          entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, 50);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1 });
     
-    fadeElements.forEach(el => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
   }
   
-  // 2. TAMBAH CLASS GLOW UNTUK CARD
-  function addGlowToCards() {
-    document.querySelectorAll('.card-project, .glass-premium, .card-about, .cert-card').forEach(card => {
-      card.classList.add('card-glow');
-    });
-  }
-  
-  // 3. TAMBAH SHIMMER UNTUK JUDUL
-  function addShimmerToTitles() {
-    const titles = document.querySelectorAll(
-      'h1, h2, .gradient-text, .gradient-text-premium, ' +
-      '.text-4xl, .text-3xl.font-bold, .text-2xl.font-bold'
-    );
-    titles.forEach(title => {
-      if (!title.closest('.btn-primary, .btn-premium')) {
-        title.classList.add('shimmer-text');
-      }
-    });
-  }
-  
-  // 4. TAMBAH PULSE UNTUK TOMBOL CONTACT
-  function addPulseToButtons() {
-    const buttons = document.querySelectorAll(
-      'a[href*="mailto"], a[href*="contact"], a[href*="Let\'s talk"], ' +
-      '.btn-primary, .btn-premium, .btn-solid'
-    );
-    buttons.forEach(btn => {
-      btn.classList.add('btn-pulse');
-    });
-  }
-  
-  // 5. PAGE TRANSITION
-  function addPageTransition() {
-    document.body.classList.add('page-transition');
-  }
-  
-  // 6. FLOAT ANIMATION UNTUK FOTO PROFIL
-  function addFloatToProfile() {
-    const profileImg = document.querySelector('.rounded-full, .w-60.h-60, .w-56.h-56');
-    if (profileImg && profileImg.closest('.relative')) {
-      profileImg.closest('.relative').classList.add('float-animation');
-    }
-  }
-  
-  // 7. SCALE IN UNTUK STATS DAN BADGE
-  function addScaleToStats() {
-    const stats = document.querySelectorAll('.grid-cols-2.md\\:grid-cols-4 > div, .flex.gap-8 > div, .stats-item');
-    stats.forEach((stat, index) => {
-      stat.style.opacity = '0';
-      stat.classList.add('scale-in');
-      stat.style.animationDelay = `${index * 0.1}s`;
-    });
-  }
-  
-  // 8. SLIDE ANIMATION UNTUK HERO CONTENT
-  function addSlideToHero() {
-    const heroLeft = document.querySelector('.lg\\:w-\\[55%\\], .lg\\:w-1\\/2');
-    const heroRight = document.querySelector('.lg\\:w-\\[40%\\], .lg\\:w-1\\/2.flex.justify-center');
-    
-    if (heroLeft) heroLeft.classList.add('slide-left');
-    if (heroRight) heroRight.classList.add('slide-right');
-  }
-  
-  // 9. BLUR IN UNTUK BACKGROUND GLOW
-  function addBlurToBackground() {
-    const glowBg = document.querySelectorAll('.glow-bg');
-    glowBg.forEach(bg => {
-      bg.classList.add('blur-in');
-    });
-  }
-  
-  // 10. OBSERVER UNTUK ELEMEN YANG MUNCUL DINAMIS (FILTER PROJECT)
-  function observeDynamicElements() {
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('.card-project, .glass-premium').forEach(card => {
-        if (!card.classList.contains('card-glow')) {
-          card.classList.add('card-glow');
-        }
+  // 2. Hover Glow Card
+  function addGlow() {
+    document.querySelectorAll('.card-project, .glass-premium').forEach(card => {
+      card.style.transition = 'all 0.3s ease';
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-6px)';
+        card.style.borderColor = '#3B82F6';
+        card.style.boxShadow = '0 20px 30px -15px rgba(59,130,246,0.3)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.borderColor = '#1E1E2A';
+        card.style.boxShadow = 'none';
       });
     });
-    
-    observer.observe(document.body, { childList: true, subtree: true });
   }
   
-  // 11. PARALLAX SCROLL (EFEK KECIL)
-  function initParallax() {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      const heroGlow = document.querySelector('.hero-glow');
-      if (heroGlow) {
-        heroGlow.style.transform = `translateY(${scrolled * 0.2}px)`;
+  // 3. Shimmer untuk judul
+  function addShimmer() {
+    const titles = document.querySelectorAll('h1, h2, .gradient-text');
+    titles.forEach(title => {
+      title.style.background = 'linear-gradient(90deg, #3B82F6, #60A5FA, #3B82F6)';
+      title.style.backgroundSize = '200% auto';
+      title.style.webkitBackgroundClip = 'text';
+      title.style.backgroundClip = 'text';
+      title.style.color = 'transparent';
+      title.style.animation = 'shimmer 3s linear infinite';
+    });
+  }
+  
+  // 4. Pulse untuk tombol Contact
+  function addPulse() {
+    const btns = document.querySelectorAll('a[href*="mailto"], .btn-primary, .btn-premium');
+    btns.forEach(btn => {
+      btn.style.animation = 'pulse 2s ease-in-out infinite';
+    });
+  }
+  
+  // 5. Tambahkan keyframes ke style
+  function addKeyframes() {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
       }
-    });
-  }
-  
-  // 12. TYPEWRITER EFFECT (OPSIONAL UNTUK HERO)
-  function initTypewriter() {
-    const heroText = document.querySelector('h1 .gradient-text-premium, .text-4xl.md\\:text-5xl span');
-    if (heroText && heroText.innerText === 'Muhammad Ahsan') {
-      // Sudah bagus, tidak perlu typewriter biar gak berlebihan
-    }
-  }
-  
-  // 13. LOADING PROGRESS BAR (SUBTLE)
-  function initLoadingProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 3px;
-      background: linear-gradient(90deg, #3B82F6, #8B5CF6);
-      z-index: 99999;
-      transition: width 0.3s ease;
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+        50% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(59,130,246,0); }
+      }
     `;
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      progressBar.style.width = scrolled + '%';
-    });
+    document.head.appendChild(style);
   }
   
-  // 14. RUN ALL ANIMATIONS
+  // Jalankan semua
   document.addEventListener('DOMContentLoaded', () => {
+    addKeyframes();
     setTimeout(() => {
-      addGlowToCards();
-      addShimmerToTitles();
-      addPulseToButtons();
-      addPageTransition();
-      addFloatToProfile();
-      addScaleToStats();
-      addSlideToHero();
-      addBlurToBackground();
       initFadeInUp();
-      observeDynamicElements();
-      initParallax();
-      initLoadingProgress();
+      addGlow();
+      addShimmer();
+      addPulse();
     }, 100);
   });
   

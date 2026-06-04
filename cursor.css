@@ -29,16 +29,34 @@
   box-shadow: 0 0 12px rgba(96, 165, 250, 0.2);
 }
 
-/* Sembunyikan cursor default */
-* {
-  cursor: none !important;
+/* Hanya tampilkan cursor custom di layar desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .cursor-dot, .cursor-ring {
+    display: block;
+  }
+  
+  /* Sembunyikan cursor default di desktop saja */
+  * {
+    cursor: none !important;
+  }
+  
+  html, body {
+    cursor: none !important;
+  }
+  
+  input, textarea {
+    cursor: text !important;
+  }
 }
 
-html, body {
-  cursor: none !important;
-}
-
-/* Khusus input biar tetap bisa ngetik */
-input, textarea {
-  cursor: text !important;
+/* Di tablet dan HP, sembunyikan cursor custom */
+@media (max-width: 1023px) {
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+  
+  /* Kembalikan cursor default di HP */
+  * {
+    cursor: auto !important;
+  }
 }
