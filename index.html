@@ -580,13 +580,49 @@
           >
         </div>
 
-        <!-- Desktop Contact Button -->
-        <a
-          href="#contact"
-          class="hidden md:inline-block px-4 lg:px-5 py-2 btn-premium rounded-full text-white text-sm font-medium hover:scale-105 transition"
-        >
-          Let's talk
-        </a>
+        <!-- Social & Action Buttons Desktop -->
+        <div class="hidden md:flex items-center gap-3">
+          <!-- GitHub -->
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            class="text-gray-400 hover:text-white transition p-2 rounded-full hover:bg-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-lg"></i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/muhammad-ahsan-al-afghani-sofware-developer/"
+            target="_blank"
+            class="text-gray-400 hover:text-blue-400 transition p-2 rounded-full hover:bg-white/10"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in text-lg"></i>
+          </a>
+
+          <!-- Download CV -->
+          <a
+            href="cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="text-gray-400 hover:text-emerald-400 transition p-2 rounded-full hover:bg-white/10"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-file-pdf text-lg"></i>
+          </a>
+
+          <!-- Divider -->
+          <div class="w-px h-6 bg-gray-700 mx-1"></div>
+
+          <!-- Contact Button -->
+          <a
+            href="#contact"
+            class="px-4 lg:px-5 py-2 btn-premium rounded-full text-white text-sm font-medium hover:scale-105 transition"
+          >
+            Let's talk
+          </a>
+        </div>
 
         <!-- Mobile Menu Button (Hamburger) -->
         <button
@@ -647,6 +683,33 @@
           </a>
 
           <div class="my-3 h-px bg-gray-800"></div>
+
+          <!-- Social Links Mobile -->
+          <div class="flex items-center justify-around gap-3 py-2">
+            <a
+              href="https://github.com/MuhammadAhsan-RPL"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition p-2 rounded-lg hover:bg-white/10"
+            >
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/muhammad-ahsan-al-afghani-sofware-developer/"
+              target="_blank"
+              class="text-gray-400 hover:text-blue-400 transition p-2 rounded-lg hover:bg-white/10"
+            >
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a
+              href="cv/Muhammad-Ahsan-CV.pdf"
+              download
+              class="text-gray-400 hover:text-emerald-400 transition p-2 rounded-lg hover:bg-white/10"
+            >
+              <i class="fas fa-file-pdf text-xl"></i>
+            </a>
+          </div>
+
+          <div class="my-1 h-px bg-gray-800"></div>
 
           <!-- Contact Button di Mobile -->
           <a
@@ -718,8 +781,11 @@
     </script>
 
     <!-- ========== HERO SECTION - BALANCED & NATURAL ========== -->
-        <!-- ========== HERO SECTION - LAPTOP TETAP, HP DIPERBESAR ========== -->
-    <section id="home" class="relative min-h-screen flex items-center px-6 overflow-hidden pt-20">
+    <!-- ========== HERO SECTION - LAPTOP TETAP, HP DIPERBESAR ========== -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center px-6 overflow-hidden pt-20"
+    >
       <div class="hero-glow top-20 -left-20"></div>
       <div
         class="hero-glow bottom-20 -right-20"
@@ -753,7 +819,8 @@
               class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-5"
             >
               <span class="text-white">Hey, I'm</span>
-              <span class="gradient-text-premium whitespace-nowrap lg:whitespace-nowrap"
+              <span
+                class="gradient-text-premium whitespace-nowrap lg:whitespace-nowrap"
                 >Muhammad Ahsan</span
               >
               <span class="text-white block mt-1"
@@ -762,7 +829,8 @@
             </h1>
 
             <p class="text-gray-400 text-base leading-relaxed mb-7 max-w-lg">
-              Full-Stack Developer · Passionate about design, user experience, and building practical digital products.
+              Full-Stack Developer · Passionate about design, user experience,
+              and building practical digital products.
             </p>
 
             <div class="flex flex-wrap gap-3 mb-10">
@@ -1021,26 +1089,37 @@
 
         <!-- Projects Grid with enhanced cards -->
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Project 1 - OneSchool -->
+          <!-- Project 2 - E-Book Platform (Featured) -->
           <div
-            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10"
           >
-            <!-- Glow effect on hover -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              class="absolute inset-0 bg-gradient-to-t from-amber-500/0 via-amber-500/0 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             ></div>
 
-            <a href="../project/oneschool.html" class="block">
-              <div class="relative h-56 overflow-hidden">
+            <!-- Banner Featured -->
+            <div
+              class="absolute top-3 left-1/2 transform -translate-x-1/2 z-20 w-[90%]"
+            >
+              <div
+                class="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white text-[9px] font-black py-0.5 px-3 rounded-full shadow-lg flex items-center justify-center gap-1"
+              >
+                <i class="fas fa-crown text-[8px]"></i>
+                <span>✦ FEATURED PROJECT ✦</span>
+                <i class="fas fa-fire text-[8px]"></i>
+              </div>
+            </div>
+
+            <a href="../project/ebook.html" class="block">
+              <div class="relative h-52 overflow-hidden">
                 <img
-                  src="../foto/ERepor.png"
-                  alt="OneSchool E-Report"
+                  src="../foto/ebook.png"
+                  alt="E-Book Platform"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
                 ></div>
-                <!-- Live badge floating -->
                 <div class="absolute top-4 right-4">
                   <span
                     class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 backdrop-blur-sm"
@@ -1048,28 +1127,53 @@
                   >
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex flex-wrap gap-2 mb-3">
+              <div class="p-5">
+                <div class="flex flex-wrap gap-2 mb-2">
                   <span
-                    class="text-[11px] font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full"
-                    >Full-stack</span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full"
+                    >Full‑stack</span
                   >
                   <span
-                    class="text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full"
+                    class="text-[10px] font-medium text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded-full"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-300"
                 >
-                  OneSchool E-Report
+                  E‑Book Platform
                 </h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                  Real‑time school reporting. Helped cut response time from days
-                  to hours.
+                <p class="text-gray-400 text-xs leading-relaxed">
+                  Digital library with user authentication, book catalog, and
+                  borrowing system.
                 </p>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-1.5 mt-3">
+                  <span
+                    class="text-[9px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20"
+                    >Laravel</span
+                  >
+                  <span
+                    class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20"
+                    >PHP</span
+                  >
+                  <span
+                    class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20"
+                    >MySQL</span
+                  >
+                  <span
+                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
+                    >Tailwind</span
+                  >
+                  <span
+                    class="text-[9px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20"
+                    >Alpine.js</span
+                  >
+                </div>
+
                 <div
-                  class="mt-5 flex items-center text-blue-400 text-sm font-medium group-hover:gap-3 transition-all duration-300"
+                  class="mt-3 flex items-center text-blue-400 text-xs font-medium group-hover:gap-2 transition-all duration-300"
                 >
                   <span class="relative inline-flex items-center">
                     See details
@@ -1086,7 +1190,7 @@
             </a>
           </div>
 
-          <!-- Project 2 - Psychology -->
+                    <!-- Project 1 - Payroll Management -->
           <div
             class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
           >
@@ -1094,11 +1198,11 @@
               class="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-blue-500/0 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             ></div>
 
-            <a href="../project/psychology.html" class="block">
-              <div class="relative h-56 overflow-hidden">
+            <a href="../project/payroll.html" class="block">
+              <div class="relative h-52 overflow-hidden">
                 <img
-                  src="../foto/Psikolog.png"
-                  alt="M-Ahsan Psychology"
+                  src="../foto/payroll.png"
+                  alt="Payroll Management"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div
@@ -1111,28 +1215,36 @@
                   >
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex flex-wrap gap-2 mb-3">
+              <div class="p-5">
+                <div class="flex flex-wrap gap-2 mb-2">
                   <span
-                    class="text-[11px] font-medium text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full"
-                    >Frontend</span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full"
+                    >Full‑stack</span
                   >
                   <span
-                    class="text-[11px] font-medium text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full"
+                    class="text-[10px] font-medium text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded-full"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                  class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors duration-300"
                 >
-                  M‑Ahsan Psychology
+                  Payroll Management
                 </h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                  Secure therapy platform. Built for real psychologists in the
-                  US.
+                <p class="text-gray-400 text-xs leading-relaxed">
+                  Employee management system with attendance tracking and automated salary calculation.
                 </p>
+                
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-1.5 mt-3">
+                  <span class="text-[9px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">Laravel</span>
+                  <span class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20">PHP</span>
+                  <span class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20">MySQL</span>
+                  <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">Tailwind</span>
+                </div>
+                
                 <div
-                  class="mt-5 flex items-center text-blue-400 text-sm font-medium group-hover:gap-3 transition-all duration-300"
+                  class="mt-3 flex items-center text-blue-400 text-xs font-medium group-hover:gap-2 transition-all duration-300"
                 >
                   <span class="relative inline-flex items-center">
                     See details
@@ -1315,17 +1427,24 @@
     </section>
 
     <!-- ========== TESTIMONIALS SECTION ========== -->
-        <!-- ========== TESTIMONIALS SECTION - PREMIUM ========== -->
+    <!-- ========== TESTIMONIALS SECTION - PREMIUM ========== -->
     <section id="testimonials" class="py-24 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 mb-4">
             <div class="w-8 h-px bg-blue-500"></div>
-            <span class="text-blue-500 text-xs font-semibold uppercase tracking-[0.2em]">kind words</span>
+            <span
+              class="text-blue-500 text-xs font-semibold uppercase tracking-[0.2em]"
+              >kind words</span
+            >
             <div class="w-8 h-px bg-blue-500"></div>
           </div>
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-            What <span class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">people say</span>
+            What
+            <span
+              class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+              >people say</span
+            >
           </h2>
           <p class="text-gray-500 max-w-2xl mx-auto">
             From clients, teachers, and fellow developers I've worked with
@@ -1333,93 +1452,141 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-          
           <!-- Testimonial 1 - Mr.Dion -->
-          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
             <!-- Quote icon background -->
-            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+            <div
+              class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity"
+            >
               <i class="fas fa-quote-right text-6xl text-white"></i>
             </div>
-            
+
             <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
-            
+
             <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
-              "What stands out most about Ahsan is his dedication to continuous improvement. He is always exploring new technologies and applying them to real projects."
+              "What stands out most about Ahsan is his dedication to continuous
+              improvement. He is always exploring new technologies and applying
+              them to real projects."
             </p>
-            
-            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+
+            <div
+              class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50"
+            >
               <!-- Avatar dengan gradient -->
               <div class="relative">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                >
                   <span class="text-white font-bold text-sm">D</span>
                 </div>
-                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+                <div
+                  class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"
+                ></div>
               </div>
               <div>
                 <div class="text-white font-semibold text-sm">Mr. Dion</div>
-                <div class="text-gray-500 text-xs">Software Development Teacher | IDN Boarding School</div>
+                <div class="text-gray-500 text-xs">
+                  Software Development Teacher | IDN Boarding School
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 2 - M.Sahel -->
-          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
-            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
+            <div
+              class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity"
+            >
               <i class="fas fa-quote-right text-6xl text-white"></i>
             </div>
-            
+
             <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
-            
+
             <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
-              "Working with Ahsan was always productive. He communicates clearly, accepts feedback professionally, and remains focused on delivering high-quality results."
+              "Working with Ahsan was always productive. He communicates
+              clearly, accepts feedback professionally, and remains focused on
+              delivering high-quality results."
             </p>
-            
-            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+
+            <div
+              class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50"
+            >
               <div class="relative">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                >
                   <span class="text-white font-bold text-sm">S</span>
                 </div>
-                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+                <div
+                  class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"
+                ></div>
               </div>
               <div>
                 <div class="text-white font-semibold text-sm">M. Sahel</div>
-                <div class="text-gray-500 text-xs">Project Collaborator | Al-Hidayah Foundation Team</div>
+                <div class="text-gray-500 text-xs">
+                  Project Collaborator | Al-Hidayah Foundation Team
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Testimonial 3 - Fellow Students -->
-          <div class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
-            <div class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity">
+          <div
+            class="group relative bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+          >
+            <div
+              class="absolute top-6 right-6 opacity-5 group-hover:opacity-10 transition-opacity"
+            >
               <i class="fas fa-quote-right text-6xl text-white"></i>
             </div>
-            
+
             <div class="flex text-yellow-500 text-xs mb-4 gap-0.5">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
-            
+
             <p class="text-gray-300 text-sm leading-relaxed mb-5 relative z-10">
-              "Ahsan brings both creativity and technical thinking to every project. He is always open to feedback and eager to explore better solutions."
+              "Ahsan brings both creativity and technical thinking to every
+              project. He is always open to feedback and eager to explore better
+              solutions."
             </p>
-            
-            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50">
+
+            <div
+              class="flex items-center gap-3 mt-4 pt-3 border-t border-gray-800/50"
+            >
               <div class="relative">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                >
                   <span class="text-white font-bold text-sm">FS</span>
                 </div>
-                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"></div>
+                <div
+                  class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#111115]"
+                ></div>
               </div>
               <div>
-                <div class="text-white font-semibold text-sm">Fellow Students</div>
-                <div class="text-gray-500 text-xs">Student Developer | IDN Boarding School</div>
+                <div class="text-white font-semibold text-sm">
+                  Fellow Students
+                </div>
+                <div class="text-gray-500 text-xs">
+                  Student Developer | IDN Boarding School
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -1437,7 +1604,8 @@
               Let's create something great together.
             </h2>
             <p class="text-gray-500">
-              I'm a Full-Stack Developer focused on building clean, reliable, and user-friendly web applications.
+              I'm a Full-Stack Developer focused on building clean, reliable,
+              and user-friendly web applications.
             </p>
           </div>
 
