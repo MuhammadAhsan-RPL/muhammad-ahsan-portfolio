@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Poster & Animation | Muhammad Ahsan</title>
+    <meta
+      name="description"
+      content="A minimalist Islamic poster and motion animation — school project inspired by the hadith: 'Your smile in the presence of your brother is charity.'"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #0a0a0f;
+        font-family: "Inter", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #111115;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 10px;
+      }
+      .card-detail {
+        background: #111115;
+        border: 1px solid #1e1e2a;
+        border-radius: 1.5rem;
+      }
+      .btn-primary {
+        background: #3b82f6;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+      }
+      .badge-tech {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 20px;
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      .glow-bg {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .gradient-border {
+        border-image: linear-gradient(135deg, #f59e0b, #ef4444, #3b82f6) 1;
+        border-image-slice: 1;
+      }
+      .feature-card {
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: #f59e0b;
+        box-shadow: 0 20px 40px -20px rgba(245, 158, 11, 0.3);
+      }
+      .badge-premium {
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.15),
+          rgba(239, 68, 68, 0.15)
+        );
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 20px;
+        padding: 4px 14px;
+        font-size: 11px;
+        color: #d1d5db;
+        transition: all 0.2s ease;
+      }
+      .badge-premium:hover {
+        border-color: #f59e0b;
+        transform: translateY(-2px);
+      }
+      .badge-school {
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <link rel="stylesheet" href="./cursor.css" />
+    <script src="./cursor.js" defer></script>
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./animations.js" defer></script>
+
+    <div class="glow-bg top-20 left-10"></div>
+    <div
+      class="glow-bg bottom-20 right-10"
+      style="
+        background: radial-gradient(
+          circle,
+          rgba(16, 185, 129, 0.05) 0%,
+          transparent 70%
+        );
+      "
+    ></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="../index.html"
+            class="text-xl sm:text-2xl font-bold text-white shrink-0"
+          >
+            ahsan<span class="text-blue-500">.</span
+            ><span class="text-gray-500 text-xs sm:text-sm ml-0.5 sm:ml-1"
+              >dev</span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <a
+              href="../index.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Home</a
+            >
+            <a
+              href="../allprojects/project.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Projects</a
+            >
+            <a
+              href="../about/about.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >About</a
+            >
+            <a
+              href="https://github.com/MuhammadAhsan-RPL"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition"
+              ><i class="fab fa-github text-lg"></i
+            ></a>
+          </div>
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="hidden md:inline-block px-4 lg:px-5 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
+            >Contact</a
+          >
+          <button
+            id="menuToggleMobile"
+            class="md:hidden text-white text-2xl focus:outline-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobileMenuPanel"
+        class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      >
+        <div
+          class="flex justify-between items-center p-5 border-b border-gray-800"
+        >
+          <span class="text-white font-bold text-lg">Menu</span>
+          <button
+            id="closeMenuMobile"
+            class="text-gray-400 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex flex-col p-5 gap-4">
+          <a
+            href="../index.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-home w-5 text-gray-500"></i><span>Home</span></a
+          >
+          <a
+            href="../allprojects/project.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-folder w-5 text-gray-500"></i
+            ><span>Projects</span></a
+          >
+          <a
+            href="../about/about.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-user w-5 text-gray-500"></i><span>About</span></a
+          >
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            class="flex items-center gap-3 text-gray-300 hover:text-white transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fab fa-github w-5 text-gray-500"></i
+            ><span>GitHub</span></a
+          >
+          <div class="my-3 h-px bg-gray-800"></div>
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-primary rounded-full text-white text-sm font-medium"
+            ><i class="fas fa-envelope"></i><span>Contact Me</span></a
+          >
+        </div>
+      </div>
+      <div
+        id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      ></div>
+    </nav>
+
+    <style>
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
+      }
+    </style>
+    <script>
+      const menuToggleBtn = document.getElementById("menuToggleMobile");
+      const menuPanel = document.getElementById("mobileMenuPanel");
+      const menuOverlay = document.getElementById("mobileMenuOverlay");
+      const closeMenuBtn = document.getElementById("closeMenuMobile");
+      function openMobileMenu() {
+        menuPanel.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("opacity-0", "invisible");
+        menuOverlay.classList.add("opacity-100", "visible");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
+      }
+      function closeMobileMenu() {
+        menuPanel.classList.add("translate-x-full");
+        menuOverlay.classList.add("opacity-0", "invisible");
+        menuOverlay.classList.remove("opacity-100", "visible");
+        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
+      }
+      if (menuToggleBtn)
+        menuToggleBtn.addEventListener("click", openMobileMenu);
+      if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) closeMobileMenu();
+      });
+    </script>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-12 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span
+          class="text-amber-400 text-xs font-semibold uppercase tracking-wider"
+          >design project</span
+        >
+        <h1 class="text-5xl md:text-6xl font-bold text-white mt-3 mb-4">
+          <span
+            class="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent"
+            >A Smile is Charity</span
+          >
+          <span class="text-white block mt-2 text-2xl md:text-3xl"
+            >Islamic Poster & Motion Animation</span
+          >
+        </h1>
+        <div class="flex flex-wrap justify-center gap-2 mt-5">
+          <span class="badge-premium">🎨 Poster Design</span>
+          <span
+            class="badge-premium"
+            style="
+              border-color: rgba(239, 68, 68, 0.3);
+              background: linear-gradient(
+                135deg,
+                rgba(239, 68, 68, 0.15),
+                rgba(245, 158, 11, 0.15)
+              );
+            "
+            >🎬 Motion Animation</span
+          >
+          <span class="badge-premium badge-school">🏫 School Project</span>
+          <span
+            class="badge-premium"
+            style="border-color: rgba(59, 130, 246, 0.3)"
+            >🕌 Islamic Theme</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <section class="px-6 pb-24">
+      <div class="max-w-4xl mx-auto">
+        <!-- Preview Gambar -->
+        <div
+          class="rounded-2xl overflow-hidden border-2 border-transparent gradient-border glow-shadow mb-10"
+        >
+          <img
+            src="../foto/poster-senyum.png"
+            alt="A Smile is Charity - Islamic Poster"
+            class="w-full"
+            onerror="
+              this.src =
+                'https://placehold.co/1200x600/1a1a2e/F59E0B?text=A+Smile+is+Charity'
+            "
+          />
+        </div>
+
+        <div class="card-detail p-6 md:p-8 space-y-8 mb-8">
+          <!-- Overview -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-info-circle text-amber-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">Overview</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              "A Smile is Charity" is a poster and motion animation project I
+              created for a school assignment. The design is inspired by a
+              beautiful hadith of Prophet Muhammad ﷺ:
+              <span class="text-amber-400 italic"
+                >"Your smile in the presence of your brother is charity."</span
+              >
+              I wanted to turn this simple yet profound message into something
+              visual — something that feels warm, peaceful, and easy to share.
+              The project combines minimalist typography, earthy colors, and
+              gentle motion to make the message feel alive.
+            </p>
+          </div>
+
+          <!-- The Challenge -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-bolt text-orange-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">The Challenge</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              The main challenge was figuring out how to visually represent a
+              spiritual message without making it feel too serious or overly
+              decorative. I wanted the design to feel sincere and inviting, not
+              preachy. At the same time, I had to keep the layout clean and
+              minimal so the message would stand out clearly. The animation part
+              was also tricky — it needed to feel calm and subtle, not
+              distracting.
+            </p>
+          </div>
+
+          <!-- The Solution -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-lightbulb text-yellow-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">The Solution</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              I ended up with a clean, centered poster layout using a warm color
+              palette — soft beige, gold, and deep maroon. These colors felt
+              natural and gave the design a grounded, spiritual tone. For the
+              animation, I added a subtle drift effect to the text and
+              decorative elements. It's not flashy — just a gentle movement that
+              makes the poster feel alive when viewed on screen. The overall
+              approach was to keep things simple, respectful, and visually warm.
+            </p>
+          </div>
+
+          <!-- Key Features + Figma Prototype -->
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Left: Key Features -->
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-1 h-6 bg-gradient-to-b from-amber-500 to-orange-500 rounded-full"
+                ></div>
+                <h2 class="text-2xl font-bold text-white">Key Features</h2>
+              </div>
+              <div class="grid grid-cols-1 gap-3">
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-pen-fancy text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Clean, minimalist typography with a warm color
+                    palette</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-film text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Gentle motion animation — fade and drift effects</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-hadith text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Authentic hadith text with clear source attribution</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-palette text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Islamic-inspired visual tone — warm and grounded</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-share-alt text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Optimized for social media and digital sharing</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Figma Prototype -->
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-1 h-6 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"
+                ></div>
+                <h2 class="text-2xl font-bold text-white">Figma Prototype</h2>
+              </div>
+              <div
+                class="relative rounded-xl overflow-hidden border-2 border-transparent gradient-border glow-shadow bg-black/40 group"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
+                ></div>
+                <iframe
+                  class="w-full aspect-video"
+                  src="https://embed.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566&embed-host=share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p
+                class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
+              >
+                <i class="fas fa-paint-brush text-amber-400 text-xs"></i>
+                Interactive Figma prototype — click around to explore the design
+              </p>
+            </div>
+          </div>
+
+          <!-- What I Learned -->
+          <div
+            class="relative rounded-2xl p-6 bg-gradient-to-br from-amber-500/5 to-red-500/5 border border-amber-500/20"
+          >
+            <div class="flex items-center gap-2 mb-3">
+              <i
+                class="fas fa-quote-left text-amber-400 text-sm opacity-50"
+              ></i>
+              <h2 class="text-2xl font-bold text-white">What I Learned</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              This project reminded me that design isn't just about making
+              things look good — it's about communicating a feeling. Creating
+              something inspired by Islamic values pushed me to think more
+              intentionally about color, typography, and motion. I also got to
+              practice my animation skills and explore how subtle motion can add
+              emotional depth to a static design. More than anything, this
+              project taught me that even a simple message — like a smile being
+              charity — can become something meaningful when you treat it with
+              care and respect.
+            </p>
+          </div>
+
+          <!-- Tools Used -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-tools text-blue-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">Tools Used</h2>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-premium">Figma</span>
+              <span class="badge-premium">Typography</span>
+              <span class="badge-premium">Motion Graphics</span>
+              <span class="badge-premium">Color Grading</span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a
+              href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/30 transition"
+            >
+              <i class="fas fa-external-link-alt"></i> Open in Figma
+            </a>
+            <span
+              class="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 rounded-lg text-gray-400 text-sm cursor-not-allowed"
+              >Source File — Private</span
+            >
+          </div>
+        </div>
+
+        <!-- Back to Projects -->
+        <div class="text-center mt-8">
+          <a
+            href="../allprojects/project.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+          >
+            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-8 px-6 text-center border-t border-gray-800">
+      <p class="text-gray-500 text-xs">
+        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
+        debugging.
+      </p>
+    </footer>
+  </body>
+</html>

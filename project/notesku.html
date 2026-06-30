@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Library Platform | Muhammad Ahsan — Full-stack Developer</title>
+    <title>Notesku | Muhammad Ahsan — Full-stack Developer</title>
     <meta
       name="description"
-      content="Digital library platform with secure authentication and book management — Laravel academic project."
+      content="Notesku – a modern note-taking app built with Laravel, MySQL, and Tailwind CSS."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -70,11 +70,9 @@
     </style>
   </head>
   <body class="relative">
-    <!-- Custom Cursor -->
+    <!-- Custom Cursor & Animations (opsional, jika file ada) -->
     <link rel="stylesheet" href="./cursor.css" />
     <script src="./cursor.js" defer></script>
-
-    <!-- Animations Premium -->
     <link rel="stylesheet" href="./animations.css" />
     <script src="./animations.js" defer></script>
 
@@ -90,13 +88,12 @@
       "
     ></div>
 
-    <!-- ========== NAVBAR PREMIUM RESPONSIVE ========== -->
+    <!-- ========== NAVBAR SAMA SEPERTI PAYROLL ========== -->
     <nav
       class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
     >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div class="flex justify-between items-center">
-          <!-- Logo -->
           <a
             href="../index.html"
             class="text-xl sm:text-2xl font-bold text-white shrink-0"
@@ -106,8 +103,6 @@
               >dev</span
             >
           </a>
-
-          <!-- Desktop Menu (hidden di HP) -->
           <div class="hidden md:flex items-center gap-6 lg:gap-8">
             <a
               href="../index.html"
@@ -128,21 +123,15 @@
               href="https://github.com/MuhammadAhsan-RPL"
               target="_blank"
               class="text-gray-400 hover:text-white transition"
-            >
-              <i class="fab fa-github text-lg"></i>
-            </a>
+              ><i class="fab fa-github text-lg"></i
+            ></a>
           </div>
-
-          <!-- Contact Button Desktop -->
           <a
             href="https://ahsanlinktree.framer.website/"
             target="_blank"
             class="hidden md:inline-block px-4 lg:px-5 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
+            >Contact</a
           >
-            Contact
-          </a>
-
-          <!-- Mobile Menu Button (Hamburger) -->
           <button
             id="menuToggleMobile"
             class="md:hidden text-white text-2xl focus:outline-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
@@ -151,13 +140,10 @@
           </button>
         </div>
       </div>
-
-      <!-- Mobile Menu Panel (Slide from right) -->
       <div
         id="mobileMenuPanel"
         class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
       >
-        <!-- Header mobile menu -->
         <div
           class="flex justify-between items-center p-5 border-b border-gray-800"
         >
@@ -169,54 +155,39 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-
-        <!-- Menu Items -->
         <div class="flex flex-col p-5 gap-4">
           <a
             href="../index.html"
             class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-home w-5 text-gray-500"></i><span>Home</span></a
           >
-            <i class="fas fa-home w-5 text-gray-500"></i>
-            <span>Home</span>
-          </a>
           <a
             href="../allprojects/project.html"
             class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-folder w-5 text-gray-500"></i
+            ><span>Projects</span></a
           >
-            <i class="fas fa-folder w-5 text-gray-500"></i>
-            <span>Projects</span>
-          </a>
           <a
             href="../about/about.html"
             class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-user w-5 text-gray-500"></i><span>About</span></a
           >
-            <i class="fas fa-user w-5 text-gray-500"></i>
-            <span>About</span>
-          </a>
           <a
             href="https://github.com/MuhammadAhsan-RPL"
             target="_blank"
             class="flex items-center gap-3 text-gray-300 hover:text-white transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fab fa-github w-5 text-gray-500"></i
+            ><span>GitHub</span></a
           >
-            <i class="fab fa-github w-5 text-gray-500"></i>
-            <span>GitHub</span>
-          </a>
-
           <div class="my-3 h-px bg-gray-800"></div>
-
-          <!-- Contact Button di Mobile Menu -->
           <a
             href="https://ahsanlinktree.framer.website/"
             target="_blank"
             class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-primary rounded-full text-white text-sm font-medium"
+            ><i class="fas fa-envelope"></i><span>Contact Me</span></a
           >
-            <i class="fas fa-envelope"></i>
-            <span>Contact Me</span>
-          </a>
         </div>
       </div>
-
-      <!-- Overlay untuk mobile menu -->
       <div
         id="mobileMenuOverlay"
         class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
@@ -224,21 +195,17 @@
     </nav>
 
     <style>
-      /* Fix untuk mobile menu */
       @media (max-width: 767px) {
         body.menu-open {
           overflow: hidden;
         }
       }
     </style>
-
     <script>
-      // Mobile Menu Toggle
       const menuToggleBtn = document.getElementById("menuToggleMobile");
       const menuPanel = document.getElementById("mobileMenuPanel");
       const menuOverlay = document.getElementById("mobileMenuOverlay");
       const closeMenuBtn = document.getElementById("closeMenuMobile");
-
       function openMobileMenu() {
         menuPanel.classList.remove("translate-x-full");
         menuOverlay.classList.remove("opacity-0", "invisible");
@@ -246,7 +213,6 @@
         document.body.style.overflow = "hidden";
         document.body.classList.add("menu-open");
       }
-
       function closeMobileMenu() {
         menuPanel.classList.add("translate-x-full");
         menuOverlay.classList.add("opacity-0", "invisible");
@@ -254,20 +220,16 @@
         document.body.style.overflow = "";
         document.body.classList.remove("menu-open");
       }
-
       if (menuToggleBtn)
         menuToggleBtn.addEventListener("click", openMobileMenu);
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
-
-      // Tutup menu saat resize ke desktop
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-          closeMobileMenu();
-        }
+        if (window.innerWidth >= 768) closeMobileMenu();
       });
     </script>
 
+    <!-- Hero -->
     <section class="relative pt-32 pb-12 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <span
@@ -275,7 +237,7 @@
           >project deep dive</span
         >
         <h1 class="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-          E‑Library Platform
+          Notesku – Notepad App
         </h1>
         <div class="flex flex-wrap justify-center gap-2 mt-4">
           <span
@@ -283,8 +245,8 @@
             >Full‑stack</span
           >
           <span
-            class="bg-yellow-500/10 text-yellow-500 px-3 py-1 rounded-full text-xs"
-            >Academic</span
+            class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
+            >Independent</span
           >
           <span
             class="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs"
@@ -296,14 +258,15 @@
 
     <section class="px-6 pb-24">
       <div class="max-w-4xl mx-auto">
+        <!-- Gambar preview (sementara placeholder) -->
         <div class="rounded-2xl overflow-hidden border border-gray-800 mb-10">
           <img
-            src="../foto/ebook.png"
-            alt="E-Book Platform"
+            src="../foto/notesku-preview.png"
+            alt="Notesku preview"
             class="w-full"
             onerror="
               this.src =
-                'https://placehold.co/1200x600/1a1a2e/3B82F6?text=E-Book'
+                'https://placehold.co/1200x600/1a1a2e/3B82F6?text=Notesku+App'
             "
           />
         </div>
@@ -312,37 +275,37 @@
           <div>
             <h2 class="text-2xl font-bold text-white mb-3">Overview</h2>
             <p class="text-gray-400 leading-relaxed">
-              A digital library platform developed as an academic project to
-              explore full-stack web development with Laravel. The application
-              allows users to browse book collections, manage borrowing
-              activities, and access library resources through a centralized and
-              user-friendly system.
+              Notesku is a modern note‑taking web application that allows users
+              to create, organize, archive, and manage their notes effortlessly.
+              Built with Laravel and MySQL, it provides a simple, user‑friendly
+              experience for keeping important information well organized. This
+              project was developed independently to explore full‑stack
+              development with authentication and real‑world CRUD operations.
             </p>
           </div>
 
           <div>
             <h2 class="text-2xl font-bold text-white mb-3">The Challenge</h2>
             <p class="text-gray-400 leading-relaxed">
-              Many libraries still rely on manual processes to manage book
-              inventories and borrowing records, making information harder to
-              organize and maintain. This project was created to simulate how a
-              digital library could streamline these activities in a more
-              efficient way.
+              Many people struggle to keep track of their daily notes and ideas.
+              The challenge was to build a reliable system where users can
+              securely store, edit, and retrieve notes, while also offering
+              features like archiving to keep the main dashboard clean.
             </p>
           </div>
 
           <div>
             <h2 class="text-2xl font-bold text-white mb-3">The Solution</h2>
             <p class="text-gray-400 leading-relaxed">
-              I developed a web-based library management system featuring
-              role-based access control, book catalog management, and borrowing
-              workflows. The platform provides a structured experience for both
-              administrators and users while keeping library operations
-              organized and accessible.
+              I designed Notesku as a full‑stack application with user
+              authentication. Each user has their own private space. Notes can
+              be created, edited, archived, restored, or permanently deleted.
+              The interface is clean and responsive, making note‑taking feel
+              natural whether on a laptop or a phone.
             </p>
           </div>
 
-          <!-- Key Features + Video Section - E-Book Platform -->
+          <!-- Key Features + Video Section -->
           <div class="grid md:grid-cols-2 gap-8">
             <!-- Left: Key Features -->
             <div>
@@ -356,53 +319,41 @@
                 <div
                   class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
                 >
-                  <i
-                    class="fas fa-user-shield text-blue-400 text-lg mt-0.5"
-                  ></i>
+                  <i class="fas fa-user-lock text-blue-400 text-lg mt-0.5"></i>
                   <span class="text-gray-300 text-sm"
-                    >Role-based authentication system</span
+                    >User authentication & personal notes</span
                   >
                 </div>
                 <div
                   class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
                 >
-                  <i class="fas fa-book text-blue-400 text-lg mt-0.5"></i>
+                  <i class="fas fa-pen-alt text-blue-400 text-lg mt-0.5"></i>
                   <span class="text-gray-300 text-sm"
-                    >Book catalog management</span
+                    >Create, edit, and delete notes</span
                   >
                 </div>
                 <div
                   class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
                 >
-                  <i
-                    class="fas fa-exchange-alt text-blue-400 text-lg mt-0.5"
-                  ></i>
+                  <i class="fas fa-archive text-blue-400 text-lg mt-0.5"></i>
                   <span class="text-gray-300 text-sm"
-                    >Borrowing and return tracking</span
+                    >Archive & restore functionality</span
                   >
                 </div>
                 <div
                   class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
                 >
-                  <i class="fas fa-eye text-blue-400 text-lg mt-0.5"></i>
+                  <i class="fas fa-search text-blue-400 text-lg mt-0.5"></i>
                   <span class="text-gray-300 text-sm"
-                    >Digital book viewing interface</span
+                    >Search and filter notes</span
                   >
                 </div>
                 <div
                   class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
                 >
-                  <i class="fas fa-history text-blue-400 text-lg mt-0.5"></i>
+                  <i class="fas fa-mobile-alt text-blue-400 text-lg mt-0.5"></i>
                   <span class="text-gray-300 text-sm"
-                    >Borrowing history records</span
-                  >
-                </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i class="fas fa-chart-line text-blue-400 text-lg mt-0.5"></i>
-                  <span class="text-gray-300 text-sm"
-                    >Administrative reporting dashboard</span
+                    >Fully responsive design</span
                   >
                 </div>
               </div>
@@ -424,8 +375,8 @@
                 ></div>
                 <iframe
                   class="w-full aspect-video"
-                  src="https://www.youtube.com/embed/auX85RvSgdw?rel=0&modestbranding=1&controls=1&showinfo=0"
-                  title="E-Book Platform Demo"
+                  src="https://www.youtube.com/embed/30A-6vs8PNA?rel=0&modestbranding=1&controls=1&showinfo=0"
+                  title="Notesku Demo"
                   frameborder="0"
                   allow="
                     accelerometer;
@@ -437,14 +388,13 @@
                     web-share;
                   "
                   allowfullscreen
-                >
-                </iframe>
+                ></iframe>
               </div>
               <p
                 class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
               >
                 <i class="fas fa-play-circle text-blue-400 text-xs"></i>
-                Watch demo — see the features in action
+                Watch demo — see how Notesku helps you organize your thoughts.
               </p>
             </div>
           </div>
@@ -452,13 +402,13 @@
           <div>
             <h2 class="text-2xl font-bold text-white mb-3">What I Learned</h2>
             <p class="text-gray-400 leading-relaxed">
-              One of the biggest challenges in this project was managing the
-              relationships between users, books, and borrowing records while
-              keeping the system organized and maintainable. Through building
-              the authentication, catalog, and borrowing modules, I gained
-              practical experience with Laravel, database design, and
-              structuring full-stack applications with multiple interconnected
-              features.
+              What started as a simple note-taking application quickly became a
+              deeper learning experience. Building features such as user
+              authentication, note ownership, archiving, and restoring records
+              taught me how to manage application data more effectively. This
+              project strengthened my understanding of Laravel, database design,
+              and how small user-focused features can significantly improve the
+              overall experience.
             </p>
           </div>
 
@@ -475,11 +425,11 @@
 
           <div class="pt-4 flex flex-wrap gap-4">
             <a
-              href="https://github.com/MuhammadAhsan-RPL/E-Book"
+              href="https://github.com/Asyamfaw/Notepad-app"
               target="_blank"
               class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium"
             >
-              <i class="fab fa-github"></i> Source Code
+              <i class="fab fa-github"></i> View Source Code
             </a>
           </div>
         </div>
@@ -497,8 +447,8 @@
 
     <footer class="py-8 px-6 text-center border-t border-gray-800">
       <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with intention, iteration, and attention
-        to detail.
+        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
+        debugging.
       </p>
     </footer>
   </body>

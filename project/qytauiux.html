@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Qyta — Food App UI/UX Design  | Muhammad Ahsan
+    </title>
+    <meta
+      name="description"
+      content="Qyta is a modern food delivery app UI/UX design project built in Figma as a school project. Focused on user experience, clean visuals, and intuitive navigation."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: #0a0a0f;
+        font-family: "Inter", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #111115;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 10px;
+      }
+
+      .card-detail {
+        background: #111115;
+        border: 1px solid #1e1e2a;
+        border-radius: 1.5rem;
+      }
+      .btn-primary {
+        background: #3b82f6;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+      }
+
+      .badge-tech {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 20px;
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      .glow-bg {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ========== PREMIUM STYLES ========== */
+      .gradient-border {
+        border-image: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6) 1;
+        border-image-slice: 1;
+      }
+
+      .feature-card {
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: #8b5cf6;
+        box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.4);
+      }
+
+      .glow-shadow {
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+      }
+
+      .badge-premium {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.15),
+          rgba(236, 72, 153, 0.15)
+        );
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 20px;
+        padding: 4px 14px;
+        font-size: 11px;
+        color: #d1d5db;
+        transition: all 0.2s ease;
+      }
+      .badge-premium:hover {
+        border-color: #8b5cf6;
+        transform: translateY(-2px);
+      }
+
+      .badge-school {
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <!-- Custom Cursor -->
+    <link rel="stylesheet" href="./cursor.css" />
+    <script src="./cursor.js" defer></script>
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./animations.js" defer></script>
+
+    <div class="glow-bg top-20 left-10"></div>
+    <div
+      class="glow-bg bottom-20 right-10"
+      style="
+        background: radial-gradient(
+          circle,
+          rgba(16, 185, 129, 0.05) 0%,
+          transparent 70%
+        );
+      "
+    ></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="../index.html"
+            class="text-xl sm:text-2xl font-bold text-white shrink-0"
+          >
+            ahsan<span class="text-blue-500">.</span
+            ><span class="text-gray-500 text-xs sm:text-sm ml-0.5 sm:ml-1"
+              >dev</span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <a
+              href="../index.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Home</a
+            >
+            <a
+              href="../allprojects/project.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >Projects</a
+            >
+            <a
+              href="../about/about.html"
+              class="text-gray-400 hover:text-blue-400 transition text-sm"
+              >About</a
+            >
+            <a
+              href="https://github.com/MuhammadAhsan-RPL"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition"
+              ><i class="fab fa-github text-lg"></i
+            ></a>
+          </div>
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="hidden md:inline-block px-4 lg:px-5 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
+            >Contact</a
+          >
+          <button
+            id="menuToggleMobile"
+            class="md:hidden text-white text-2xl focus:outline-none w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobileMenuPanel"
+        class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      >
+        <div
+          class="flex justify-between items-center p-5 border-b border-gray-800"
+        >
+          <span class="text-white font-bold text-lg">Menu</span>
+          <button
+            id="closeMenuMobile"
+            class="text-gray-400 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex flex-col p-5 gap-4">
+          <a
+            href="../index.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-home w-5 text-gray-500"></i><span>Home</span></a
+          >
+          <a
+            href="../allprojects/project.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-folder w-5 text-gray-500"></i
+            ><span>Projects</span></a
+          >
+          <a
+            href="../about/about.html"
+            class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fas fa-user w-5 text-gray-500"></i><span>About</span></a
+          >
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            class="flex items-center gap-3 text-gray-300 hover:text-white transition text-base py-2 px-3 rounded-lg hover:bg-white/5"
+            ><i class="fab fa-github w-5 text-gray-500"></i
+            ><span>GitHub</span></a
+          >
+          <div class="my-3 h-px bg-gray-800"></div>
+          <a
+            href="https://ahsanlinktree.framer.website/"
+            target="_blank"
+            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-primary rounded-full text-white text-sm font-medium"
+            ><i class="fas fa-envelope"></i><span>Contact Me</span></a
+          >
+        </div>
+      </div>
+      <div
+        id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      ></div>
+    </nav>
+
+    <style>
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
+      }
+    </style>
+    <script>
+      const menuToggleBtn = document.getElementById("menuToggleMobile");
+      const menuPanel = document.getElementById("mobileMenuPanel");
+      const menuOverlay = document.getElementById("mobileMenuOverlay");
+      const closeMenuBtn = document.getElementById("closeMenuMobile");
+      function openMobileMenu() {
+        menuPanel.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("opacity-0", "invisible");
+        menuOverlay.classList.add("opacity-100", "visible");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
+      }
+      function closeMobileMenu() {
+        menuPanel.classList.add("translate-x-full");
+        menuOverlay.classList.add("opacity-0", "invisible");
+        menuOverlay.classList.remove("opacity-100", "visible");
+        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
+      }
+      if (menuToggleBtn)
+        menuToggleBtn.addEventListener("click", openMobileMenu);
+      if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) closeMobileMenu();
+      });
+    </script>
+
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-12 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <span
+          class="text-purple-400 text-xs font-semibold uppercase tracking-wider"
+          >design project</span
+        >
+        <h1 class="text-5xl md:text-6xl font-bold text-white mt-3 mb-4">
+          <span
+            class="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
+            >Qyta</span
+          >
+          <span class="text-white block mt-2 text-3xl md:text-4xl"
+            >Food App UI/UX Design</span
+          >
+        </h1>
+        <div class="flex flex-wrap justify-center gap-2 mt-5">
+          <span class="badge-premium">🎨 UI/UX Design</span>
+          <span class="badge-premium badge-school">🏫 School Project</span>
+          <span class="badge-premium">⚡ Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <section class="px-6 pb-24">
+      <div class="max-w-4xl mx-auto">
+        <!-- Preview Gambar dengan border gradient -->
+        <div
+          class="rounded-2xl overflow-hidden border-2 border-transparent gradient-border glow-shadow mb-10"
+        >
+          <img
+            src="../foto/qyta-preview.png"
+            alt="Qyta Food App Design"
+            class="w-full"
+            onerror="
+              this.src =
+                'https://placehold.co/1200x600/1a1a2e/8B5CF6?text=Qyta+Food+App+Design'
+            "
+          />
+        </div>
+
+        <div class="card-detail p-6 md:p-8 space-y-8 mb-8">
+          <!-- Overview -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-info-circle text-purple-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">Overview</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Qyta is a food delivery app design that I built from scratch in
+              Figma as part of a school project. The goal was to design a
+              modern, user-friendly interface that feels warm and intuitive —
+              not just another generic food app. The design includes everything
+              from browsing restaurants to placing an order, with a focus on
+              clarity and a smooth user journey.
+            </p>
+          </div>
+
+          <!-- The Challenge -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-bolt text-pink-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">The Challenge</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Building a food delivery interface is tricky because there's so
+              much information to fit in — menus, prices, delivery times,
+              special offers — without overwhelming the user. I had to carefully
+              decide what to show and what to hide, and make sure the most
+              important actions (like adding to cart or checking out) are always
+              easy to find.
+            </p>
+          </div>
+
+          <!-- The Solution -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-lightbulb text-yellow-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">The Solution</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              I designed a set of mobile screens that feel like a real app. The
+              home screen highlights weekly specials and featured items, the
+              menu is organized by category, and the cart screen gives a clear
+              summary of the order. Every screen is built around the idea of
+              making food ordering feel effortless — even for first-time users.
+            </p>
+          </div>
+
+          <!-- Key Features + Figma Prototype -->
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Left: Key Features Premium -->
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"
+                ></div>
+                <h2 class="text-2xl font-bold text-white">Key Features</h2>
+              </div>
+              <div class="grid grid-cols-1 gap-3">
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-mobile-alt text-purple-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Full mobile app screens — from home to checkout</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-utensils text-purple-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Restaurant and menu browsing made simple</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-shopping-cart text-purple-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Cart management with real-time order summary</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-tag text-purple-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Highlighted "Top of Week" and "Featured" sections</span
+                  >
+                </div>
+                <div
+                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-route text-purple-400 text-sm"></i>
+                  </div>
+                  <span class="text-gray-300 text-sm"
+                    >Order tracking and delivery status indicators</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Figma Prototype Premium -->
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-1 h-6 bg-gradient-to-b from-pink-500 to-rose-500 rounded-full"
+                ></div>
+                <h2 class="text-2xl font-bold text-white">Figma Prototype</h2>
+              </div>
+              <div
+                class="relative rounded-xl overflow-hidden border-2 border-transparent gradient-border glow-shadow bg-black/40 group"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
+                ></div>
+                <iframe
+                  class="w-full aspect-video"
+                  src="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed&embed_host=share&hide-ui=1"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p
+                class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
+              >
+                <i class="fas fa-paint-brush text-purple-400 text-xs"></i>
+                Interactive Figma prototype — click around to explore the design
+              </p>
+            </div>
+          </div>
+
+          <!-- What I Learned - Premium Version -->
+          <div
+            class="relative rounded-2xl p-6 bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/20"
+          >
+            <div class="flex items-center gap-2 mb-3">
+              <i
+                class="fas fa-quote-left text-purple-400 text-sm opacity-50"
+              ></i>
+              <h2 class="text-2xl font-bold text-white">What I Learned</h2>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Working on Qyta reminded me that good design isn't just about
+              making things look beautiful — it's about making things work well
+              for real people. I spent a lot of time thinking about how users
+              would actually interact with the app: where their eyes would go
+              first, what they'd tap, and what information they'd need at each
+              step. I also learned a lot about Figma's prototyping features,
+              which helped me bring the design to life and test the flow before
+              writing any code. This school project really deepened my
+              appreciation for thoughtful, human-centered design.
+            </p>
+          </div>
+
+          <!-- Tools Used - Premium -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <i class="fas fa-tools text-blue-400 text-sm"></i>
+              <h2 class="text-2xl font-bold text-white">Tools Used</h2>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-premium">Figma</span>
+              <span class="badge-premium">UI/UX Design</span>
+              <span class="badge-premium">Wireframing</span>
+              <span class="badge-premium">Prototyping</span>
+              <span class="badge-premium">Design Systems</span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a
+              href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/30 transition"
+            >
+              <i class="fas fa-external-link-alt"></i> View Figma Prototype
+            </a>
+            <span
+              class="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 rounded-lg text-gray-400 text-sm cursor-not-allowed"
+              >Source File — Private</span
+            >
+          </div>
+        </div>
+
+        <!-- Back to Projects -->
+        <div class="text-center mt-8">
+          <a
+            href="../allprojects/project.html"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+          >
+            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-8 px-6 text-center border-t border-gray-800">
+      <p class="text-gray-500 text-xs">
+        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
+        debugging.
+      </p>
+    </footer>
+  </body>
+</html>
