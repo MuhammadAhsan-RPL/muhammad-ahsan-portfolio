@@ -47,7 +47,7 @@
     />
     <meta
       name="twitter:description"
-      content="Professional full-stack developer crafting digital excellence that scales."
+      content="Full-stack & Mobile developer crafting digital excellence that scales."
     />
 
     <!-- ========== STRUCTURED DATA (Schema.org untuk ranking lebih baik) ========== -->
@@ -58,7 +58,7 @@
         "name": "Muhammad Ahsan",
         "alternateName": "Ahsan",
         "jobTitle": "Full-stack Developer",
-        "description": "Professional full-stack developer specializing in high-performance web applications and HIPAA-compliant platforms.",
+        "description": "Full-stack developer specializing in high-performance web applications and HIPAA-compliant platforms.",
         "url": "https://muhammadahsan.dev",
         "sameAs": [
           "https://github.com/MuhammadAhsan-RPL",
@@ -556,7 +556,7 @@
           >
         </a>
 
-        <!-- Desktop Menu (hidden di HP) -->
+        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-6 lg:gap-10">
           <a
             href="#home"
@@ -633,10 +633,15 @@
         </button>
       </div>
 
-      <!-- Mobile Menu Panel (Slide from right) -->
+      <!-- Mobile Menu Panel (Slide from right) - BACKGROUND HITAM PEKAT -->
       <div
         id="mobileMenuPanel"
-        class="fixed top-0 right-0 w-72 h-full bg-[#0F0F17] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+        class="fixed top-0 right-0 w-72 h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+        style="
+          background: #000000 !important;
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
+          border-left: 1px solid rgba(255, 255, 255, 0.05);
+        "
       >
         <!-- Header Mobile Menu -->
         <div
@@ -714,20 +719,20 @@
           <!-- Contact Button di Mobile -->
           <a
             href="#contact"
-            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-premium rounded-full text-white text-sm font-medium"
+            class="flex items-center justify-center gap-2 mt-2 px-4 py-3 btn-primary rounded-full text-white text-sm font-medium"
           >
             <i class="fas fa-envelope"></i>
             <span>Let's talk</span>
           </a>
         </div>
       </div>
+    </nav>
 
-      <!-- Overlay untuk Mobile Menu -->
+            <!-- Overlay untuk Mobile Menu - LEBIH GELAP -->
       <div
         id="mobileMenuOverlay"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
       ></div>
-    </nav>
 
     <style>
       @media (max-width: 767px) {
@@ -780,12 +785,12 @@
       });
     </script>
 
-    <!-- ========== HERO SECTION - BALANCED & NATURAL ========== -->
-    <!-- ========== HERO SECTION - LAPTOP TETAP, HP DIPERBESAR ========== -->
+    <!-- ========== HERO SECTION - BALANCED ========== -->
     <section
       id="home"
-      class="relative min-h-screen flex items-center px-6 overflow-hidden pt-20"
+      class="relative min-h-screen flex items-center px-4 sm:px-6 overflow-hidden pt-20 pb-12"
     >
+      <!-- Background Glows -->
       <div class="hero-glow top-20 -left-20"></div>
       <div
         class="hero-glow bottom-20 -right-20"
@@ -800,93 +805,121 @@
       ></div>
 
       <div class="max-w-6xl mx-auto w-full relative z-10">
+        <!-- Flex: Mobile vertical, Desktop horizontal -->
         <div
-          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-10"
         >
-          <!-- Left Content -->
-          <div class="lg:w-[55%]">
-            <div class="inline-flex items-center gap-3 mb-5">
+          <!-- ===== LEFT CONTENT ===== -->
+          <div class="lg:w-[55%] text-center lg:text-left">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 mb-4 mx-auto lg:mx-0">
               <div
-                class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 rounded-full animate-pulse"
               ></div>
-              <span class="text-gray-400 text-sm"
-                >Full-Stack Developer · Product Builder · Open to
+              <span class="text-gray-400 text-xs sm:text-sm"
+                >Full-Stack & Mobile Developer · Design Enthusiast · Open to
                 Collaboration</span
               >
             </div>
 
+            <!-- Title - Ukuran medium, tidak kebesaran -->
             <h1
-              class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-5"
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-4"
             >
               <span class="text-white">Hey, I'm</span>
-              <span
-                class="gradient-text-premium whitespace-nowrap lg:whitespace-nowrap"
-                >Muhammad Ahsan</span
-              >
+              <span class="gradient-text-premium block">Muhammad Ahsan</span>
               <span class="text-white block mt-1"
                 >I build things that work</span
               >
             </h1>
 
-            <p class="text-gray-400 text-base leading-relaxed mb-7 max-w-lg">
-              Full-Stack Developer · Passionate about design, user experience,
-              and building practical digital products.
+            <!-- Description -->
+            <p
+              class="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0"
+            >
+              Full-Stack & Mobile Developer · Passionate about design, user
+              experience, and building practical web and mobile applications.
             </p>
 
-            <div class="flex flex-wrap gap-3 mb-10">
+            <!-- Buttons -->
+            <div
+              class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
+            >
               <a
                 href="/about/about.html"
-                class="px-6 py-2.5 btn-premium rounded-full text-white text-sm font-medium"
+                class="px-5 sm:px-6 py-2.5 sm:py-3 btn-premium rounded-full text-white text-sm sm:text-base font-medium"
               >
                 Get to know me
                 <i class="fas fa-arrow-right ml-2 text-xs"></i>
               </a>
               <a
                 href="#work"
-                class="px-6 py-2.5 btn-outline-sv rounded-full text-indigo-400 text-sm font-medium"
+                class="px-5 sm:px-6 py-2.5 sm:py-3 btn-outline-sv rounded-full text-indigo-400 text-sm sm:text-base font-medium"
               >
                 See my work
               </a>
             </div>
 
-            <!-- Stats -->
-            <div class="flex flex-wrap gap-8">
-              <div>
-                <div class="text-2xl font-bold text-white">6+</div>
-                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+            <!-- Stats - 3 kolom rapi -->
+            <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto lg:mx-0">
+              <div class="text-center lg:text-left">
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                >
+                  9+
+                </div>
+                <div
+                  class="text-gray-500 text-[10px] sm:text-xs tracking-wide mt-0.5"
+                >
                   PROJECTS BUILT
                 </div>
               </div>
-              <div>
-                <div class="text-2xl font-bold text-white">3</div>
-                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+              <div class="text-center lg:text-left">
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                >
+                  3
+                </div>
+                <div
+                  class="text-gray-500 text-[10px] sm:text-xs tracking-wide mt-0.5"
+                >
                   REAL-WORLD PROJECTS
                 </div>
               </div>
-              <div>
-                <div class="text-2xl font-bold text-white">4+</div>
-                <div class="text-gray-500 text-xs tracking-wide mt-0.5">
+              <div class="text-center lg:text-left">
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                >
+                  3+
+                </div>
+                <div
+                  class="text-gray-500 text-[10px] sm:text-xs tracking-wide mt-0.5"
+                >
                   YEARS CODING
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Content - Profile -->
-          <div class="lg:w-[40%] flex justify-center lg:justify-end">
+          <!-- ===== RIGHT CONTENT - PROFILE ===== -->
+          <div
+            class="lg:w-[40%] flex justify-center lg:justify-end mt-6 lg:mt-0"
+          >
             <div class="relative">
+              <!-- Animated rings - ukuran proporsional -->
               <div class="absolute inset-0 flex items-center justify-center">
                 <div
-                  class="w-[310px] h-[310px] border border-indigo-500/20 rounded-full animate-spin-slow"
+                  class="w-[210px] h-[210px] sm:w-[250px] sm:h-[250px] md:w-[280px] md:h-[280px] lg:w-[300px] lg:h-[300px] border border-indigo-500/20 rounded-full animate-spin-slow"
                 ></div>
                 <div
-                  class="absolute w-[280px] h-[280px] border border-emerald-500/15 rounded-full animate-spin-reverse"
+                  class="absolute w-[190px] h-[190px] sm:w-[225px] sm:h-[225px] md:w-[250px] md:h-[250px] lg:w-[270px] lg:h-[270px] border border-emerald-500/15 rounded-full animate-spin-reverse"
                 ></div>
               </div>
 
+              <!-- Profile Image -->
               <div class="relative z-10">
                 <div
-                  class="w-60 h-60 rounded-full overflow-hidden border-2 border-indigo-500/30 shadow-2xl"
+                  class="w-48 h-48 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 rounded-full overflow-hidden border-2 border-indigo-500/30 shadow-2xl mx-auto lg:mx-0"
                 >
                   <img
                     src="../foto/ahsan.jpeg"
@@ -894,11 +927,15 @@
                     class="w-full h-full object-cover scale-110"
                   />
                 </div>
+                <!-- Badge Full-stack - tetap menempel -->
                 <div
-                  class="absolute -bottom-3 -right-3 bg-gradient-to-r from-indigo-600 to-emerald-600 rounded-full px-2.5 py-1 shadow-lg"
+                  class="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 bg-gradient-to-r from-indigo-600 to-emerald-600 rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 shadow-lg"
                 >
-                  <i class="fas fa-code text-white text-xs"></i>
-                  <span class="text-white text-[10px] ml-1">Full-stack</span>
+                  <i class="fas fa-code text-white text-[8px] sm:text-xs"></i>
+                  <span
+                    class="text-white text-[8px] sm:text-[10px] ml-0.5 sm:ml-1"
+                    >Full-stack</span
+                  >
                 </div>
               </div>
             </div>
@@ -908,13 +945,13 @@
 
       <!-- Scroll Indicator -->
       <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
+        class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
       >
         <div
-          class="w-6 h-10 border-2 border-indigo-500/30 rounded-full flex justify-center"
+          class="w-5 h-8 sm:w-6 sm:h-10 border-2 border-indigo-500/30 rounded-full flex justify-center"
         >
           <div
-            class="w-1 h-2 bg-indigo-500 rounded-full mt-2 animate-bounce"
+            class="w-1 h-1.5 sm:w-1 sm:h-2 bg-indigo-500 rounded-full mt-2 animate-bounce"
           ></div>
         </div>
       </div>
@@ -1294,8 +1331,8 @@
                     >Corporate</span
                   >
                   <span
-                    class="text-[11px] font-medium text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full"
-                    >+40% Leads</span
+                    class="text-[11px] font-medium text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full"
+                    >Academic</span
                   >
                 </div>
                 <h3
@@ -1344,7 +1381,6 @@
               </div>
             </a>
           </div>
-
         </div>
 
         <!-- View all button - more premium -->
@@ -1444,7 +1480,7 @@
               <div>
                 <div class="text-white font-semibold">Muhammad Ahsan</div>
                 <div class="text-gray-500 text-sm">
-                  Junior full-stack developer
+                  Full-Stack & Mobile Developer
                 </div>
               </div>
             </div>
@@ -1628,11 +1664,12 @@
               >get in touch</span
             >
             <h2 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">
-              Let's create something great together.
+              Let's build something meaningful together.
             </h2>
             <p class="text-gray-500">
-              I'm a Full-Stack Developer focused on building clean, reliable,
-              and user-friendly web applications.
+              I'm a Full-Stack & Mobile Developer focused on building clean,
+              reliable, and user-friendly web and mobile applications with
+              thoughtful design.
             </p>
           </div>
 
