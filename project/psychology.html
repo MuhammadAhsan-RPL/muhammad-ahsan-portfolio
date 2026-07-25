@@ -67,9 +67,17 @@
         pointer-events: none;
         z-index: 0;
       }
+      .grid-pattern-sv {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
     </style>
   </head>
-  <body class="relative">
+  
+  <body class="relative grid-pattern-sv">
     <!-- Custom Cursor -->
     <link rel="stylesheet" href="./cursor.css" />
     <script src="./cursor.js" defer></script>
