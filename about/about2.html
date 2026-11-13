@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -19,17 +19,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <title>About | Muhammad Ahsan — Full-stack Developer</title>
+    <title>Engineering Process | Muhammad Ahsan — Full-Stack & Mobile Developer</title>
     <meta
       name="description"
-      content="Discover how Muhammad Ahsan builds modern web applications, from planning and design to development, tools, and lessons learned through real-world projects."
+      content="Discover how Muhammad Ahsan plans, architects, and builds modern web and mobile applications—from system design to deployment."
     />
     <meta name="author" content="Muhammad Ahsan" />
     <meta name="robots" content="index, follow" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -42,11 +42,15 @@
         darkMode: "class",
         theme: {
           extend: {
-            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
             colors: {
-              dark: "#0A0A0F",
-              darkCard: "#111115",
-              border: "#1E1E2A",
+              dark: "#06070B",
+              darkCard: "#10131C",
+              border: "#1E2230",
               primary: "#3B82F6",
             },
           },
@@ -56,72 +60,85 @@
 
     <style>
       body {
-        background: #0a0a0f;
+        background: #06070b;
         font-family: "Inter", sans-serif;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      .font-heading {
+        font-family: "Plus Jakarta Sans", "Inter", sans-serif;
       }
 
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 7px;
       }
       ::-webkit-scrollbar-track {
-        background: #111115;
+        background: #08090f;
       }
       ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
+        background: #2563eb;
         border-radius: 10px;
       }
 
       .glass-premium {
-        background: rgba(17, 22, 31, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(59, 130, 246, 0.15);
+        background: rgba(16, 19, 28, 0.78);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .glow-bg {
         position: fixed;
-        width: 400px;
-        height: 400px;
+        width: 460px;
+        height: 460px;
         background: radial-gradient(
           circle,
-          rgba(59, 130, 246, 0.06) 0%,
+          rgba(59, 130, 246, 0.07) 0%,
           transparent 70%
         );
         border-radius: 50%;
-        filter: blur(60px);
+        filter: blur(80px);
         pointer-events: none;
         z-index: 0;
       }
 
       .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 25px -6px rgba(37, 99, 235, 0.45);
       }
       .btn-primary:hover {
-        background: #2563eb;
         transform: translateY(-2px);
+        box-shadow: 0 16px 32px -6px rgba(37, 99, 235, 0.6);
+        filter: brightness(1.08);
       }
 
       .badge-tech {
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        border-radius: 20px;
-        padding: 4px 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 5px 12px;
         font-size: 12px;
-        color: #9ca3af;
+        font-family: "JetBrains Mono", monospace;
+        color: #cbd5e1;
         transition: all 0.2s;
       }
       .badge-tech:hover {
         border-color: #3b82f6;
-        color: #60a5fa;
+        color: #ffffff;
       }
 
       .card-hover {
-        transition: all 0.3s ease;
+        background: linear-gradient(165deg, #111420 0%, #0b0d14 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .card-hover:hover {
         transform: translateY(-4px);
-        border-color: #3b82f6;
-        box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.3);
+        border-color: rgba(59, 130, 246, 0.45);
+        box-shadow: 0 20px 40px -18px rgba(15, 23, 42, 0.85);
       }
 
       .faq-answer {
@@ -130,195 +147,331 @@
         transition: max-height 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       }
       .faq-answer.open {
-        max-height: 200px;
+        max-height: 250px;
       }
 
       .grid-pattern-sv {
         background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
       }
     </style>
   </head>
 
-  <body class="relative grid-pattern-sv">
+  <body class="relative grid-pattern-sv antialiased selection:bg-blue-500/30 selection:text-white">
     <div class="glow-bg top-20 left-10"></div>
     <div
       class="glow-bg bottom-20 right-10"
       style="
         background: radial-gradient(
           circle,
-          rgba(16, 185, 129, 0.04) 0%,
+          rgba(16, 185, 129, 0.05) 0%,
           transparent 70%
         );
       "
     ></div>
 
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="../index.html" class="text-2xl font-bold tracking-tight group">
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-heading text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
           >
         </a>
-        <div class="hidden md:flex items-center gap-8">
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
           <a
             href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Home</a
           >
           <a
             href="../allprojects/project.html"
-            class="text-gray-400 hover:text-blue-500 transition text-sm"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Projects</a
           >
           <a
             href="../about/about.html"
-            class="text-blue-500 transition text-sm font-medium"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >About</a
           >
           <a
+            href="../about/about2.html"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
+        </div>
+
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
             href="https://github.com/MuhammadAhsan-RPL"
             target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
+
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Panel -->
+    <div
+      id="mobileMenuPanel"
+      class="fixed top-0 right-0 w-72 h-screen z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      style="
+        background: #08090f !important;
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      "
+    >
+      <div
+        class="flex justify-between items-center p-5 border-b border-white/[0.08]"
+      >
+        <span class="text-white font-heading font-bold text-base">Navigation</span>
+        <button
+          id="closeMobileMenu"
+          class="text-slate-400 hover:text-white text-xl w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col p-5 gap-2">
+        <a
+          href="../index.html"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
+        >
+          <i class="fas fa-home w-5 text-slate-500"></i>
+          <span>Home</span>
+        </a>
+        <a
+          href="../allprojects/project.html"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
+        >
+          <i class="fas fa-folder-open w-5 text-slate-500"></i>
+          <span>Projects Archive</span>
+        </a>
+        <a
+          href="../about/about.html"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
+        >
+          <i class="fas fa-user-tie w-5 text-slate-500"></i>
+          <span>About &amp; Credentials</span>
+        </a>
+        <a
+          href="../about/about2.html"
+          class="flex items-center gap-3 text-blue-400 font-medium text-sm py-2.5 px-3 rounded-lg bg-blue-500/10"
+        >
+          <i class="fas fa-layer-group w-5 text-blue-400"></i>
+          <span>How I Work</span>
+        </a>
+        <div class="my-3 h-px bg-white/[0.08]"></div>
         <a
           href="mailto:siahsantv@gmail.com"
-          class="px-4 py-2 btn-primary rounded-full text-white text-sm hidden md:inline-block"
-          >Contact</a
+          class="flex items-center justify-center gap-2 px-4 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
         >
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
+        </a>
       </div>
-    </nav>
+    </div>
+
+    <div
+      id="mobileMenuOverlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+    ></div>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const menuPanel = document.getElementById("mobileMenuPanel");
+      const menuOverlay = document.getElementById("mobileMenuOverlay");
+      const closeMenuBtn = document.getElementById("closeMobileMenu");
+
+      function openMenu() {
+        menuPanel.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("opacity-0", "invisible");
+        menuOverlay.classList.add("opacity-100", "visible");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMenu() {
+        menuPanel.classList.add("translate-x-full");
+        menuOverlay.classList.add("opacity-0", "invisible");
+        menuOverlay.classList.remove("opacity-100", "visible");
+        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
+      }
+
+      if (menuToggle) menuToggle.addEventListener("click", openMenu);
+      if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
+      if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+      document.querySelectorAll("#mobileMenuPanel a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+    </script>
 
     <!-- Hero -->
-    <section class="relative px-6 pt-32 pb-16">
+    <section class="relative px-4 sm:px-6 pt-32 pb-12">
       <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-        >
-          How I Work
-        </span>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-          How I Build Websites
+        <div class="inline-flex items-center gap-2.5 mb-3">
+          <span class="w-6 h-px bg-blue-500"></span>
+          <span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+          >
+            Engineering Methodology
+          </span>
+          <span class="w-6 h-px bg-blue-500"></span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 mb-4 tracking-tight">
+          How I Architect &amp; Build Software
         </h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-base">
-          Every website starts with an idea. But turning that idea into
-          something functional requires planning, problem-solving, and
-          continuous improvement.
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          Every digital product starts with an idea—but turning that idea into a
+          dependable application requires structured planning, clean code, and
+          relentless iteration.
         </p>
       </div>
     </section>
 
     <!-- My Approach -->
-    <section class="px-6 py-12">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl font-bold text-white mb-4">My Approach</h2>
-        <p class="text-gray-400 text-base leading-relaxed">
-          I believe good websites are not defined by flashy animations or
-          complex features. They should be easy to use, visually clear, and
-          built with <span class="text-blue-400">a purpose</span>.
-        </p>
+    <section class="px-4 sm:px-6 py-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="card-hover rounded-2xl p-7 text-center">
+          <h2 class="text-xl font-bold text-white mb-3">Core Engineering Principle</h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I believe great software is not defined by unnecessary complexity.
+            It should be <span class="text-blue-400 font-semibold">intuitive to navigate, resilient under the hood, and built with a clear purpose</span>.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- From Idea to Product -->
-    <section class="px-6 py-16 bg-black/30">
+    <!-- From Idea to Product (5 Steps) -->
+    <section class="px-4 sm:px-6 py-16 bg-[#090B12] border-y border-white/[0.06]">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >my process</span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Development Lifecycle</span
           >
-          <h2 class="text-3xl font-bold text-white mt-2">
-            From Idea to Product
+          <h2 class="text-3xl font-extrabold text-white mt-2">
+            From Concept to Production
           </h2>
         </div>
-        <div class="space-y-8">
-          <div class="flex flex-col md:flex-row gap-5 items-start group">
-            <div class="text-3xl font-bold text-blue-400/50 w-16 shrink-0">
-              01
-            </div>
+
+        <div class="grid md:grid-cols-5 gap-5">
+          <div class="card-hover rounded-2xl p-6 flex flex-col justify-between">
             <div>
-              <h3
-                class="text-xl font-semibold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Understanding The Goal
+              <div class="text-2xl font-extrabold font-mono text-blue-400 mb-3">01</div>
+              <h3 class="text-base font-bold text-white mb-2">
+                Discovery &amp; Scope
               </h3>
-              <p class="text-gray-400 leading-relaxed">
-                I find out what the website needs to achieve and who it's for.
-                Without this, coding is pointless.
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Clarifying the core problem, target users, and operational
+                objectives before writing code.
               </p>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row gap-5 items-start group">
-            <div class="text-3xl font-bold text-blue-400/50 w-16 shrink-0">
-              02
-            </div>
+
+          <div class="card-hover rounded-2xl p-6 flex flex-col justify-between">
             <div>
-              <h3
-                class="text-xl font-semibold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Planning
+              <div class="text-2xl font-extrabold font-mono text-indigo-400 mb-3">02</div>
+              <h3 class="text-base font-bold text-white mb-2">
+                System Architecture
               </h3>
-              <p class="text-gray-400 leading-relaxed">
-                I create a clear structure and list of features before writing
-                any code.
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Designing relational database schemas, user roles, and clean
+                feature specifications.
               </p>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row gap-5 items-start group">
-            <div class="text-3xl font-bold text-blue-400/50 w-16 shrink-0">
-              03
-            </div>
+
+          <div class="card-hover rounded-2xl p-6 flex flex-col justify-between">
             <div>
-              <h3
-                class="text-xl font-semibold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Designing
+              <div class="text-2xl font-extrabold font-mono text-purple-400 mb-3">03</div>
+              <h3 class="text-base font-bold text-white mb-2">
+                UI/UX Prototyping
               </h3>
-              <p class="text-gray-400 leading-relaxed">
-                Focus on usability, layout, and visual consistency. Good design
-                helps users feel comfortable.
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Crafting clear visual hierarchy, responsive layouts, and
+                intuitive user flows in Figma.
               </p>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row gap-5 items-start group">
-            <div class="text-3xl font-bold text-blue-400/50 w-16 shrink-0">
-              04
-            </div>
+
+          <div class="card-hover rounded-2xl p-6 flex flex-col justify-between">
             <div>
-              <h3
-                class="text-xl font-semibold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Development
+              <div class="text-2xl font-extrabold font-mono text-emerald-400 mb-3">04</div>
+              <h3 class="text-base font-bold text-white mb-2">
+                Full-Stack Engineering
               </h3>
-              <p class="text-gray-400 leading-relaxed">
-                Build frontend and backend with clean, maintainable code.
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Building backend business logic and responsive frontend
+                interfaces with modular, maintainable code.
               </p>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row gap-5 items-start group">
-            <div class="text-3xl font-bold text-blue-400/50 w-16 shrink-0">
-              05
-            </div>
+
+          <div class="card-hover rounded-2xl p-6 flex flex-col justify-between">
             <div>
-              <h3
-                class="text-xl font-semibold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Testing & Improvement
+              <div class="text-2xl font-extrabold font-mono text-amber-400 mb-3">05</div>
+              <h3 class="text-base font-bold text-white mb-2">
+                QA &amp; Refinement
               </h3>
-              <p class="text-gray-400 leading-relaxed">
-                Fix bugs, optimize performance, and refine the user experience.
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Debugging edge cases, optimizing performance, and validating the
+                end-to-end user experience.
               </p>
             </div>
           </div>
@@ -327,367 +480,300 @@
     </section>
 
     <!-- What Matters To Me -->
-    <section class="px-6 py-16">
-      <div class="max-w-6xl mx-auto">
+    <section class="px-4 sm:px-6 py-16">
+      <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >my values</span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Engineering Standards</span
           >
-          <h2 class="text-3xl font-bold text-white mt-2">What Matters To Me</h2>
+          <h2 class="text-3xl font-extrabold text-white mt-2">What Matters To Me</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div
-            class="text-center p-4 rounded-xl bg-darkCard border border-gray-800 hover:border-blue-500/50 transition"
-          >
-            <i class="fas fa-code text-blue-400 text-2xl mb-2 block"></i
-            ><span class="text-gray-300 text-sm">Clean Code</span>
+          <div class="card-hover text-center p-5 rounded-2xl">
+            <i class="fas fa-code text-blue-400 text-2xl mb-3 block"></i>
+            <span class="text-white font-semibold text-sm block">Clean Code</span>
           </div>
-          <div
-            class="text-center p-4 rounded-xl bg-darkCard border border-gray-800 hover:border-blue-500/50 transition"
-          >
-            <i class="fas fa-smile text-blue-400 text-2xl mb-2 block"></i
-            ><span class="text-gray-300 text-sm">User Experience</span>
+          <div class="card-hover text-center p-5 rounded-2xl">
+            <i class="fas fa-layer-group text-indigo-400 text-2xl mb-3 block"></i>
+            <span class="text-white font-semibold text-sm block">User Experience</span>
           </div>
-          <div
-            class="text-center p-4 rounded-xl bg-darkCard border border-gray-800 hover:border-blue-500/50 transition"
-          >
-            <i class="fas fa-mobile-alt text-blue-400 text-2xl mb-2 block"></i
-            ><span class="text-gray-300 text-sm">Responsive Design</span>
+          <div class="card-hover text-center p-5 rounded-2xl">
+            <i class="fas fa-mobile-alt text-emerald-400 text-2xl mb-3 block"></i>
+            <span class="text-white font-semibold text-sm block">Responsive UI</span>
           </div>
-          <div
-            class="text-center p-4 rounded-xl bg-darkCard border border-gray-800 hover:border-blue-500/50 transition"
-          >
-            <i
-              class="fas fa-tachometer-alt text-blue-400 text-2xl mb-2 block"
-            ></i
-            ><span class="text-gray-300 text-sm">Performance</span>
+          <div class="card-hover text-center p-5 rounded-2xl">
+            <i class="fas fa-tachometer-alt text-amber-400 text-2xl mb-3 block"></i>
+            <span class="text-white font-semibold text-sm block">Performance</span>
           </div>
-          <div
-            class="text-center p-4 rounded-xl bg-darkCard border border-gray-800 hover:border-blue-500/50 transition"
-          >
-            <i
-              class="fas fa-graduation-cap text-blue-400 text-2xl mb-2 block"
-            ></i
-            ><span class="text-gray-300 text-sm">Continuous Learning</span>
+          <div class="card-hover text-center p-5 rounded-2xl col-span-2 md:col-span-1">
+            <i class="fas fa-graduation-cap text-purple-400 text-2xl mb-3 block"></i>
+            <span class="text-white font-semibold text-sm block">Continuous Growth</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Lessons From Building Projects -->
-    <section class="px-6 py-16 bg-black/30">
-      <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-          >What Projects Taught Me</span
-        >
-        <h2 class="text-3xl font-bold text-white mt-2 mb-8">
-          Lessons From Building Projects
-        </h2>
-        <div class="grid md:grid-cols-2 gap-4 text-left">
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-darkCard">
-            <i class="fas fa-times-circle text-red-400 mt-0.5"></i
-            ><span class="text-gray-300"
-              >Some of my projects started with failed versions.</span
-            >
-          </div>
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-darkCard">
-            <i class="fas fa-sync-alt text-blue-400 mt-0.5"></i
-            ><span class="text-gray-300"
-              >Rebuilding taught me more than finishing an easy project.</span
-            >
-          </div>
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-darkCard">
-            <i class="fas fa-bug text-yellow-400 mt-0.5"></i
-            ><span class="text-gray-300"
-              >Every bug is an opportunity to understand systems better.</span
-            >
-          </div>
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-darkCard">
-            <i class="fas fa-rocket text-emerald-400 mt-0.5"></i
-            ><span class="text-gray-300"
-              >Real projects accelerate learning more than tutorials ever
-              could.</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tools I Enjoy Working With -->
-    <section class="px-6 py-16">
+    <section class="px-4 sm:px-6 py-16 bg-[#090B12] border-y border-white/[0.06]">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-10">
           <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >toolkit</span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Practical Insights</span
           >
-          <h2 class="text-3xl font-bold text-white mt-2">
-            Tools I Enjoy Working With
+          <h2 class="text-3xl font-extrabold text-white mt-2">
+            Lessons From Real Projects
           </h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            class="bg-darkCard rounded-2xl p-6 border border-gray-800 card-hover"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <i class="fab fa-html5 text-3xl text-orange-400"></i>
-              <h3 class="text-xl font-bold text-white">Frontend</h3>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="card-hover flex items-start gap-4 p-5 rounded-2xl">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-redo text-red-400 text-sm"></i>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="badge-tech">HTML5</span
-              ><span class="badge-tech">CSS3</span
-              ><span class="badge-tech">JavaScript</span
-              ><span class="badge-tech">Tailwind</span>
+            <div>
+              <h4 class="text-white font-bold text-sm mb-1">Iteration Builds Resilience</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Several of my strongest applications started as early prototypes
+                that had to be re-architected from the ground up.
+              </p>
             </div>
           </div>
-          <div
-            class="bg-darkCard rounded-2xl p-6 border border-gray-800 card-hover"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <i class="fas fa-database text-3xl text-purple-400"></i>
-              <h3 class="text-xl font-bold text-white">Backend</h3>
+
+          <div class="card-hover flex items-start gap-4 p-5 rounded-2xl">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-sitemap text-blue-400 text-sm"></i>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="badge-tech">Laravel</span
-              ><span class="badge-tech">PHP</span
-              ><span class="badge-tech">MySQL</span
-              ><span class="badge-tech">Firebase</span>
+            <div>
+              <h4 class="text-white font-bold text-sm mb-1">Architecture Over Shortcuts</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Refining database schemas and structure early saves hours of
+                refactoring later in the lifecycle.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-hover flex items-start gap-4 p-5 rounded-2xl">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-bug text-amber-400 text-sm"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm mb-1">Debugging Deepens Understanding</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Every complex bug is an opportunity to understand how the
+                underlying framework and data flow actually work.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-hover flex items-start gap-4 p-5 rounded-2xl">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
+              <i class="fas fa-rocket text-emerald-400 text-sm"></i>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm mb-1">Shipping Accelerates Mastery</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Building and deploying real end-to-end systems teaches far more
+                than passive tutorials ever could.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section - Premium Accordion Design -->
-    <section class="px-6 py-20 bg-gradient-to-b from-black/30 to-transparent">
+    <!-- Primary Stack -->
+    <section class="px-4 sm:px-6 py-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+          <span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Core Stack</span
+          >
+          <h2 class="text-3xl font-extrabold text-white mt-2">
+            Technologies I Build With
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card-hover rounded-2xl p-7">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                <i class="fas fa-laptop-code text-blue-400"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">Frontend &amp; Mobile UI</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-tech">HTML5</span>
+              <span class="badge-tech">CSS3</span>
+              <span class="badge-tech">Tailwind CSS</span>
+              <span class="badge-tech">JavaScript</span>
+              <span class="badge-tech">React</span>
+              <span class="badge-tech">Alpine.js</span>
+              <span class="badge-tech">Flutter</span>
+            </div>
+          </div>
+
+          <div class="card-hover rounded-2xl p-7">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <i class="fas fa-server text-indigo-400"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">Backend &amp; Data Persistence</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-tech">Laravel 10</span>
+              <span class="badge-tech">PHP 8.2</span>
+              <span class="badge-tech">MySQL</span>
+              <span class="badge-tech">PostgreSQL</span>
+              <span class="badge-tech">Firebase</span>
+              <span class="badge-tech">RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="px-4 sm:px-6 py-16 bg-[#090B12] border-y border-white/[0.06]">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
-          <div class="inline-flex items-center gap-2 mb-3">
-            <i class="fas fa-comment-dots text-blue-400 text-sm"></i>
-            <span
-              class="text-blue-500 text-xs font-semibold uppercase tracking-[0.2em]"
-              >you ask, i answer</span
-            >
-          </div>
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">
-            Frequently Asked
-            <span
-              class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-              >Questions</span
-            >
+          <span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Q&amp;A</span
+          >
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-2">
+            Frequently Asked Questions
           </h2>
-          <p class="text-gray-500 text-sm">
-            Click on any question to reveal the answer.
+          <p class="text-slate-400 text-sm">
+            Common questions about my engineering workflow and approach.
           </p>
         </div>
 
-        <div class="space-y-4" id="faqContainer">
+        <div class="space-y-3.5" id="faqContainer">
           <!-- FAQ 1 -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300 overflow-hidden"
-          >
+          <div class="card-hover rounded-2xl overflow-hidden">
             <div
               class="faq-question flex justify-between items-center p-5 cursor-pointer"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3.5">
                 <div
-                  class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition"
+                  class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center"
                 >
-                  <i class="fas fa-robot text-blue-400 text-sm"></i>
+                  <i class="fas fa-layer-group text-blue-400 text-xs"></i>
                 </div>
-                <span
-                  class="text-white font-medium group-hover:text-blue-400 transition"
-                  >Do you use AI?</span
+                <span class="text-white font-semibold text-sm sm:text-base"
+                  >Why focus on full-stack &amp; mobile development?</span
                 >
               </div>
               <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-blue-400"
+                class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"
               ></i>
             </div>
             <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
+              class="faq-answer text-slate-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
             >
-              Yes. I use AI to learn faster and prototype ideas. But every
-              project still requires planning, debugging, testing, and
-              decision-making from me.
+              Because I enjoy owning the complete lifecycle of a product—from
+              designing the relational database schema and backend API to
+              crafting the interface that users interact with on web and mobile.
             </div>
           </div>
 
           <!-- FAQ 2 -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300 overflow-hidden"
-          >
+          <div class="card-hover rounded-2xl overflow-hidden">
             <div
               class="faq-question flex justify-between items-center p-5 cursor-pointer"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3.5">
                 <div
-                  class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition"
+                  class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center"
                 >
-                  <i class="fas fa-layer-group text-purple-400 text-sm"></i>
+                  <i class="fas fa-robot text-indigo-400 text-xs"></i>
                 </div>
-                <span
-                  class="text-white font-medium group-hover:text-purple-400 transition"
-                  >Why full-stack development?</span
+                <span class="text-white font-semibold text-sm sm:text-base"
+                  >How do you integrate AI tools into your workflow?</span
                 >
               </div>
               <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-purple-400"
+                class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"
               ></i>
             </div>
             <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
+              class="faq-answer text-slate-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
             >
-              Because I enjoy understanding how a product works — from the user
-              interface to the system behind it.
+              I use AI as an accelerator for research, rubber-duck debugging,
+              and rapid prototyping—while keeping architectural decisions,
+              database modeling, security, and code quality strictly under my
+              own control.
             </div>
           </div>
 
           <!-- FAQ 3 -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-pink-500/50 transition-all duration-300 overflow-hidden"
-          >
+          <div class="card-hover rounded-2xl overflow-hidden">
             <div
               class="faq-question flex justify-between items-center p-5 cursor-pointer"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3.5">
                 <div
-                  class="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition"
+                  class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center"
                 >
-                  <i class="fas fa-heart text-pink-400 text-sm"></i>
+                  <i class="fas fa-book text-emerald-400 text-xs"></i>
                 </div>
-                <span
-                  class="text-white font-medium group-hover:text-pink-400 transition"
-                  >What's your favorite part of development?</span
+                <span class="text-white font-semibold text-sm sm:text-base"
+                  >How do you approach learning a new technology stack?</span
                 >
               </div>
               <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-pink-400"
+                class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"
               ></i>
             </div>
             <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
+              class="faq-answer text-slate-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
             >
-              Turning an idea into a working product that people can actually
-              use.
+              By reading official documentation, studying architectural
+              patterns, and immediately building a functional project that solves
+              a real problem.
             </div>
           </div>
 
           <!-- FAQ 4 -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition-all duration-300 overflow-hidden"
-          >
+          <div class="card-hover rounded-2xl overflow-hidden">
             <div
               class="faq-question flex justify-between items-center p-5 cursor-pointer"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3.5">
                 <div
-                  class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition"
+                  class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center"
                 >
-                  <i class="fas fa-book text-emerald-400 text-sm"></i>
+                  <i class="fas fa-palette text-purple-400 text-xs"></i>
                 </div>
-                <span
-                  class="text-white font-medium group-hover:text-emerald-400 transition"
-                  >How do you learn new technologies?</span
+                <span class="text-white font-semibold text-sm sm:text-base"
+                  >Why do you care deeply about UI/UX design as a developer?</span
                 >
               </div>
               <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-emerald-400"
+                class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"
               ></i>
             </div>
             <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
+              class="faq-answer text-slate-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
             >
-              By reading documentation, experimenting, and building projects.
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="faq-question flex justify-between items-center p-5 cursor-pointer"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition"
-                >
-                  <i class="fas fa-bolt text-orange-400 text-sm"></i>
-                </div>
-                <span
-                  class="text-white font-medium group-hover:text-orange-400 transition"
-                  >What's the biggest challenge you've faced?</span
-                >
-              </div>
-              <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-orange-400"
-              ></i>
-            </div>
-            <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
-            >
-              Learning how to debug problems without obvious solutions — and
-              knowing when to rebuild instead of patching.
-            </div>
-          </div>
-
-          <!-- FAQ 6 (BARU) - Why do you care about design? -->
-          <div
-            class="group bg-gradient-to-br from-darkCard to-[#0D0D12] rounded-2xl border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden"
-          >
-            <div
-              class="faq-question flex justify-between items-center p-5 cursor-pointer"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition"
-                >
-                  <i class="fas fa-palette text-cyan-400 text-sm"></i>
-                </div>
-                <span
-                  class="text-white font-medium group-hover:text-cyan-400 transition"
-                  >Why do you care about design?</span
-                >
-              </div>
-              <i
-                class="fas fa-chevron-down text-gray-500 transition-all duration-300 group-hover:text-cyan-400"
-              ></i>
-            </div>
-            <div
-              class="faq-answer text-gray-400 text-sm px-5 pb-5 pl-16 leading-relaxed"
-            >
-              Because users experience the design before they experience the
-              code. A great product needs both strong functionality and a
-              thoughtful user experience.
+              Because users experience the interface before they experience the
+              backend architecture. A truly great digital product requires both
+              rock-solid engineering and an intuitive, trustworthy user
+              interface.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <style>
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-      .faq-answer.open {
-        max-height: 250px;
-      }
-    </style>
-
     <script>
-      // FAQ Accordion Functionality
       document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
           const parentDiv = question.parentElement;
           const answer = parentDiv.querySelector(".faq-answer");
           const icon = question.querySelector(".fa-chevron-down");
 
-          // Tutup semua FAQ lainnya
           document.querySelectorAll(".faq-answer").forEach((a) => {
             if (a !== answer) {
               a.classList.remove("open");
@@ -697,7 +783,6 @@
             }
           });
 
-          // Toggle current
           answer.classList.toggle("open");
           icon.style.transform = answer.classList.contains("open")
             ? "rotate(180deg)"
@@ -707,63 +792,42 @@
     </script>
 
     <!-- Things You Won't See On My Resume -->
-    <section class="px-6 py-16">
+    <section class="px-4 sm:px-6 py-16">
       <div class="max-w-4xl mx-auto">
         <div
-          class="relative rounded-2xl bg-gradient-to-br from-blue-600/5 to-emerald-600/5 border border-blue-500/20 p-8 md:p-10"
+          class="card-hover rounded-2xl p-8 md:p-10"
         >
-          <div class="absolute top-5 right-5 opacity-10">
-            <i class="fas fa-file-alt text-5xl"></i>
-          </div>
-          <div class="relative z-10">
-            <span
-              class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-              >off the record</span
-            >
-            <h2 class="text-3xl font-bold text-white mt-2 mb-6">
-              Things You Won't See On My Resume
-            </h2>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-pen-fancy text-blue-400"></i
-                ><span class="text-gray-300"
-                  >I redesigned my portfolio multiple times before publishing
-                  it.</span
-                >
-              </div>
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-history text-purple-400"></i
-                ><span class="text-gray-300"
-                  >Some projects started after previous versions failed.</span
-                >
-              </div>
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-chart-line text-emerald-400"></i
-                ><span class="text-gray-300"
-                  >I enjoy analyzing website designs and user experiences.</span
-                >
-              </div>
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-cube text-amber-400"></i
-                ><span class="text-gray-300"
-                  >I learn best by building things from scratch.</span
-                >
-              </div>
-
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-cube text-amber-400"></i
-                ><span class="text-gray-300"
-                  >I learn best by building things from scratch.</span
-                >
-              </div>
-
-              <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5">
-                <i class="fas fa-cube text-amber-400"></i
-                ><span class="text-gray-300">
-                  I probably spend more time refining details than most people
-                  would notice.</span
-                >
-              </div>
+          <span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest"
+            >Behind The Scenes</span
+          >
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-6">
+            Things You Won't See On My Resume
+          </h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+              <i class="fas fa-pen-fancy text-blue-400 mt-1"></i>
+              <span class="text-slate-300 text-sm"
+                >I iterated on my portfolio multiple times to ensure every detail reflects my standards.</span
+              >
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+              <i class="fas fa-history text-indigo-400 mt-1"></i>
+              <span class="text-slate-300 text-sm"
+                >Several of my best projects succeeded only after I rebuilt their earlier failed versions.</span
+              >
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+              <i class="fas fa-chart-line text-emerald-400 mt-1"></i>
+              <span class="text-slate-300 text-sm"
+                >I regularly dissect modern web applications to study their UX flows and component architecture.</span
+              >
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+              <i class="fas fa-sliders-h text-amber-400 mt-1"></i>
+              <span class="text-slate-300 text-sm"
+                >I spend extra time refining micro-interactions, spacing, and edge cases that most people overlook.</span
+              >
             </div>
           </div>
         </div>
@@ -771,77 +835,36 @@
     </section>
 
     <!-- CTA -->
-    <section class="px-6 py-16">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="glass-premium rounded-2xl p-8">
-          <h2 class="text-2xl font-bold text-white mb-3">
-            Let's Build Something Great
+    <section class="px-4 sm:px-6 py-10 pb-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="glass-premium rounded-2xl p-8 sm:p-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            Ready to Build Something Great Together?
           </h2>
-          <p class="text-gray-400 text-sm mb-6">
-            I'm always interested in new ideas, creative projects, and
-            meaningful collaborations. Feel free to reach out and say hello.
+          <p class="text-slate-400 text-sm mb-6 max-w-xl mx-auto">
+            I am open to software engineering opportunities, internships, and
+            collaborative projects. Let's connect.
           </p>
-          <a
-            href="mailto:siahsantv@gmail.com"
-            class="inline-block px-6 py-3 btn-primary rounded-full text-white text-sm font-medium"
-            >Get in touch →</a
-          >
+          <div class="flex flex-wrap justify-center gap-3">
+            <a
+              href="mailto:siahsantv@gmail.com"
+              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+              ><span>Get in Touch</span> <i class="fas fa-arrow-right text-xs"></i></a
+            >
+            <a
+              href="../allprojects/project.html"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-xl text-slate-200 text-sm font-semibold transition"
+              >Explore All Projects</a
+            >
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Back to Home -->
-    <div class="text-center pb-8">
-      <a
-        href="../index.html"
-        class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition text-sm"
-        >← Back to home</a
-      >
-    </div>
-
-    <!-- Footer -->
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
-        debugging.
+    <footer class="py-10 px-4 sm:px-6 text-center border-t border-white/[0.07] bg-[#05060A]">
+      <p class="text-slate-500 text-xs">
+        © 2026 Muhammad Ahsan. Engineered with precision, clean architecture, and attention to detail.
       </p>
     </footer>
-
-    <script>
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const nav = document.getElementById("navbar");
-        if (window.scrollY > 50)
-          nav.classList.add(
-            "bg-black/80",
-            "backdrop-blur-md",
-            "border-b",
-            "border-gray-800",
-          );
-        else
-          nav.classList.remove(
-            "bg-black/80",
-            "backdrop-blur-md",
-            "border-b",
-            "border-gray-800",
-          );
-      });
-
-      // GSAP reveal animations
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray("section").forEach((section) => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-          opacity: 0,
-          y: 40,
-          duration: 0.7,
-          ease: "power2.out",
-        });
-      });
-    </script>
   </body>
 </html>

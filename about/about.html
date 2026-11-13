@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Muhammad Ahsan — Full-stack & Mobile Developer</title>
+    <title>About & Credentials | Muhammad Ahsan — Full-Stack & Mobile Developer</title>
     <meta
       name="description"
       content="Learn more about Muhammad Ahsan, a Software Engineering student and Full-Stack & Mobile Developer passionate about building modern web and mobile applications with clean code and thoughtful design."
@@ -22,12 +22,16 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css"
     />
 
     <script>
@@ -37,11 +41,13 @@
           extend: {
             fontFamily: {
               sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              dark: "#0A0A0F",
-              darkCard: "#111115",
-              border: "#1E1E2A",
+              dark: "#06070B",
+              darkCard: "#10131C",
+              border: "#1E2230",
               primary: "#3B82F6",
             },
           },
@@ -51,248 +57,270 @@
 
     <style>
       body {
-        background: #0a0a0f;
+        background: #06070b;
         font-family: "Inter", sans-serif;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      .font-heading {
+        font-family: "Plus Jakarta Sans", "Inter", sans-serif;
       }
 
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 7px;
       }
       ::-webkit-scrollbar-track {
-        background: #111115;
+        background: #08090f;
       }
       ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
+        background: #2563eb;
         border-radius: 10px;
       }
 
       .card-about {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        transition: all 0.3s ease;
+        background: linear-gradient(165deg, #111420 0%, #0b0d14 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .card-about:hover {
-        border-color: #3b82f6;
+        border-color: rgba(59, 130, 246, 0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -18px rgba(15, 23, 42, 0.85);
       }
 
       .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 25px -6px rgba(37, 99, 235, 0.45);
       }
       .btn-primary:hover {
-        background: #2563eb;
         transform: translateY(-2px);
+        box-shadow: 0 16px 32px -6px rgba(37, 99, 235, 0.6);
+        filter: brightness(1.08);
       }
 
       .glow-bg {
         position: fixed;
-        width: 400px;
-        height: 400px;
+        width: 460px;
+        height: 460px;
         background: radial-gradient(
           circle,
           rgba(59, 130, 246, 0.08) 0%,
           transparent 70%
         );
         border-radius: 50%;
-        filter: blur(60px);
+        filter: blur(80px);
         pointer-events: none;
         z-index: 0;
       }
 
-      .skill-bar {
-        background: #1e1e2a;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-      .skill-fill {
-        background: #3b82f6;
-        height: 6px;
-        border-radius: 10px;
-      }
-
       .cert-card {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        transition: all 0.3s ease;
+        background: linear-gradient(165deg, #111420 0%, #0b0d14 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .cert-card:hover {
-        border-color: #3b82f6;
-        transform: translateY(-4px);
+        border-color: rgba(59, 130, 246, 0.45);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -18px rgba(15, 23, 42, 0.85);
       }
 
       .grid-pattern-sv {
         background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
       }
     </style>
   </head>
 
-  <body class="relative grid-pattern-sv">
+  <body class="relative grid-pattern-sv antialiased selection:bg-blue-500/30 selection:text-white">
     <div class="glow-bg top-20 left-10"></div>
     <div
       class="glow-bg bottom-20 right-10"
       style="
         background: radial-gradient(
           circle,
-          rgba(16, 185, 129, 0.05) 0%,
+          rgba(16, 185, 129, 0.06) 0%,
           transparent 70%
         );
       "
     ></div>
 
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a
-          href="../index.html"
-          class="text-2xl font-bold tracking-tight group shrink-0"
-        >
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-heading text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
           >
         </a>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
           <a
             href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Home</a
           >
           <a
             href="../allprojects/project.html"
-            class="text-gray-400 hover:text-white transition text-sm font-medium"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Projects</a
           >
           <a
             href="../about/about.html"
-            class="text-blue-500 hover:text-blue-400 transition text-sm"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >About</a
           >
           <a
-            href="https://github.com/MuhammadAhsan-RPL"
-            target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
+            href="../about/about2.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
         </div>
 
-        <!-- Contact Button Desktop -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="hidden md:inline-block px-4 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
-          >Contact</a
-        >
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
 
-        <!-- Mobile Menu Button (Hamburger) - DIPERKECIL & RAPI -->
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
         <button
           id="menuToggle"
-          class="md:hidden text-white focus:outline-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-          aria-label="Menu"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
         >
-          <i class="fas fa-bars text-xl"></i>
+          <i class="fas fa-bars"></i>
         </button>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- Mobile Menu Panel - HITAM PEKAT (PAKAI INLINE STYLE) -->
+    <!-- Mobile Menu Panel -->
     <div
       id="mobileMenuPanel"
-      class="fixed top-0 right-0 w-[70%] max-w-[260px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      class="fixed top-0 right-0 w-72 h-screen z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
       style="
-        background: #000000 !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
+        background: #08090f !important;
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
       "
     >
-      <!-- Header -->
       <div
-        class="flex justify-between items-center p-4 sm:p-5 border-b border-gray-800"
+        class="flex justify-between items-center p-5 border-b border-white/[0.08]"
       >
-        <span class="text-white font-bold text-base sm:text-lg">Menu</span>
+        <span class="text-white font-heading font-bold text-base">Navigation</span>
         <button
           id="closeMobileMenu"
-          class="text-gray-400 hover:text-white text-xl sm:text-2xl w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          class="text-slate-400 hover:text-white text-xl w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
         >
           <i class="fas fa-times"></i>
         </button>
       </div>
 
-      <!-- Menu Items -->
-      <div class="flex flex-col p-4 sm:p-5 gap-2 sm:gap-3">
+      <div class="flex flex-col p-5 gap-2">
         <a
           href="../index.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fas fa-home w-4 sm:w-5 text-gray-500"></i>
+          <i class="fas fa-home w-5 text-slate-500"></i>
           <span>Home</span>
         </a>
         <a
           href="../allprojects/project.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fas fa-folder w-4 sm:w-5 text-gray-500"></i>
-          <span>Projects</span>
+          <i class="fas fa-folder-open w-5 text-slate-500"></i>
+          <span>Projects Archive</span>
         </a>
         <a
           href="../about/about.html"
-          class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-blue-400 font-medium text-sm py-2.5 px-3 rounded-lg bg-blue-500/10"
         >
-          <i class="fas fa-user w-4 sm:w-5 text-blue-500"></i>
-          <span>About</span>
+          <i class="fas fa-user-tie w-5 text-blue-400"></i>
+          <span>About &amp; Credentials</span>
+        </a>
+        <a
+          href="../about/about2.html"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
+        >
+          <i class="fas fa-layer-group w-5 text-slate-500"></i>
+          <span>How I Work</span>
         </a>
         <a
           href="https://github.com/MuhammadAhsan-RPL"
           target="_blank"
-          class="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fab fa-github w-4 sm:w-5 text-gray-500"></i>
+          <i class="fab fa-github w-5 text-slate-500"></i>
           <span>GitHub</span>
         </a>
 
-        <div class="my-2 sm:my-3 h-px bg-gray-800"></div>
+        <div class="my-3 h-px bg-white/[0.08]"></div>
 
-        <!-- Contact Button di Mobile -->
         <a
           href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="flex items-center justify-center gap-2 mt-1 sm:mt-2 px-4 py-2.5 sm:py-3 btn-primary rounded-full text-white text-sm sm:text-base font-medium"
+          class="flex items-center justify-center gap-2 px-4 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
         >
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
         </a>
       </div>
     </div>
 
-    <!-- Overlay - LEBIH GELAP & BLUR UNTUK MENUTUPI KONTEN BELAKANG -->
     <div
       id="mobileMenuOverlay"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
     ></div>
 
-    <style>
-      @media (max-width: 767px) {
-        body.menu-open {
-          overflow: hidden;
-        }
-      }
-      /* Tambahan agar panel tidak terlihat di luar layar */
-      #mobileMenuPanel {
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    </style>
-
     <script>
-      // Mobile Menu Elements
       const menuToggle = document.getElementById("menuToggle");
       const menuPanel = document.getElementById("mobileMenuPanel");
       const menuOverlay = document.getElementById("mobileMenuOverlay");
@@ -318,834 +346,716 @@
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
 
-      // Tutup menu saat klik link di dalam menu mobile
-      const mobileLinks = document.querySelectorAll("#mobileMenuPanel a");
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          closeMenu();
-        });
+      document.querySelectorAll("#mobileMenuPanel a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
       });
 
-      // Tutup menu saat resize ke desktop
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-          closeMenu();
-        }
+        if (window.innerWidth >= 768) closeMenu();
       });
     </script>
 
-    <!-- Hero About - CENTERED (Professional) -->
-    <section class="relative px-6 pt-32 pb-12">
+    <!-- Hero About Section -->
+    <section class="relative px-4 sm:px-6 pt-32 pb-12">
       <div class="max-w-5xl mx-auto">
         <div class="flex flex-col items-center text-center">
           <div class="relative mb-6">
             <div
-              class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-500/30"
+              class="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-blue-500/40 shadow-2xl shadow-blue-500/10"
             >
               <img
                 src="../foto/ahsan.jpeg"
                 alt="Muhammad Ahsan"
-                class="w-full h-full object-cover scale-110"
+                class="w-full h-full object-cover object-[65%_75%] scale-125"
               />
             </div>
             <div
-              class="absolute -bottom-2 -right-2 bg-blue-500 rounded-full p-1.5"
+              class="absolute -bottom-2 -right-2 bg-blue-600 border-2 border-[#06070B] rounded-xl w-9 h-9 flex items-center justify-center shadow-lg"
             >
               <i class="fas fa-code text-white text-xs"></i>
             </div>
           </div>
 
-          <div>
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="w-5 h-px bg-blue-500"></span>
             <span
-              class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-              >about</span
+              class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+              >Developer Profile</span
             >
-            <h1 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-3">
-              Muhammad Ahsan
-            </h1>
-            <p class="text-gray-400 text-base">
-              Full-Stack & Mobile Developer · Building reliable applications and
-              meaningful digital experiences
-            </p>
-            <div class="flex flex-wrap justify-center gap-3 mt-4">
-              <span
-                class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
-                >Based in Indonesia</span
-              >
-              <span
-                class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
-                >Open to Collaboration</span
-              >
-              <span
-                class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
-                >Building Real-World Projects</span
-              >
-            </div>
+            <span class="w-5 h-px bg-blue-500"></span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 mb-3 tracking-tight">
+            Muhammad Ahsan
+          </h1>
+          <p class="text-slate-300 text-base sm:text-lg font-medium">
+            Full-Stack &amp; Mobile Developer · Engineering Practical Digital Products
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-2.5 mt-5">
+            <span
+              class="bg-blue-500/10 border border-blue-500/25 text-blue-400 px-3.5 py-1 rounded-full text-xs font-medium"
+              ><i class="fas fa-map-marker-alt mr-1.5 text-[10px]"></i>Based in Indonesia</span
+            >
+            <span
+              class="bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 px-3.5 py-1 rounded-full text-xs font-medium"
+              ><i class="fas fa-check-circle mr-1.5 text-[10px]"></i>Open to Work &amp; Collaboration</span
+            >
+            <span
+              class="bg-white/5 border border-white/10 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium"
+              ><i class="fas fa-laptop-code mr-1.5 text-[10px]"></i>Web &amp; Mobile Architecture</span
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bio (Professional) -->
-    <section class="px-6 py-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-gray-400 text-base leading-relaxed">
-          I'm a Full-Stack & Mobile Developer passionate about building modern,
-          user-friendly applications that combine functionality, usability, and
-          thoughtful design. I enjoy turning ideas into practical digital
-          products, exploring new technologies, and continuously improving
-          through hands-on experience. My goal is to create reliable solutions
-          that are easy to use and genuinely useful to the people who use them.
-        </p>
+    <!-- Executive Bio -->
+    <section class="px-4 sm:px-6 py-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="card-about rounded-2xl p-6 sm:p-8 text-center">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I am a <span class="text-white font-semibold">Full-Stack &amp; Mobile Developer</span> who enjoys turning complex requirements into reliable, working applications. My experience is built on hands-on engineering—ranging from multi-role academic management systems to corporate websites developed collaboratively. Working across both frontend interfaces and backend database architectures, my goal is straightforward: to build software that is clean, maintainable, and genuinely useful for real users.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Mission & Vision + Quick Facts (Professional) -->
-    <section class="px-6 py-8">
+    <!-- Mission, Vision & Philosophy -->
+    <section class="px-4 sm:px-6 py-8">
       <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-        <div class="card-about rounded-2xl p-6 text-center">
+        <div class="card-about rounded-2xl p-7">
           <div
-            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4"
+            class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4"
           >
-            <i class="fas fa-bullseye text-blue-400 text-xl"></i>
+            <i class="fas fa-bullseye text-blue-400 text-lg"></i>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Mission</h3>
-          <p class="text-gray-500 text-sm">
-            Build software solutions that solve real problems, create meaningful
-            value, and deliver exceptional user experiences.
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Engineer dependable software solutions that streamline workflows,
+            solve real operational problems, and deliver intuitive user
+            experiences.
           </p>
         </div>
 
-        <div class="card-about rounded-2xl p-6 text-center">
+        <div class="card-about rounded-2xl p-7">
           <div
-            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4"
+            class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-4"
           >
-            <i class="fas fa-globe text-blue-400 text-xl"></i>
+            <i class="fas fa-compass text-indigo-400 text-lg"></i>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Vision</h3>
-          <p class="text-gray-500 text-sm">
-            Great software is built on simplicity, reliability, and a deep
-            understanding of user needs.
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Great digital products are built on architectural simplicity,
+            system reliability, and a deep respect for the end user's time.
           </p>
         </div>
 
-        <div class="card-about rounded-2xl p-6 text-center">
+        <div class="card-about rounded-2xl p-7">
           <div
-            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4"
+            class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4"
           >
-            <i class="fas fa-heart text-blue-400 text-xl"></i>
+            <i class="fas fa-layer-group text-emerald-400 text-lg"></i>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Philosophy</h3>
-          <p class="text-gray-500 text-sm">
-            Good software should feel simple, clear, and purposeful — both for
-            users and developers.
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Software should feel effortless on the surface and structured
+            underneath—clear for users and maintainable for engineers.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Technical Skills Detail - Categorized Version -->
-    <section class="px-6 py-16">
+    <!-- Technical Proficiency -->
+    <section class="px-4 sm:px-6 py-16">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
-          <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >core competencies</span
-          >
-          <h2 class="text-3xl font-bold text-white mt-2">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="w-5 h-px bg-blue-500"></span>
+            <span
+              class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+              >Core Competencies</span
+            >
+            <span class="w-5 h-px bg-blue-500"></span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-white mt-1">
             Technical Proficiency
           </h2>
-          <p class="text-gray-500 text-sm mt-2">
-            Technologies and tools I work with daily
+          <p class="text-slate-400 text-sm mt-2">
+            Languages, frameworks, and engineering tools I work with daily
           </p>
         </div>
 
-        <!-- ====== FRONTEND ====== -->
-        <div class="mb-8">
+        <!-- FRONTEND & MOBILE -->
+        <div class="mb-9">
           <div class="flex items-center gap-3 mb-4">
             <div
-              class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center"
+              class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center"
             >
-              <i class="fas fa-laptop-code text-blue-400 text-sm"></i>
+              <i class="fas fa-laptop-code text-blue-400 text-xs"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">Frontend</h3>
+            <h3 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+              Frontend &amp; Mobile
+            </h3>
             <div
-              class="flex-1 h-px bg-gradient-to-r from-blue-500/30 to-transparent"
+              class="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent"
             ></div>
           </div>
           <div
-            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3"
           >
-            <!-- HTML -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-orange-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition"
-              >
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-orange-500/10 flex items-center justify-center">
                 <i class="fab fa-html5 text-xl text-orange-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">HTML5</span>
+              <span class="text-slate-200 text-xs font-semibold">HTML5</span>
             </div>
-            <!-- CSS -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition"
-              >
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/10 flex items-center justify-center">
                 <i class="fab fa-css3-alt text-xl text-blue-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">CSS3</span>
+              <span class="text-slate-200 text-xs font-semibold">CSS3</span>
             </div>
-            <!-- Tailwind -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-cyan-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition"
-              >
-                <i class="fab fa-tailwind text-xl text-cyan-400"></i>
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <i class="devicon-tailwindcss-plain text-xl text-cyan-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">Tailwind</span>
+              <span class="text-slate-200 text-xs font-semibold">Tailwind CSS</span>
             </div>
-            <!-- JavaScript -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-yellow-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-yellow-500/10 flex items-center justify-center group-hover:bg-yellow-500/20 transition"
-              >
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-yellow-500/10 flex items-center justify-center">
                 <i class="fab fa-js text-xl text-yellow-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">JavaScript</span>
+              <span class="text-slate-200 text-xs font-semibold">JavaScript</span>
             </div>
-            <!-- React -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-cyan-400/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-400/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-cyan-400/10 flex items-center justify-center group-hover:bg-cyan-400/20 transition"
-              >
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-cyan-400/10 flex items-center justify-center">
                 <i class="fab fa-react text-xl text-cyan-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">React</span>
+              <span class="text-slate-200 text-xs font-semibold">React</span>
             </div>
-            <!-- Bootstrap -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition"
-              >
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                <i class="devicon-flutter-plain text-xl text-sky-400"></i>
+              </div>
+              <span class="text-slate-200 text-xs font-semibold">Flutter</span>
+            </div>
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <i class="fab fa-bootstrap text-xl text-purple-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">Bootstrap</span>
+              <span class="text-slate-200 text-xs font-semibold">Bootstrap</span>
             </div>
           </div>
         </div>
 
-        <!-- ====== BACKEND ====== -->
-        <div class="mb-8">
+        <!-- BACKEND -->
+        <div class="mb-9">
           <div class="flex items-center gap-3 mb-4">
             <div
-              class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center"
+              class="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center"
             >
-              <i class="fas fa-server text-purple-400 text-sm"></i>
+              <i class="fas fa-server text-indigo-400 text-xs"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">Backend</h3>
+            <h3 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+              Backend &amp; Architecture
+            </h3>
             <div
-              class="flex-1 h-px bg-gradient-to-r from-purple-500/30 to-transparent"
+              class="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent"
             ></div>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            <!-- Laravel -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-red-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition"
-              >
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-red-500/10 flex items-center justify-center">
                 <i class="fab fa-laravel text-xl text-red-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">Laravel</span>
+              <span class="text-slate-200 text-xs font-semibold">Laravel</span>
             </div>
-            <!-- PHP -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition"
-              >
-                <i class="fab fa-php text-xl text-purple-400"></i>
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                <i class="fab fa-php text-xl text-indigo-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">PHP</span>
+              <span class="text-slate-200 text-xs font-semibold">PHP 8</span>
             </div>
-            <!-- Node.js -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-green-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition"
-              >
-                <i class="fab fa-node-js text-xl text-green-400"></i>
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                <i class="fab fa-node-js text-xl text-emerald-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">Node.js</span>
+              <span class="text-slate-200 text-xs font-semibold">Node.js</span>
             </div>
-            <!-- Alpine.js -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-orange-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition"
-              >
-                <i class="fas fa-code text-xl text-orange-400"></i>
+
+            <div class="card-about rounded-xl p-3.5 text-center">
+              <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <i class="fas fa-bolt text-lg text-cyan-400"></i>
               </div>
-              <span class="text-gray-300 text-xs font-medium">Alpine.js</span>
+              <span class="text-slate-200 text-xs font-semibold">Alpine.js</span>
             </div>
           </div>
         </div>
 
-        <!-- ====== DATABASE ====== -->
-        <div class="mb-8">
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center"
-            >
-              <i class="fas fa-database text-emerald-400 text-sm"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white">Database</h3>
-            <div
-              class="flex-1 h-px bg-gradient-to-r from-emerald-500/30 to-transparent"
-            ></div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            <!-- MySQL -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition"
-              >
-                <i class="fas fa-database text-xl text-blue-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">MySQL</span>
-            </div>
-            <!-- Firebase -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-orange-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition"
-              >
-                <i class="fas fa-fire text-xl text-orange-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">Firebase</span>
-            </div>
-            <!-- PostgreSQL -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-blue-400/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-blue-400/10 flex items-center justify-center group-hover:bg-blue-400/20 transition"
-              >
-                <i class="fas fa-database text-xl text-blue-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">PostgreSQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ====== TOOLS & PLATFORMS ====== -->
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center"
-            >
-              <i class="fas fa-tools text-yellow-400 text-sm"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white">Tools & Platforms</h3>
-            <div
-              class="flex-1 h-px bg-gradient-to-r from-yellow-500/30 to-transparent"
-            ></div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            <!-- Git -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-orange-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition"
-              >
-                <i class="fab fa-git-alt text-xl text-orange-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">Git</span>
-            </div>
-            <!-- GitHub -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-white/30 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition"
-              >
-                <i
-                  class="fab fa-github text-xl text-gray-400 group-hover:text-white transition"
-                ></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">GitHub</span>
-            </div>
-            <!-- VS Code -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition"
-              >
-                <i class="fas fa-code text-xl text-blue-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">VS Code</span>
-            </div>
-            <!-- Figma -->
-            <div
-              class="group bg-darkCard rounded-xl p-3 border border-gray-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 text-center"
-            >
-              <div
-                class="w-10 h-10 mx-auto mb-1.5 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition"
-              >
-                <i class="fab fa-figma text-xl text-purple-400"></i>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">Figma</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Soft Skills & Tools -->
-    <section class="px-6 py-8 bg-black/30">
-      <div class="max-w-5xl mx-auto">
+        <!-- DATABASE & TOOLS -->
         <div class="grid md:grid-cols-2 gap-8">
           <div>
-            <div class="flex items-center gap-3 mb-5">
-              <i class="fas fa-users text-blue-400 text-lg"></i>
-              <h3 class="text-lg font-bold text-white">
-                Interpersonal Strengths
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center"
+              >
+                <i class="fas fa-database text-emerald-400 text-xs"></i>
+              </div>
+              <h3 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+                Database Systems
               </h3>
+              <div
+                class="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent"
+              ></div>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Problem Solving</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Communication</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Collaboration</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Adaptability</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Attention to Detail</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Continuous Learning</span
-              >
+            <div class="grid grid-cols-3 gap-3">
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                  <i class="devicon-mysql-plain text-xl text-blue-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">MySQL</span>
+              </div>
+
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                  <i class="fas fa-fire text-xl text-amber-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">Firebase</span>
+              </div>
+
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                  <i class="devicon-postgresql-plain text-xl text-sky-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">PostgreSQL</span>
+              </div>
             </div>
           </div>
 
           <div>
-            <div class="flex items-center gap-3 mb-5">
-              <i class="fas fa-tools text-blue-400 text-lg"></i>
-              <h3 class="text-lg font-bold text-white">Development Toolkit</h3>
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center"
+              >
+                <i class="fas fa-tools text-amber-400 text-xs"></i>
+              </div>
+              <h3 class="text-base font-bold text-white uppercase tracking-wider font-mono">
+                Tools &amp; Platforms
+              </h3>
+              <div
+                class="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent"
+              ></div>
+            </div>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                  <i class="fab fa-git-alt text-xl text-orange-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">Git</span>
+              </div>
+
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-white/10 flex items-center justify-center">
+                  <i class="fab fa-github text-xl text-white"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">GitHub</span>
+              </div>
+
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                  <i class="fas fa-terminal text-lg text-blue-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">VS Code</span>
+              </div>
+
+              <div class="card-about rounded-xl p-3.5 text-center">
+                <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                  <i class="fab fa-figma text-xl text-purple-400"></i>
+                </div>
+                <span class="text-slate-200 text-xs font-semibold">Figma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft Skills & Workflow Toolkit -->
+    <section class="px-4 sm:px-6 py-12 bg-[#090B12] border-y border-white/[0.06]">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="card-about rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <i class="fas fa-users text-blue-400 text-sm"></i>
+              </div>
+              <h3 class="text-base font-bold text-white">
+                Professional &amp; Interpersonal Strengths
+              </h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Git & GitHub</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >VS Code</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Figma</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Postman</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Vercel</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >Firebase</span
-              >
-              <span
-                class="bg-gray-800 text-gray-300 px-3 py-1.5 rounded-full text-xs"
-                >MySQL Workbench</span
-              >
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Analytical Problem Solving</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Clear Technical Communication</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Team Collaboration</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Fast Adaptability</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Attention to Detail</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Continuous Learning</span>
+            </div>
+          </div>
+
+          <div class="card-about rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                <i class="fas fa-layer-group text-emerald-400 text-sm"></i>
+              </div>
+              <h3 class="text-base font-bold text-white">
+                Development &amp; Deployment Ecosystem
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Git &amp; GitHub Workflows</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">VS Code</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Figma UI/UX</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Postman API Testing</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Vercel &amp; Netlify</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">Firebase Cloud</span>
+              <span class="bg-white/[0.04] border border-white/10 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-medium">MySQL Workbench</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section class="px-6 py-16">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-10">
-          <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >professional timeline</span
-          >
-          <h2 class="text-2xl font-bold text-white mt-2">Experience</h2>
-        </div>
+    <!-- Experience & Education Grid -->
+    <section class="px-4 sm:px-6 py-16">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Experience -->
+        <div>
+          <div class="mb-6">
+            <span class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest">Career Track</span>
+            <h2 class="text-2xl font-extrabold text-white mt-1">Experience</h2>
+          </div>
 
-        <div class="space-y-6">
-          <div class="flex gap-4">
-            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+          <div class="card-about rounded-2xl p-7 h-[calc(100%-3.75rem)] flex flex-col justify-between">
             <div>
-              <span class="text-blue-400 text-xs">2022 — Present</span>
-              <h3 class="text-white font-semibold mt-1">
-                Independent Developer
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="text-xs font-mono font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">
+                  2022 — Present
+                </span>
+                <span class="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white">
+                Independent Full-Stack &amp; Mobile Developer
               </h3>
-              <p class="text-gray-500 text-sm mt-1">
-                Building modern web applications through personal, academic, and
-                freelance projects while combining development, design, and
-                continuous learning.
+              <p class="text-slate-400 text-sm leading-relaxed mt-3">
+                Architecting and delivering modern web and mobile applications
+                across academic systems, independent products, and team
+                collaborations—focusing on clean MVC structure, relational
+                databases, and responsive frontend interfaces.
               </p>
             </div>
-          </div>
-          <!-- Tambahkan role lain jika diperlukan, sesuai permintaan user tidak mengubah struktur -->
-        </div>
-      </div>
-    </section>
 
-    <!-- Education -->
-    <section class="px-6 py-16 bg-black/30">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-10">
-          <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >academic background</span
-          >
-          <h2 class="text-2xl font-bold text-white mt-2">Education</h2>
-        </div>
-
-        <div class="card-about rounded-2xl p-8">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fas fa-graduation-cap text-blue-400 text-xl"></i>
-            <h3 class="text-xl font-bold text-white">Vocational High School</h3>
-          </div>
-          <h4 class="text-white font-semibold">Software Engineering</h4>
-          <p class="text-blue-400 text-sm mt-1">
-            IDN Boarding School | 2025 — 2028
-          </p>
-          <p class="text-gray-500 text-sm mt-3">
-            Learning software engineering through academic coursework and
-            real-world projects, with a strong interest in full-stack
-            development, user experience, and modern web technologies.
-          </p>
-
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="text-xs text-gray-400">Relevant coursework:</span>
-            <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs"
-              >Web Development</span
-            >
-            <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs"
-              >Database Systems</span
-            >
-            <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs"
-              >UI/UX Design</span
-            >
-            <span class="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs"
-              >Data Structures & Algorithms</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section class="px-6 py-16">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-10">
-          <span
-            class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-            >continuous learning</span
-          >
-          <h2 class="text-2xl font-bold text-white mt-2">Certifications</h2>
-          <p class="text-gray-500 text-sm mt-2">
-            Verified credentials that validate my technical expertise
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-5">
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i
-                class="fas fa-certificate text-blue-500 text-5xl opacity-30"
-              ></i>
+            <div class="mt-6 pt-4 border-t border-white/[0.07] flex flex-wrap gap-2">
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">Full-Stack Web</span>
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">REST APIs</span>
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">UI/UX Implementation</span>
             </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <div class="mb-6">
+            <span class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest">Academic Background</span>
+            <h2 class="text-2xl font-extrabold text-white mt-1">Education</h2>
+          </div>
+
+          <div class="card-about rounded-2xl p-7 h-[calc(100%-3.75rem)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="text-xs font-mono font-semibold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">
+                  2025 — 2028
+                </span>
+                <span class="text-xs text-slate-400 font-mono">IDN Boarding School</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">
+                Software Engineering (RPL)
+              </h3>
+              <p class="text-blue-400 text-xs font-semibold mt-0.5">
+                Vocational High School · IDN Boarding School
+              </p>
+              <p class="text-slate-400 text-sm leading-relaxed mt-3">
+                Intensive software engineering program combining structured
+                computer science fundamentals with hands-on, project-based
+                full-stack and mobile application development.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/[0.07] flex flex-wrap gap-1.5">
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">Web Engineering</span>
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">Database Systems</span>
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">UI/UX Design</span>
+              <span class="text-[11px] font-mono text-slate-300 bg-white/5 px-2.5 py-1 rounded">Algorithms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="px-4 sm:px-6 py-16 bg-[#090B12] border-y border-white/[0.06]">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="w-5 h-px bg-blue-500"></span>
+            <span
+              class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+              >Verified Credentials</span
+            >
+            <span class="w-5 h-px bg-blue-500"></span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-white mt-1">Certifications</h2>
+          <p class="text-slate-400 text-sm mt-2">
+            Courses and technical certifications validating my continuous learning
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
+                <i class="fas fa-certificate text-blue-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
                 Web Development Fundamentals
               </h4>
-              <p class="text-gray-500 text-xs mt-1">Dicoding · 2023</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">Credential Verified</span>
-              </div>
+              <p class="text-slate-400 text-xs mt-1">Dicoding Indonesia · 2023</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Credential Verified</span>
             </div>
           </div>
 
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i class="fab fa-js text-yellow-500 text-5xl opacity-30"></i>
-            </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-4">
+                <i class="fab fa-js text-yellow-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
                 JavaScript Programming
               </h4>
-              <p class="text-gray-500 text-xs mt-1">Online Course · 2024</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">Credential Verified</span>
-              </div>
+              <p class="text-slate-400 text-xs mt-1">Online Certification · 2024</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Credential Verified</span>
             </div>
           </div>
 
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i class="fab fa-react text-cyan-500 text-5xl opacity-30"></i>
-            </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                <i class="fab fa-react text-cyan-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
                 Frontend Developer Bootcamp
               </h4>
-              <p class="text-gray-500 text-xs mt-1">Bootcamp · 2024</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">Credential Verified</span>
-              </div>
+              <p class="text-slate-400 text-xs mt-1">Intensive Bootcamp · 2024</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Credential Verified</span>
             </div>
           </div>
 
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i class="fab fa-tailwind text-cyan-400 text-5xl opacity-30"></i>
-            </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                <i class="devicon-tailwindcss-plain text-cyan-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
                 Tailwind CSS Mastery
               </h4>
-              <p class="text-gray-500 text-xs mt-1">Online Course · 2024</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">Credential Verified</span>
-              </div>
+              <p class="text-slate-400 text-xs mt-1">Online Course · 2024</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Credential Verified</span>
             </div>
           </div>
 
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i class="fas fa-database text-blue-400 text-5xl opacity-30"></i>
-            </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
-                Database Design & MySQL
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-4">
+                <i class="fas fa-database text-indigo-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
+                Database Design &amp; MySQL
               </h4>
-              <p class="text-gray-500 text-xs mt-1">School Course · 2024</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-hourglass-half text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">In Progress</span>
-              </div>
+              <p class="text-slate-400 text-xs mt-1">Academic Specialization · 2024</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Completed</span>
             </div>
           </div>
 
-          <div class="cert-card rounded-xl overflow-hidden">
-            <div
-              class="h-36 overflow-hidden bg-gray-900 flex items-center justify-center"
-            >
-              <i class="fas fa-code text-blue-500 text-5xl opacity-30"></i>
-            </div>
-            <div class="p-4">
-              <h4 class="text-white font-semibold text-sm">
+          <div class="cert-card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
+                <i class="fas fa-code text-emerald-400 text-lg"></i>
+              </div>
+              <h4 class="text-white font-bold text-base">
                 Responsive Web Design
               </h4>
-              <p class="text-gray-500 text-xs mt-1">FreeCodeCamp · 2023</p>
-              <div class="mt-2 flex items-center gap-1">
-                <i class="fas fa-check-circle text-emerald-500 text-xs"></i>
-                <span class="text-gray-500 text-xs">Credential Verified</span>
+              <p class="text-slate-400 text-xs mt-1">freeCodeCamp · 2023</p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center gap-1.5">
+              <i class="fas fa-check-circle text-emerald-400 text-xs"></i>
+              <span class="text-slate-300 text-xs font-medium">Credential Verified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recognition & Languages Grid -->
+    <section class="px-4 sm:px-6 py-16">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <!-- Recognition -->
+        <div>
+          <div class="mb-6">
+            <span class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest">Accolades</span>
+            <h2 class="text-2xl font-extrabold text-white mt-1">Honors &amp; Recognition</h2>
+          </div>
+
+          <div class="space-y-4">
+            <div class="card-about rounded-2xl p-5 flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center shrink-0"
+              >
+                <i class="fas fa-trophy text-amber-400 text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-base">Best Web Project Award</h4>
+                <p class="text-slate-400 text-xs mt-0.5">
+                  School-Wide Software Exhibition · OneSchool E-Report (2024)
+                </p>
+              </div>
+            </div>
+
+            <div class="card-about rounded-2xl p-5 flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0"
+              >
+                <i class="fas fa-award text-emerald-400 text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-white font-bold text-base">
+                  Top 10 Student Developer
+                </h4>
+                <p class="text-slate-400 text-xs mt-0.5">
+                  IDN Boarding School Software Engineering Cohort · 2024
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Languages -->
-    <section class="px-6 py-16 bg-black/30">
-      <div class="max-w-3xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-          >linguistic proficiency</span
-        >
-        <h2 class="text-2xl font-bold text-white mt-2 mb-8">Languages</h2>
-
-        <div class="flex flex-wrap justify-center gap-8">
-          <div class="text-center">
-            <div
-              class="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20"
-            >
-              <span class="text-2xl font-bold text-blue-400">ID</span>
-            </div>
-            <p class="text-white font-medium mt-3">Indonesian</p>
-            <p class="text-gray-500 text-xs">Native</p>
+        <!-- Languages -->
+        <div>
+          <div class="mb-6">
+            <span class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-widest">Communication</span>
+            <h2 class="text-2xl font-extrabold text-white mt-1">Languages</h2>
           </div>
 
-          <div class="text-center">
-            <div
-              class="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20"
-            >
-              <span class="text-2xl font-bold text-blue-400">EN</span>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-about rounded-2xl p-6 text-center">
+              <div
+                class="w-14 h-14 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center mb-3"
+              >
+                <span class="text-lg font-extrabold text-blue-400 font-mono">ID</span>
+              </div>
+              <p class="text-white font-bold text-base">Indonesian</p>
+              <p class="text-slate-400 text-xs mt-1">Native Proficiency</p>
             </div>
-            <p class="text-white font-medium mt-3">English</p>
-            <p class="text-gray-500 text-xs">
-              Professional Working Proficiency
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Achievements / Awards -->
-    <section class="px-6 py-16">
-      <div class="max-w-3xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-          >accolades</span
-        >
-        <h2 class="text-2xl font-bold text-white mt-2 mb-8">Recognition</h2>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="card-about rounded-xl p-4 flex items-center gap-3">
-            <div
-              class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center"
-            >
-              <i class="fas fa-trophy text-yellow-400 text-sm"></i>
-            </div>
-            <div class="text-left">
-              <h4 class="text-white font-semibold text-sm">Best Web Project</h4>
-              <p class="text-gray-500 text-xs">
-                School‑wide Competition · 2024
+            <div class="card-about rounded-2xl p-6 text-center">
+              <div
+                class="w-14 h-14 mx-auto rounded-2xl bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center mb-3"
+              >
+                <span class="text-lg font-extrabold text-indigo-400 font-mono">EN</span>
+              </div>
+              <p class="text-white font-bold text-base">English</p>
+              <p class="text-slate-400 text-xs mt-1">
+                Professional Working Proficiency
               </p>
             </div>
           </div>
-
-          <div class="card-about rounded-xl p-4 flex items-center gap-3">
-            <div
-              class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center"
-            >
-              <i class="fas fa-award text-green-400 text-sm"></i>
-            </div>
-            <div class="text-left">
-              <h4 class="text-white font-semibold text-sm">
-                Top 10 Student Developer
-              </h4>
-              <p class="text-gray-500 text-xs">IDN Boarding School · 2024</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="px-6 py-16">
+    <!-- Call to Action: How I Work -->
+    <section class="px-4 sm:px-6 py-12">
       <div
-        class="max-w-3xl mx-auto text-center bg-gradient-to-r from-blue-600/10 to-emerald-600/10 rounded-2xl p-10 border border-blue-500/20"
+        class="max-w-5xl mx-auto text-center bg-gradient-to-br from-blue-600/10 via-[#0C0E16] to-emerald-600/10 rounded-2xl p-8 sm:p-10 border border-blue-500/20"
       >
-        <h2 class="text-2xl font-bold text-white mb-3">Behind The Portfolio</h2>
-        <p class="text-gray-400 text-sm mb-6">
-          Go beyond the projects and explore how I plan, design, build, and
-          continuously improve every website I create.
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-semibold">Engineering Workflow</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-3">
+          Behind the Code: How I Build Software
+        </h2>
+        <p class="text-slate-400 text-sm mb-6 max-w-xl mx-auto leading-relaxed">
+          Explore my step-by-step engineering workflow—from requirement analysis
+          and database modeling to frontend polish and testing.
         </p>
-        <a
-          href="../about/about2.html"
-          target="_blank"
-          class="inline-block px-6 py-3 btn-primary rounded-full text-white text-sm font-medium"
-        >
-          How I Work
-          <i class="fas fa-arrow-right ml-2 text-xs"></i>
-        </a>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="../about/about2.html"
+            class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+          >
+            <span>Explore My Engineering Process</span>
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-xl text-slate-200 text-sm font-semibold transition"
+          >
+            <i class="fas fa-file-pdf text-blue-400"></i>
+            <span>Download Resume (PDF)</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Back to Home -->
-    <section class="px-6 pb-16 text-center">
+    <section class="px-4 sm:px-6 pb-16 text-center">
       <a
         href="../index.html"
-        class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition text-sm"
+        class="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition text-sm font-medium"
       >
-        <i class="fas fa-arrow-left text-xs"></i> Back to home
+        <i class="fas fa-arrow-left text-xs"></i> Back to Home
       </a>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-600 text-xs">
-        © 2026 Muhammad Ahsan — engineered with precision, purpose, and a
-        relentless focus on quality.
+    <footer class="py-10 px-4 sm:px-6 text-center border-t border-white/[0.07] bg-[#05060A]">
+      <p class="text-slate-500 text-xs">
+        © 2026 Muhammad Ahsan. Engineered with precision, clean architecture, and attention to detail.
       </p>
     </footer>
-
-    <!-- ========== GSAP ANIMATIONS ========== -->
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Fade animations untuk semua section
-      gsap.utils.toArray("section").forEach((section) => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-          opacity: 0,
-          y: 40,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-      });
-
-      // Animasi untuk hero text (selector yang benar di about.html)
-      gsap.from(".text-3xl.md\\:text-4xl.font-bold", {
-        duration: 1,
-        opacity: 0,
-        y: 30,
-        stagger: 0.2,
-        ease: "back.out(1.2)",
-      });
-    </script>
   </body>
 </html>

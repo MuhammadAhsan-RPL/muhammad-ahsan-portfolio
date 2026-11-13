@@ -1,262 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payroll Management System | Muhammad Ahsan</title>
+    <title>Payroll Management System — Case Study | Muhammad Ahsan</title>
     <meta
       name="description"
-      content="Full-stack payroll management system with employee management, attendance tracking, salary processing, and reporting features."
+      content="Full-stack payroll management system built with Laravel 10, MySQL, and Tailwind CSS featuring role-based authentication, attendance tracking, automated salary calculation, and digital payslip generation."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <style>
-      body {
-        background: #0a0a0f;
-        font-family: "Inter", sans-serif;
-      }
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #111115;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
-        border-radius: 10px;
-      }
-      .card-detail {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        border-radius: 1.5rem;
-      }
-      .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background: #2563eb;
-        transform: translateY(-2px);
-      }
-      .btn-outline {
-        border: 1px solid #3b82f6;
-        transition: all 0.3s ease;
-      }
-      .btn-outline:hover {
-        background: rgba(59, 130, 246, 0.1);
-        transform: translateY(-2px);
-      }
-      .badge-tech {
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        border-radius: 20px;
-        padding: 4px 10px;
-        font-size: 11px;
-        color: #9ca3af;
-      }
-      .glow-bg {
-        position: fixed;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.08) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        filter: blur(60px);
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .grid-pattern-sv {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      
-    </style>
-  </head>
-  <body class="relative grid-pattern-sv">
-    <!-- Custom Cursor -->
     <link rel="stylesheet" href="./cursor.css" />
     <script src="./cursor.js" defer></script>
-
-    <!-- Animations Premium -->
     <link rel="stylesheet" href="./animations.css" />
     <script src="./animations.js" defer></script>
 
-    <div class="glow-bg top-20 left-10"></div>
-    <div
-      class="glow-bg bottom-20 right-10"
-      style="
-        background: radial-gradient(
-          circle,
-          rgba(16, 185, 129, 0.05) 0%,
-          transparent 70%
-        );
-      "
-    ></div>
-
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a
-          href="../index.html"
-          class="text-2xl font-bold tracking-tight group shrink-0"
-        >
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
-          >
-        </a>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
-            >Home</a
-          >
-          <a
-            href="../allprojects/project.html"
-            class="text-blue-500 hover:text-white transition text-sm font-medium"
-            >Projects</a
-          >
-          <a
-            href="../about/about.html"
-            class="text-gray-400 hover:text-blue-400 transition text-sm"
-            >About</a
-          >
-          <a
-            href="https://github.com/MuhammadAhsan-RPL"
-            target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-
-        <!-- Contact Button Desktop -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="hidden md:inline-block px-4 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
-          >Contact</a
-        >
-
-        <!-- Mobile Menu Button (Hamburger) - DIPERKECIL & RAPI -->
-        <button
-          id="menuToggle"
-          class="md:hidden text-white focus:outline-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-          aria-label="Menu"
-        >
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Panel - HITAM PEKAT (PAKAI INLINE STYLE) -->
-    <div
-      id="mobileMenuPanel"
-      class="fixed top-0 right-0 w-[70%] max-w-[260px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
-      style="
-        background: #000000 !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
-      "
-    >
-      <!-- Header -->
-      <div
-        class="flex justify-between items-center p-4 sm:p-5 border-b border-gray-800"
-      >
-        <span class="text-white font-bold text-base sm:text-lg">Menu</span>
-        <button
-          id="closeMobileMenu"
-          class="text-gray-400 hover:text-white text-xl sm:text-2xl w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <!-- Menu Items -->
-      <div class="flex flex-col p-4 sm:p-5 gap-2 sm:gap-3">
-        <a
-          href="../index.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-home w-4 sm:w-5 text-gray-500"></i>
-          <span>Home</span>
-        </a>
-        <a
-          href="../allprojects/project.html"
-          class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-folder w-4 sm:w-5 text-blue-500"></i>
-          <span>Projects</span>
-        </a>
-        <a
-          href="../about/about.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-user w-4 sm:w-5 text-gray-300"></i>
-          <span>About</span>
-        </a>
-        <a
-          href="https://github.com/MuhammadAhsan-RPL"
-          target="_blank"
-          class="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fab fa-github w-4 sm:w-5 text-gray-500"></i>
-          <span>GitHub</span>
-        </a>
-
-        <div class="my-2 sm:my-3 h-px bg-gray-800"></div>
-
-        <!-- Contact Button di Mobile -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="flex items-center justify-center gap-2 mt-1 sm:mt-2 px-4 py-2.5 sm:py-3 btn-primary rounded-full text-white text-sm sm:text-base font-medium"
-        >
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Overlay - LEBIH GELAP & BLUR UNTUK MENUTUPI KONTEN BELAKANG -->
-    <div
-      id="mobileMenuOverlay"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
-    ></div>
-
     <style>
+      body {
+        background: #06070b;
+        color: #f8fafc;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .font-mono-code {
+        font-family: "JetBrains Mono", monospace;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #06070b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2563eb;
+        border-radius: 8px;
+      }
+      .card-detail {
+        background: linear-gradient(165deg, rgba(17, 20, 32, 0.92) 0%, rgba(11, 13, 20, 0.96) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+      }
+      .sub-card {
+        background: rgba(15, 18, 28, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 1rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .sub-card:hover {
+        border-color: rgba(59, 130, 246, 0.35);
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        border: 1px solid rgba(96, 165, 250, 0.35);
+        box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.45);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px -6px rgba(59, 130, 246, 0.6);
+      }
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-outline:hover {
+        background: rgba(59, 130, 246, 0.08);
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-2px);
+      }
+      .badge-tech {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 0.5rem;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        color: #cbd5e1;
+        transition: all 0.2s ease;
+      }
+      .badge-tech:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        color: #60a5fa;
+        background: rgba(59, 130, 246, 0.08);
+      }
+      .glow-bg {
+        position: fixed;
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(70px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .grid-pattern-sv {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
       @media (max-width: 767px) {
         body.menu-open {
           overflow: hidden;
         }
       }
-      /* Tambahan agar panel tidak terlihat di luar layar */
-      #mobileMenuPanel {
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
     </style>
+  </head>
+  <body class="relative grid-pattern-sv selection:bg-blue-600 selection:text-white">
+    <div class="glow-bg top-16 left-10"></div>
+    <div
+      class="glow-bg bottom-16 right-10"
+      style="background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);"
+    ></div>
+
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono-code font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-display text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono-code font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
+          <a
+            href="../index.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Home</a
+          >
+          <a
+            href="../allprojects/project.html"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >All Projects</a
+          >
+          <a
+            href="../about/about.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >About</a
+          >
+          <a
+            href="../about/about2.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
+        </div>
+
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
+
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Panel -->
+    <div
+      id="mobileMenuPanel"
+      class="fixed top-0 right-0 w-[75%] max-w-[280px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden border-l border-white/10"
+      style="background: #080a10 !important; box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);"
+    >
+      <div class="flex justify-between items-center p-5 border-b border-white/10">
+        <span class="text-white font-display font-bold text-base">Navigation</span>
+        <button
+          id="closeMobileMenu"
+          class="text-slate-400 hover:text-white text-lg w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col p-5 gap-2">
+        <a href="../index.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-home w-5 text-slate-500"></i>
+          <span>Home</span>
+        </a>
+        <a href="../allprojects/project.html" class="flex items-center gap-3 text-blue-400 font-medium transition text-sm py-2.5 px-3 rounded-lg bg-blue-500/10">
+          <i class="fas fa-layer-group w-5 text-blue-400"></i>
+          <span>Projects</span>
+        </a>
+        <a href="../about/about.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-user w-5 text-slate-500"></i>
+          <span>About</span>
+        </a>
+        <a href="../about/about2.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-compass w-5 text-slate-500"></i>
+          <span>Process & Standards</span>
+        </a>
+        <a href="https://github.com/MuhammadAhsan-RPL" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fab fa-github w-5 text-slate-500"></i>
+          <span>GitHub</span>
+        </a>
+        <div class="my-3 h-px bg-white/10"></div>
+        <a href="mailto:siahsantv@gmail.com" class="flex items-center justify-center gap-2 px-4 py-2.5 btn-primary rounded-lg text-white text-sm font-semibold">
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div
+      id="mobileMenuOverlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+    ></div>
 
     <script>
-      // Mobile Menu Toggle
       const menuToggleBtn = document.getElementById("menuToggle");
       const menuPanel = document.getElementById("mobileMenuPanel");
       const menuOverlay = document.getElementById("mobileMenuOverlay");
@@ -278,251 +284,290 @@
         document.body.classList.remove("menu-open");
       }
 
-      if (menuToggleBtn)
-        menuToggleBtn.addEventListener("click", openMobileMenu);
+      if (menuToggleBtn) menuToggleBtn.addEventListener("click", openMobileMenu);
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
 
-      // Tutup menu saat resize ke desktop
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-          closeMobileMenu();
-        }
+        if (window.innerWidth >= 768) closeMobileMenu();
       });
     </script>
 
-    <section class="relative pt-32 pb-12 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-          >project deep dive</span
-        >
-        <h1 class="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-          Payroll Management System
-        </h1>
-        <div class="flex flex-wrap justify-center gap-2 mt-4">
-          <span
-            class="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs"
-            >Full‑stack</span
+    <!-- Case Study Header -->
+    <section class="relative pt-28 pb-10 px-6 z-10">
+      <div class="max-w-5xl mx-auto">
+        <!-- Breadcrumb -->
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+          <a
+            href="../allprojects/project.html"
+            class="inline-flex items-center gap-2 text-xs font-mono-code text-slate-400 hover:text-blue-400 transition group"
           >
-          <span
-            class="bg-yellow-500/10 text-yellow-500 px-3 py-1 rounded-full text-xs"
-            >Academic</span
-          >
-          <span
-            class="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs"
-            >Laravel</span
-          >
+            <i class="fas fa-arrow-left text-[10px] group-hover:-translate-x-1 transition-transform"></i>
+            <span>ALL PROJECTS / CASE STUDY</span>
+          </a>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono-code bg-amber-500/10 text-amber-300 border border-amber-500/25">
+            <i class="fas fa-star text-[9px] text-amber-400"></i> Featured Full-Stack System
+          </span>
+        </div>
+
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-blue-500/10 text-blue-400 border border-blue-500/20">Full-Stack Architecture</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Laravel 10 & MySQL</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-white/5 text-slate-300 border border-white/10">Academic Capstone</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Payroll Management System
+          </h1>
+          <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+            An integrated HR & compensation platform engineered to centralize employee records, daily attendance tracking, automated salary computation, and digital payslip generation within a role-protected administrative dashboard.
+          </p>
+        </div>
+
+        <!-- Executive Metadata Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 p-5 rounded-2xl bg-[#0c0f17]/90 border border-white/[0.07]">
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Role</p>
+            <p class="text-sm font-semibold text-white">Full-Stack Developer</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Architecture</p>
+            <p class="text-sm font-semibold text-white">MVC + Relational DB</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Core Stack</p>
+            <p class="text-sm font-semibold text-blue-400">Laravel 10, PHP 8.2, MySQL</p>
+          </div>
+          <div class="flex items-center md:justify-end">
+            <a
+              href="https://github.com/MuhammadAhsan-RPL/Payroll"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 btn-primary rounded-xl text-white text-xs font-semibold w-full md:w-auto justify-center"
+            >
+              <i class="fab fa-github text-sm"></i>
+              <span>View Source Code</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="px-6 pb-24">
-      <div class="max-w-4xl mx-auto">
-        <div class="rounded-2xl overflow-hidden border border-gray-800 mb-10">
+    <!-- Main Case Study Body -->
+    <section class="px-6 pb-24 relative z-10">
+      <div class="max-w-5xl mx-auto">
+        <!-- Browser Frame Preview -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0b0d14] shadow-2xl mb-10">
+          <div class="px-4 py-3 bg-[#111420] border-b border-white/[0.07] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            </div>
+            <span class="text-[11px] font-mono-code text-slate-400">payroll-management.local / admin-dashboard</span>
+            <span class="text-[11px] font-mono-code text-blue-400">Laravel 10</span>
+          </div>
           <img
             src="../foto/payroll.png"
-            alt="Payroll Dashboard"
-            class="w-full"
-            onerror="
-              this.src =
-                'https://placehold.co/1200x600/1a1a2e/3B82F6?text=Payroll+System'
-            "
+            alt="Payroll Management System Dashboard"
+            class="w-full object-cover"
+            onerror="this.src='https://placehold.co/1200x600/111420/3B82F6?text=Payroll+Management+System'"
           />
         </div>
 
-        <div class="card-detail p-6 md:p-8 space-y-6 mb-8">
-          <div>
-            <h2 class="text-2xl font-bold text-white mb-3">Overview</h2>
-            <p class="text-gray-400 leading-relaxed">
-              Payroll Management System is a full-stack web application
-              developed as a semester-end project. The system was built to
-              explore how employee management, attendance tracking, and payroll
-              processing can be integrated into a single platform using Laravel,
-              MySQL, and Tailwind CSS.
-            </p>
+        <div class="card-detail p-6 sm:p-8 md:p-10 space-y-10 mb-10">
+          <!-- Executive Summary Grid -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                <i class="fas fa-compass text-sm"></i>
+              </div>
+              <h2 class="text-lg font-bold text-white mb-2">Project Overview</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Developed as a comprehensive semester capstone, this full-stack web application unifies employee data management, attendance logging, and monthly salary disbursement into a single cohesive platform powered by Laravel, MySQL, and Tailwind CSS.
+              </p>
+            </div>
+
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+                <i class="fas fa-triangle-exclamation text-sm"></i>
+              </div>
+              <h2 class="text-lg font-bold text-white mb-2">The Challenge</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Handling employee records, daily attendance, allowances, and deductions across disconnected spreadsheets leads to calculation errors and slow reporting. The challenge was designing a normalized relational schema that keeps attendance and salary records strictly synchronized.
+              </p>
+            </div>
+
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+                <i class="fas fa-check-double text-sm"></i>
+              </div>
+              <h2 class="text-lg font-bold text-white mb-2">The Solution</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                I engineered a role-based web system that links employee profiles directly to attendance logs and automated payroll calculation rules—enabling administrators to process monthly compensation and generate clean digital salary slips in seconds.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h2 class="text-2xl font-bold text-white mb-3">The Challenge</h2>
-            <p class="text-gray-400 leading-relaxed">
-              Managing employee records, attendance, and payroll manually can
-              become repetitive and difficult to organize. The goal of this
-              project was to design a system that simplifies these processes
-              through a centralized dashboard.
-            </p>
-          </div>
+          <div class="h-px bg-white/[0.07]"></div>
 
-          <div>
-            <h2 class="text-2xl font-bold text-white mb-3">The Solution</h2>
-            <p class="text-gray-400 leading-relaxed">
-              I developed a web-based management system that combines employee
-              records, attendance tracking, and payroll calculations in one
-              application. The project focuses on creating an organized workflow
-              while providing a clean and user-friendly interface.
-            </p>
-          </div>
-
-          <!-- Key Features + Video Section - Payroll Management -->
-          <div class="grid md:grid-cols-2 gap-8">
+          <!-- Key Features + Demo Video -->
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
             <!-- Left: Key Features -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Key Features</h2>
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-blue-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">Core System Capabilities</h2>
               </div>
               <div class="grid grid-cols-1 gap-3">
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i class="fas fa-user-lock text-blue-400 text-lg mt-0.5"></i>
-                  <span class="text-gray-300 text-sm"
-                    >Role-based authentication system</span
-                  >
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-user-lock text-blue-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Role-Based Access Control (RBAC)</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Protected authentication separating administrative payroll controls from standard employee views.</p>
+                  </div>
                 </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i class="fas fa-users text-blue-400 text-lg mt-0.5"></i>
-                  <span class="text-gray-300 text-sm"
-                    >Employee management dashboard</span
-                  >
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-users text-blue-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Employee Directory & Position Management</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Structured CRUD workflows for managing staff profiles, departments, roles, and base compensation tiers.</p>
+                  </div>
                 </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i
-                    class="fas fa-calendar-check text-blue-400 text-lg mt-0.5"
-                  ></i>
-                  <span class="text-gray-300 text-sm"
-                    >Attendance tracking and monitoring</span
-                  >
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-calendar-check text-blue-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Attendance Tracking & Monitoring</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Daily attendance recording that directly feeds into monthly salary and deduction calculations.</p>
+                  </div>
                 </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i class="fas fa-calculator text-blue-400 text-lg mt-0.5"></i>
-                  <span class="text-gray-300 text-sm"
-                    >Automated payroll calculation</span
-                  >
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-calculator text-blue-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Automated Payroll Computation</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Dynamic net-pay engine factoring base salary, allowances, overtime, and absence deductions.</p>
+                  </div>
                 </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i
-                    class="fas fa-file-invoice text-blue-400 text-lg mt-0.5"
-                  ></i>
-                  <span class="text-gray-300 text-sm"
-                    >Monthly payroll reports</span
-                  >
-                </div>
-                <div
-                  class="flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-blue-500/30 transition-all hover:-translate-y-0.5"
-                >
-                  <i class="fas fa-receipt text-blue-400 text-lg mt-0.5"></i>
-                  <span class="text-gray-300 text-sm"
-                    >Digital salary slip generation</span
-                  >
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-file-invoice text-blue-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Monthly Reports & Digital Payslips</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Exportable monthly compensation summaries and itemized digital salary slips for each employee.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Right: YouTube Video -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Demo Video</h2>
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">System Walkthrough</h2>
               </div>
-              <div
-                class="relative rounded-xl overflow-hidden border border-gray-700 shadow-xl shadow-black/30 bg-black/40 group"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
-                ></div>
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/60">
                 <iframe
                   class="w-full aspect-video"
                   src="https://www.youtube.com/embed/Z2kU738L1qw?rel=0&modestbranding=1&controls=1&showinfo=0"
                   title="Payroll Management Demo"
                   frameborder="0"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen
-                >
-                </iframe>
+                ></iframe>
               </div>
-              <p
-                class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
-              >
-                <i class="fas fa-play-circle text-blue-400 text-xs"></i>
-                Watch demo — see the features in action
+              <p class="text-slate-400 text-xs mt-3 flex items-center justify-between px-1">
+                <span class="flex items-center gap-1.5">
+                  <i class="fas fa-play-circle text-blue-400"></i>
+                  Full walkthrough of employee, attendance, and payroll modules
+                </span>
+                <span class="font-mono-code text-[11px] text-slate-500">HD Walkthrough</span>
               </p>
             </div>
           </div>
 
-          <div>
+          <div class="h-px bg-white/[0.07]"></div>
+
+          <!-- Engineering Takeaways -->
+          <div class="sub-card p-6 md:p-8 border-l-4 border-l-blue-500">
+            <span class="text-xs font-mono-code uppercase tracking-wider text-blue-400 block mb-2">Engineering Retrospective</span>
             <h2 class="text-2xl font-bold text-white mb-3">What I Learned</h2>
-            <p class="text-gray-400 leading-relaxed">
-              This was one of the most challenging projects I had worked on at
-              the time. Building multiple interconnected features required
-              careful planning of database relationships, authentication flows,
-              and application structure. I encountered several issues while
-              developing the payroll calculation and attendance modules, which
-              often required redesigning parts of the system. Through this
-              project, I gained a deeper understanding of Laravel, database
-              design, and how different business processes can be translated
-              into a functional web application.
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              This was one of the most architecturally demanding projects I built during my studies. Connecting employee profiles, attendance logs, and payroll calculations required careful relational database modeling, foreign-key constraints, and clean MVC separation in Laravel. Debugging edge cases in salary computation taught me how to translate real-world business rules into predictable, maintainable backend logic.
             </p>
           </div>
 
-          <div>
-            <h2 class="text-2xl font-bold text-white mb-3">Tech Stack</h2>
-            <div class="flex flex-wrap gap-2">
-              <span class="badge-tech">Laravel 10</span>
-              <span class="badge-tech">PHP 8.2</span>
-              <span class="badge-tech">MySQL</span>
-              <span class="badge-tech">Tailwind CSS</span>
-              <span class="badge-tech">Alpine.js</span>
+          <!-- Tech Stack & Action Bar -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-2">
+            <div>
+              <h3 class="text-xs font-mono-code uppercase tracking-wider text-slate-400 mb-3">Technologies & Tools</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-tech">Laravel 10</span>
+                <span class="badge-tech">PHP 8.2</span>
+                <span class="badge-tech">MySQL</span>
+                <span class="badge-tech">Tailwind CSS</span>
+                <span class="badge-tech">Alpine.js</span>
+                <span class="badge-tech">MVC Architecture</span>
+              </div>
             </div>
-          </div>
 
-          <div class="pt-4 flex flex-wrap gap-4">
-            <a
-              href="https://github.com/MuhammadAhsan-RPL/Payroll"
-              target="_blank"
-              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium"
-            >
-              <i class="fab fa-github"></i> View Source Code
-            </a>
+            <div class="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="https://github.com/MuhammadAhsan-RPL/Payroll"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+              >
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="text-center mt-8">
+        <!-- Case Study Navigation -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
           <a
             href="../allprojects/project.html"
-            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+            class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition"
           >
-            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+            <i class="fas fa-arrow-left text-xs text-blue-400"></i>
+            <span>Back to All Projects</span>
           </a>
+          <div class="flex items-center gap-3">
+            <a
+              href="./ebook.html"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-outline text-xs font-medium text-slate-300 hover:text-white"
+            >
+              <span>Next Case Study: E-Library Platform</span>
+              <i class="fas fa-arrow-right text-[10px] text-blue-400"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
-        debugging.
-      </p>
+    <footer class="py-8 px-6 text-center border-t border-white/[0.07] bg-[#050609]">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Muhammad Ahsan. Engineered with precision and clarity.</p>
+        <div class="flex items-center gap-5">
+          <a href="../index.html" class="hover:text-slate-300 transition">Home</a>
+          <a href="../allprojects/project.html" class="hover:text-slate-300 transition">Projects</a>
+          <a href="../about/about.html" class="hover:text-slate-300 transition">About</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

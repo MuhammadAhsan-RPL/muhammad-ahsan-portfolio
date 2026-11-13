@@ -1,295 +1,266 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Qyta — Food App UI/UX Design | Muhammad Ahsan</title>
+    <title>Qyta Food Delivery UI/UX — Case Study | Muhammad Ahsan</title>
     <meta
       name="description"
-      content="Qyta is a modern food delivery app UI/UX design project created in Figma, focusing on user experience, clean visuals, and intuitive navigation."
+      content="Comprehensive mobile food delivery application UI/UX case study and interactive Figma prototype focusing on user empathy, visual hierarchy, and seamless ordering flows."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <style>
-      body {
-        background: #0a0a0f;
-        font-family: "Inter", sans-serif;
-      }
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #111115;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
-        border-radius: 10px;
-      }
-
-      .card-detail {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        border-radius: 1.5rem;
-      }
-      .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background: #2563eb;
-        transform: translateY(-2px);
-      }
-
-      .badge-tech {
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        border-radius: 20px;
-        padding: 4px 10px;
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      .glow-bg {
-        position: fixed;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.08) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        filter: blur(60px);
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      /* ========== PREMIUM STYLES ========== */
-      .gradient-border {
-        border-image: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6) 1;
-        border-image-slice: 1;
-      }
-
-      .feature-card {
-        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-      .feature-card:hover {
-        transform: translateY(-6px);
-        border-color: #8b5cf6;
-        box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.4);
-      }
-
-      .glow-shadow {
-        box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-      }
-
-      .badge-premium {
-        background: linear-gradient(
-          135deg,
-          rgba(139, 92, 246, 0.15),
-          rgba(236, 72, 153, 0.15)
-        );
-        border: 1px solid rgba(139, 92, 246, 0.3);
-        border-radius: 20px;
-        padding: 4px 14px;
-        font-size: 11px;
-        color: #d1d5db;
-        transition: all 0.2s ease;
-      }
-      .badge-premium:hover {
-        border-color: #8b5cf6;
-        transform: translateY(-2px);
-      }
-
-      .badge-school {
-        background: rgba(245, 158, 11, 0.15);
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        color: #f59e0b;
-      }
-
-      .grid-pattern-sv {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-    </style>
-  </head>
-
-  <body class="relative grid-pattern-sv">
-    <!-- Custom Cursor -->
     <link rel="stylesheet" href="./cursor.css" />
     <script src="./cursor.js" defer></script>
     <link rel="stylesheet" href="./animations.css" />
     <script src="./animations.js" defer></script>
 
-    <div class="glow-bg top-20 left-10"></div>
-    <div
-      class="glow-bg bottom-20 right-10"
-      style="
-        background: radial-gradient(
-          circle,
-          rgba(16, 185, 129, 0.05) 0%,
-          transparent 70%
-        );
-      "
-    ></div>
-
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a
-          href="../index.html"
-          class="text-2xl font-bold tracking-tight group shrink-0"
-        >
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
-          >
-        </a>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
-            >Home</a
-          >
-          <a
-            href="../allprojects/project.html"
-            class="text-blue-500 hover:text-white transition text-sm font-medium"
-            >Projects</a
-          >
-          <a
-            href="../about/about.html"
-            class="text-gray-400 hover:text-blue-400 transition text-sm"
-            >About</a
-          >
-          <a
-            href="https://github.com/MuhammadAhsan-RPL"
-            target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-
-        <!-- Contact Button Desktop -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="hidden md:inline-block px-4 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
-          >Contact</a
-        >
-
-        <!-- Mobile Menu Button (Hamburger) - DIPERKECIL & RAPI -->
-        <button
-          id="menuToggle"
-          class="md:hidden text-white focus:outline-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-          aria-label="Menu"
-        >
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Panel - HITAM PEKAT (PAKAI INLINE STYLE) -->
-    <div
-      id="mobileMenuPanel"
-      class="fixed top-0 right-0 w-[70%] max-w-[260px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
-      style="
-        background: #000000 !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
-      "
-    >
-      <!-- Header -->
-      <div
-        class="flex justify-between items-center p-4 sm:p-5 border-b border-gray-800"
-      >
-        <span class="text-white font-bold text-base sm:text-lg">Menu</span>
-        <button
-          id="closeMobileMenu"
-          class="text-gray-400 hover:text-white text-xl sm:text-2xl w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <!-- Menu Items -->
-      <div class="flex flex-col p-4 sm:p-5 gap-2 sm:gap-3">
-        <a
-          href="../index.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-home w-4 sm:w-5 text-gray-500"></i>
-          <span>Home</span>
-        </a>
-        <a
-          href="../allprojects/project.html"
-          class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-folder w-4 sm:w-5 text-blue-500"></i>
-          <span>Projects</span>
-        </a>
-        <a
-          href="../about/about.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-user w-4 sm:w-5 text-gray-300"></i>
-          <span>About</span>
-        </a>
-        <a
-          href="https://github.com/MuhammadAhsan-RPL"
-          target="_blank"
-          class="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fab fa-github w-4 sm:w-5 text-gray-500"></i>
-          <span>GitHub</span>
-        </a>
-
-        <div class="my-2 sm:my-3 h-px bg-gray-800"></div>
-
-        <!-- Contact Button di Mobile -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="flex items-center justify-center gap-2 mt-1 sm:mt-2 px-4 py-2.5 sm:py-3 btn-primary rounded-full text-white text-sm sm:text-base font-medium"
-        >
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Overlay - LEBIH GELAP & BLUR UNTUK MENUTUPI KONTEN BELAKANG -->
-    <div
-      id="mobileMenuOverlay"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
-    ></div>
-
     <style>
+      body {
+        background: #06070b;
+        color: #f8fafc;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .font-mono-code {
+        font-family: "JetBrains Mono", monospace;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #06070b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b5cf6;
+        border-radius: 8px;
+      }
+      .card-detail {
+        background: linear-gradient(165deg, rgba(17, 20, 32, 0.92) 0%, rgba(11, 13, 20, 0.96) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+      }
+      .sub-card {
+        background: rgba(15, 18, 28, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 1rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .sub-card:hover {
+        border-color: rgba(139, 92, 246, 0.35);
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        border: 1px solid rgba(167, 139, 250, 0.35);
+        box-shadow: 0 8px 24px -6px rgba(124, 58, 237, 0.45);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px -6px rgba(139, 92, 246, 0.6);
+      }
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-outline:hover {
+        background: rgba(139, 92, 246, 0.08);
+        border-color: rgba(139, 92, 246, 0.4);
+        transform: translateY(-2px);
+      }
+      .badge-tech {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 0.5rem;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        color: #cbd5e1;
+        transition: all 0.2s ease;
+      }
+      .badge-tech:hover {
+        border-color: rgba(139, 92, 246, 0.4);
+        color: #c084fc;
+        background: rgba(139, 92, 246, 0.08);
+      }
+      .glow-bg {
+        position: fixed;
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(70px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .grid-pattern-sv {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
       @media (max-width: 767px) {
         body.menu-open {
           overflow: hidden;
         }
       }
-      /* Tambahan agar panel tidak terlihat di luar layar */
-      #mobileMenuPanel {
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
     </style>
+  </head>
+  <body class="relative grid-pattern-sv selection:bg-purple-600 selection:text-white">
+    <div class="glow-bg top-16 left-10"></div>
+    <div
+      class="glow-bg bottom-16 right-10"
+      style="background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%);"
+    ></div>
+
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono-code font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-display text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono-code font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
+          <a
+            href="../index.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Home</a
+          >
+          <a
+            href="../allprojects/project.html"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >All Projects</a
+          >
+          <a
+            href="../about/about.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >About</a
+          >
+          <a
+            href="../about/about2.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
+        </div>
+
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
+
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Panel -->
+    <div
+      id="mobileMenuPanel"
+      class="fixed top-0 right-0 w-[75%] max-w-[280px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden border-l border-white/10"
+      style="background: #080a10 !important; box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);"
+    >
+      <div class="flex justify-between items-center p-5 border-b border-white/10">
+        <span class="text-white font-display font-bold text-base">Navigation</span>
+        <button
+          id="closeMobileMenu"
+          class="text-slate-400 hover:text-white text-lg w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col p-5 gap-2">
+        <a href="../index.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-home w-5 text-slate-500"></i>
+          <span>Home</span>
+        </a>
+        <a href="../allprojects/project.html" class="flex items-center gap-3 text-blue-400 font-medium transition text-sm py-2.5 px-3 rounded-lg bg-blue-500/10">
+          <i class="fas fa-layer-group w-5 text-blue-400"></i>
+          <span>Projects</span>
+        </a>
+        <a href="../about/about.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-user w-5 text-slate-500"></i>
+          <span>About</span>
+        </a>
+        <a href="../about/about2.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-compass w-5 text-slate-500"></i>
+          <span>Process & Standards</span>
+        </a>
+        <a href="https://github.com/MuhammadAhsan-RPL" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fab fa-github w-5 text-slate-500"></i>
+          <span>GitHub</span>
+        </a>
+        <div class="my-3 h-px bg-white/10"></div>
+        <a href="mailto:siahsantv@gmail.com" class="flex items-center justify-center gap-2 px-4 py-2.5 btn-primary rounded-lg text-white text-sm font-semibold">
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div
+      id="mobileMenuOverlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+    ></div>
 
     <script>
       const menuToggleBtn = document.getElementById("menuToggle");
@@ -304,6 +275,7 @@
         document.body.style.overflow = "hidden";
         document.body.classList.add("menu-open");
       }
+
       function closeMobileMenu() {
         menuPanel.classList.add("translate-x-full");
         menuOverlay.classList.add("opacity-0", "invisible");
@@ -311,281 +283,288 @@
         document.body.style.overflow = "";
         document.body.classList.remove("menu-open");
       }
-      if (menuToggleBtn)
-        menuToggleBtn.addEventListener("click", openMobileMenu);
+
+      if (menuToggleBtn) menuToggleBtn.addEventListener("click", openMobileMenu);
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
+
       window.addEventListener("resize", () => {
         if (window.innerWidth >= 768) closeMobileMenu();
       });
     </script>
 
-    <!-- ========== HERO ========== -->
-    <section class="relative pt-32 pb-12 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-purple-400 text-xs font-semibold uppercase tracking-wider"
-          >design project</span
-        >
-        <h1 class="text-5xl md:text-6xl font-bold text-white mt-3 mb-4">
-          <span
-            class="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
-            >Qyta</span
+    <!-- Case Study Header -->
+    <section class="relative pt-28 pb-10 px-6 z-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+          <a
+            href="../allprojects/project.html"
+            class="inline-flex items-center gap-2 text-xs font-mono-code text-slate-400 hover:text-purple-400 transition group"
           >
-          <span class="text-white block mt-2 text-3xl md:text-4xl"
-            >Food App UI/UX Design</span
-          >
-        </h1>
-        <div class="flex flex-wrap justify-center gap-2 mt-5">
-          <span class="badge-premium">🎨 UI/UX Design</span>
-          <span class="badge-premium badge-school">🏫 School Project</span>
-          <span class="badge-premium">⚡ Figma</span>
+            <i class="fas fa-arrow-left text-[10px] group-hover:-translate-x-1 transition-transform"></i>
+            <span>ALL PROJECTS / CASE STUDY</span>
+          </a>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono-code bg-purple-500/10 text-purple-300 border border-purple-500/25">
+            <i class="fas fa-figma text-[9px] text-purple-400"></i> Interactive Figma Prototype
+          </span>
+        </div>
+
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-purple-500/10 text-purple-300 border border-purple-500/20">Product Design</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-pink-500/10 text-pink-300 border border-pink-500/20">Mobile UI/UX & Prototyping</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-white/5 text-slate-300 border border-white/10">Academic Capstone</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Qyta — Food Delivery Experience Design
+          </h1>
+          <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+            An end-to-end mobile product design case study crafted in Figma—transforming the multi-step food ordering journey into an intuitive, warm, and delightful digital experience.
+          </p>
+        </div>
+
+        <!-- Executive Metadata Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 p-5 rounded-2xl bg-[#0c0f17]/90 border border-white/[0.07]">
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Role</p>
+            <p class="text-sm font-semibold text-white">UI/UX & Product Designer</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Platform</p>
+            <p class="text-sm font-semibold text-purple-400">Mobile (iOS / Android)</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Tools</p>
+            <p class="text-sm font-semibold text-white">Figma, Design System, Prototyping</p>
+          </div>
+          <div class="flex items-center md:justify-end">
+            <a
+              href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 btn-primary rounded-xl text-white text-xs font-semibold w-full md:w-auto justify-center"
+            >
+              <i class="fas fa-external-link-alt text-xs"></i>
+              <span>Open in Figma</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <section class="px-6 pb-24">
-      <div class="max-w-4xl mx-auto">
-        <!-- Preview Gambar dengan border gradient -->
-        <div
-          class="rounded-2xl overflow-hidden border-2 border-transparent gradient-border glow-shadow mb-10"
-        >
+    <!-- Main Case Study Body -->
+    <section class="px-6 pb-24 relative z-10">
+      <div class="max-w-5xl mx-auto">
+        <!-- Browser Frame Preview -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0b0d14] shadow-2xl mb-10">
+          <div class="px-4 py-3 bg-[#111420] border-b border-white/[0.07] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            </div>
+            <span class="text-[11px] font-mono-code text-slate-400">figma.com / qyta-food-delivery-app</span>
+            <span class="text-[11px] font-mono-code text-purple-400">Interactive Prototype</span>
+          </div>
           <img
             src="../foto/qyta-preview.png"
-            alt="Qyta Food App Design"
-            class="w-full"
-            onerror="
-              this.src =
-                'https://placehold.co/1200x600/1a1a2e/8B5CF6?text=Qyta+Food+App+Design'
-            "
+            alt="Qyta Food Delivery UI/UX Design"
+            class="w-full object-cover"
+            onerror="this.src='https://placehold.co/1200x600/111420/8B5CF6?text=Qyta+Food+App+Design'"
           />
         </div>
 
-        <div class="card-detail p-6 md:p-8 space-y-8 mb-8">
-          <!-- Overview -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-info-circle text-purple-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">Overview</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              Qyta is a food delivery app design that I built from scratch in
-              Figma as part of a school project. The goal was to design a
-              modern, user-friendly interface that feels warm and intuitive —
-              not just another generic food app. The design includes everything
-              from browsing restaurants to placing an order, with a focus on
-              clarity and a smooth user journey.
-            </p>
-          </div>
-
-          <!-- The Challenge -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-bolt text-pink-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">The Challenge</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              Building a food delivery interface is tricky because there's so
-              much information to fit in — menus, prices, delivery times,
-              special offers — without overwhelming the user. I had to carefully
-              decide what to show and what to hide, and make sure the most
-              important actions (like adding to cart or checking out) are always
-              easy to find.
-            </p>
-          </div>
-
-          <!-- The Solution -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-lightbulb text-yellow-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">The Solution</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              I designed a set of mobile screens that feel like a real app. The
-              home screen highlights weekly specials and featured items, the
-              menu is organized by category, and the cart screen gives a clear
-              summary of the order. Every screen is built around the idea of
-              making food ordering feel effortless — even for first-time users.
-            </p>
-          </div>
-
-          <!-- Key Features + Figma Prototype -->
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- Left: Key Features Premium -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Key Features</h2>
+        <div class="card-detail p-6 sm:p-8 md:p-10 space-y-10 mb-10">
+          <!-- Executive Summary Grid -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+                <i class="fas fa-compass text-sm"></i>
               </div>
-              <div class="grid grid-cols-1 gap-3">
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-mobile-alt text-purple-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Full mobile app screens — from home to checkout</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-utensils text-purple-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Restaurant and menu browsing made simple</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-shopping-cart text-purple-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Cart management with real-time order summary</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-tag text-purple-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Highlighted "Top of Week" and "Featured" sections</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-purple-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-route text-purple-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Order tracking and delivery status indicators</span
-                  >
-                </div>
-              </div>
+              <h2 class="text-lg font-bold text-white mb-2">Project Overview</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Qyta is an original mobile product design conceptualized from scratch in Figma as a school capstone—built to demonstrate how strong visual hierarchy and empathetic layout reduce decision fatigue during food discovery.
+              </p>
             </div>
 
-            <!-- Right: Figma Prototype Premium -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-pink-500 to-rose-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Figma Prototype</h2>
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+                <i class="fas fa-triangle-exclamation text-sm"></i>
               </div>
-              <div
-                class="relative rounded-xl overflow-hidden border-2 border-transparent gradient-border glow-shadow bg-black/40 group"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
-                ></div>
-                <iframe
-                  class="w-full aspect-video"
-                  src="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed&embed_host=share&hide-ui=1"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+              <h2 class="text-lg font-bold text-white mb-2">The Challenge</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Food delivery apps must present dense information—menus, dietary tags, ratings, delivery ETAs, promotions—on compact screens. The design challenge was organizing this density without creating cognitive overload for hungry users.
+              </p>
+            </div>
+
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                <i class="fas fa-check-double text-sm"></i>
               </div>
-              <p
-                class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
-              >
-                <i class="fas fa-paint-brush text-purple-400 text-xs"></i>
-                Interactive Figma prototype — click around to explore the design
+              <h2 class="text-lg font-bold text-white mb-2">The Solution</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                I designed a cohesive multi-screen system with consistent component states, prominent primary actions, sticky order summary trays, and live prototype micro-interactions that make ordering feel natural and transparent.
               </p>
             </div>
           </div>
 
-          <!-- What I Learned - Premium Version -->
-          <div
-            class="relative rounded-2xl p-6 bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/20"
-          >
-            <div class="flex items-center gap-2 mb-3">
-              <i
-                class="fas fa-quote-left text-purple-400 text-sm opacity-50"
-              ></i>
-              <h2 class="text-2xl font-bold text-white">What I Learned</h2>
+          <div class="h-px bg-white/[0.07]"></div>
+
+          <!-- Key Features + Interactive Figma Embed -->
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-purple-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">Experience Highlights</h2>
+              </div>
+              <div class="grid grid-cols-1 gap-3">
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-mobile-screen text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">End-to-End User Journey</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Complete screen coverage from onboarding, restaurant browsing, custom item options, to order review.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-utensils text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Scannable Menu Architecture</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Category tabs, top-of-week highlights, and transparent pricing cards optimized for rapid scanning.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-bag-shopping text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Transparent Cart & Checkout</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Real-time subtotal calculations, fee disclosures, and distinct primary CTA buttons.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-wand-magic-sparkles text-purple-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Micro-Interactions & Prototyping</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Smart animate transitions, modal popovers, and interactive states modeled directly in Figma.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="text-gray-400 leading-relaxed">
-              Working on Qyta reminded me that good design isn't just about
-              making things look beautiful — it's about making things work well
-              for real people. I spent a lot of time thinking about how users
-              would actually interact with the app: where their eyes would go
-              first, what they'd tap, and what information they'd need at each
-              step. I also learned a lot about Figma's prototyping features,
-              which helped me bring the design to life and test the flow before
-              writing any code. This school project really deepened my
-              appreciation for thoughtful, human-centered design.
+
+            <!-- Right: Figma Embed -->
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-pink-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">Interactive Prototype</h2>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/60">
+                <iframe
+                  class="w-full aspect-video"
+                  src="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed&embed_host=share&hide-ui=1"
+                  title="Qyta Figma Prototype"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="text-slate-400 text-xs mt-3 flex items-center justify-between px-1">
+                <span class="flex items-center gap-1.5">
+                  <i class="fas fa-hand-pointer text-purple-400"></i>
+                  Click inside the frame to navigate through the interactive mobile prototype
+                </span>
+                <span class="font-mono-code text-[11px] text-slate-500">Figma Live</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/[0.07]"></div>
+
+          <!-- Engineering & Design Retrospective -->
+          <div class="sub-card p-6 md:p-8 border-l-4 border-l-purple-500">
+            <span class="text-xs font-mono-code uppercase tracking-wider text-purple-400 block mb-2">Design Retrospective</span>
+            <h2 class="text-2xl font-bold text-white mb-3">What I Learned</h2>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Designing Qyta reinforced that UI/UX is fundamentally about problem solving rather than visual embellishment. Modeling every screen from the perspective of a user ordering lunch on a busy workday forced me to be ruthless about clarity, touch target sizing, and feedback visibility. Learning Figma's advanced component systems and smart animation flows proved invaluable for bridging the gap between design theory and production implementation.
             </p>
           </div>
 
-          <!-- Tools Used - Premium -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-tools text-blue-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">Tools Used</h2>
+          <!-- Tech Stack & Action Bar -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-2">
+            <div>
+              <h3 class="text-xs font-mono-code uppercase tracking-wider text-slate-400 mb-3">Design Tools & Disciplines</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-tech">Figma</span>
+                <span class="badge-tech">UI/UX Design</span>
+                <span class="badge-tech">Design Systems</span>
+                <span class="badge-tech">Interactive Prototyping</span>
+                <span class="badge-tech">User Flow Architecture</span>
+              </div>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="badge-premium">Figma</span>
-              <span class="badge-premium">UI/UX Design</span>
-              <span class="badge-premium">Wireframing</span>
-              <span class="badge-premium">Prototyping</span>
-              <span class="badge-premium">Design Systems</span>
-            </div>
-          </div>
 
-          <!-- Buttons -->
-          <div class="pt-4 flex flex-wrap gap-4">
-            <a
-              href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed"
-              target="_blank"
-              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/30 transition"
-            >
-              <i class="fas fa-external-link-alt"></i> View Figma Prototype
-            </a>
-            <span
-              class="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 rounded-lg text-gray-400 text-sm cursor-not-allowed"
-              >Source File — Private</span
-            >
+            <div class="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?page-id=2%3A786&node-id=3-2362&viewport=338%2C909%2C0.07&t=fapw9Y1TzA09H05b-1&scaling=scale-down&content-scaling=fixed"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+              >
+                <i class="fas fa-external-link-alt text-xs"></i>
+                <span>Open in Figma</span>
+              </a>
+              <span class="inline-flex items-center gap-2 px-5 py-3 btn-outline rounded-xl text-slate-400 text-sm cursor-not-allowed">
+                <i class="fas fa-lock text-xs"></i>
+                <span>Source File: Academic</span>
+              </span>
+            </div>
           </div>
         </div>
 
-        <!-- Back to Projects -->
-        <div class="text-center mt-8">
+        <!-- Case Study Navigation -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
           <a
             href="../allprojects/project.html"
-            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+            class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition"
           >
-            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+            <i class="fas fa-arrow-left text-xs text-blue-400"></i>
+            <span>Back to All Projects</span>
           </a>
+          <div class="flex items-center gap-3">
+            <a
+              href="./tech-store.html"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-outline text-xs font-medium text-slate-300 hover:text-white"
+            >
+              <i class="fas fa-arrow-left text-[10px] text-blue-400"></i>
+              <span>Prev: Tech Store</span>
+            </a>
+            <a
+              href="./poster-animation.html"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-outline text-xs font-medium text-slate-300 hover:text-white"
+            >
+              <span>Next: Poster & Motion Animation</span>
+              <i class="fas fa-arrow-right text-[10px] text-blue-400"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
-        debugging.
-      </p>
+    <footer class="py-8 px-6 text-center border-t border-white/[0.07] bg-[#050609]">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Muhammad Ahsan. Engineered with precision and clarity.</p>
+        <div class="flex items-center gap-5">
+          <a href="../index.html" class="hover:text-slate-300 transition">Home</a>
+          <a href="../allprojects/project.html" class="hover:text-slate-300 transition">Projects</a>
+          <a href="../about/about.html" class="hover:text-slate-300 transition">About</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

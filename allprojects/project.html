@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -18,23 +18,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <title>Projects | Muhammad Ahsan — Full-stack Developer</title>
+    <title>Projects Archive | Muhammad Ahsan — Full-Stack & Mobile Developer</title>
     <meta
       name="description"
-      content="Explore the portfolio of Muhammad Ahsan, featuring academic, personal, and freelance projects in web and mobile development, focused on solving real-world problems."
+      content="Explore the complete portfolio of Muhammad Ahsan, featuring full-stack web applications, frontend architectures, and UI/UX design systems built for real-world impact."
     />
     <meta name="author" content="Muhammad Ahsan" />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="Projects | Muhammad Ahsan" />
+    <meta property="og:title" content="Projects Archive | Muhammad Ahsan" />
     <meta
       property="og:description"
-      content="6 projects. Live demos and source code included."
+      content="9 selected engineering and design case studies with live demos and source code."
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -47,11 +47,15 @@
         darkMode: "class",
         theme: {
           extend: {
-            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
             colors: {
-              dark: "#0A0A0F",
-              darkCard: "#111115",
-              border: "#1E1E2A",
+              dark: "#06070B",
+              darkCard: "#10131C",
+              border: "#1E2230",
               primary: "#3B82F6",
             },
           },
@@ -61,66 +65,85 @@
 
     <style>
       body {
-        background: #0a0a0f;
+        background: #06070b;
         font-family: "Inter", sans-serif;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      .font-heading {
+        font-family: "Plus Jakarta Sans", "Inter", sans-serif;
       }
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 7px;
       }
       ::-webkit-scrollbar-track {
-        background: #111115;
+        background: #08090f;
       }
       ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
+        background: #2563eb;
         border-radius: 10px;
       }
       .card-project {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        transition: all 0.3s ease;
+        background: linear-gradient(165deg, rgba(17, 20, 32, 0.95) 0%, rgba(11, 13, 20, 0.98) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .card-project:hover {
-        border-color: #3b82f6;
-        transform: translateY(-4px);
+        border-color: rgba(96, 165, 250, 0.45);
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.9),
+          0 0 32px -8px rgba(59, 130, 246, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+      .card-project-featured {
+        background: linear-gradient(165deg, rgba(19, 22, 36, 0.95) 0%, rgba(11, 13, 20, 0.98) 100%);
+        border: 1px solid rgba(245, 158, 11, 0.28);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(245, 158, 11, 0.1);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card-project-featured:hover {
+        border-color: rgba(245, 158, 11, 0.6);
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.95),
+          0 0 32px -8px rgba(245, 158, 11, 0.22),
+          inset 0 1px 0 rgba(245, 158, 11, 0.2);
       }
       .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 25px -6px rgba(37, 99, 235, 0.45);
       }
       .btn-primary:hover {
-        background: #2563eb;
         transform: translateY(-2px);
-      }
-      .badge-tech {
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        border-radius: 20px;
-        padding: 4px 10px;
-        font-size: 11px;
-        color: #9ca3af;
+        box-shadow: 0 16px 32px -6px rgba(37, 99, 235, 0.6);
+        filter: brightness(1.08);
       }
       .glow-bg {
         position: fixed;
-        width: 400px;
-        height: 400px;
+        width: 480px;
+        height: 480px;
         background: radial-gradient(
           circle,
           rgba(59, 130, 246, 0.08) 0%,
           transparent 70%
         );
         border-radius: 50%;
-        filter: blur(60px);
+        filter: blur(80px);
         pointer-events: none;
         z-index: 0;
       }
       .back-to-top {
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 45px;
-        height: 45px;
-        background: #3b82f6;
-        border-radius: 50%;
+        bottom: 28px;
+        right: 28px;
+        width: 44px;
+        height: 44px;
+        background: #2563eb;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,255 +152,208 @@
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 99;
+        box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5);
       }
       .back-to-top.show {
         opacity: 1;
         visibility: visible;
       }
       .back-to-top:hover {
-        background: #2563eb;
+        background: #1d4ed8;
         transform: translateY(-3px);
       }
-      .mobile-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: #111115;
-        z-index: 1000;
-        transition: right 0.3s ease;
-        padding: 80px 30px;
-        border-left: 1px solid #1e1e2a;
-      }
-      .mobile-menu.open {
-        right: 0;
-      }
-      .menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-      .menu-overlay.open {
-        opacity: 1;
-        visibility: visible;
-      }
-
       .grid-pattern-sv {
         background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+      @media (max-width: 767px) {
+        body.menu-open {
+          overflow: hidden;
+        }
       }
     </style>
   </head>
 
-  <body class="relative grid-pattern-sv">
+  <body class="relative grid-pattern-sv antialiased selection:bg-blue-500/30 selection:text-white">
     <div class="glow-bg top-20 left-10"></div>
     <div
       class="glow-bg bottom-20 right-10"
       style="
         background: radial-gradient(
           circle,
-          rgba(16, 185, 129, 0.05) 0%,
+          rgba(16, 185, 129, 0.06) 0%,
           transparent 70%
         );
       "
     ></div>
 
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="flex flex-col gap-6">
-        <a
-          href="../index.html"
-          class="text-gray-300 hover:text-blue-400 transition text-lg"
-          >Home</a
-        >
-        <a
-          href="../allprojects/project.html"
-          class="text-blue-400 transition text-lg font-medium"
-          >Projects</a
-        >
-        <a
-          href="../about/about.html"
-          class="text-gray-300 hover:text-blue-400 transition text-lg"
-          >About</a
-        >
-        <a
-          href="https://ahsanlinktree.framer.website/"
-          target="_blank"
-          class="text-gray-300 hover:text-blue-400 transition text-lg"
-          >Contact</a
-        >
-        <hr class="border-gray-800 my-2" />
-        <a
-          href="https://github.com/MuhammadAhsan-RPL"
-          target="_blank"
-          class="text-gray-400 hover:text-white transition text-sm"
-          ><i class="fab fa-github mr-2"></i> GitHub</a
-        >
-      </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a
-          href="../index.html"
-          class="text-2xl font-bold tracking-tight group shrink-0"
-        >
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-heading text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
           >
         </a>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
           <a
             href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Home</a
           >
           <a
             href="../allprojects/project.html"
-            class="text-blue-500 hover:text-white transition text-sm font-medium"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >Projects</a
           >
           <a
             href="../about/about.html"
-            class="text-gray-400 hover:text-blue-400 transition text-sm"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
             >About</a
           >
           <a
-            href="https://github.com/MuhammadAhsan-RPL"
-            target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
+            href="../about/about2.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
         </div>
 
-        <!-- Contact Button Desktop -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="hidden md:inline-block px-4 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
-          >Contact</a
-        >
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
 
-        <!-- Mobile Menu Button (Hamburger) - DIPERKECIL & RAPI -->
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
         <button
           id="menuToggle"
-          class="md:hidden text-white focus:outline-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-          aria-label="Menu"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
         >
-          <i class="fas fa-bars text-xl"></i>
+          <i class="fas fa-bars"></i>
         </button>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- Mobile Menu Panel - HITAM PEKAT (PAKAI INLINE STYLE) -->
+    <!-- Mobile Menu Panel -->
     <div
       id="mobileMenuPanel"
-      class="fixed top-0 right-0 w-[70%] max-w-[260px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
+      class="fixed top-0 right-0 w-72 h-screen z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
       style="
-        background: #000000 !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
+        background: #08090f !important;
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
       "
     >
-      <!-- Header -->
       <div
-        class="flex justify-between items-center p-4 sm:p-5 border-b border-gray-800"
+        class="flex justify-between items-center p-5 border-b border-white/[0.08]"
       >
-        <span class="text-white font-bold text-base sm:text-lg">Menu</span>
+        <span class="text-white font-heading font-bold text-base">Navigation</span>
         <button
           id="closeMobileMenu"
-          class="text-gray-400 hover:text-white text-xl sm:text-2xl w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+          class="text-slate-400 hover:text-white text-xl w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
         >
           <i class="fas fa-times"></i>
         </button>
       </div>
 
-      <!-- Menu Items -->
-      <div class="flex flex-col p-4 sm:p-5 gap-2 sm:gap-3">
+      <div class="flex flex-col p-5 gap-2">
         <a
           href="../index.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fas fa-home w-4 sm:w-5 text-gray-500"></i>
+          <i class="fas fa-home w-5 text-slate-500"></i>
           <span>Home</span>
         </a>
         <a
           href="../allprojects/project.html"
-          class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-blue-400 font-medium text-sm py-2.5 px-3 rounded-lg bg-blue-500/10"
         >
-          <i class="fas fa-folder w-4 sm:w-5 text-blue-500"></i>
-          <span>Projects</span>
+          <i class="fas fa-folder-open w-5 text-blue-400"></i>
+          <span>Projects Archive</span>
         </a>
         <a
           href="../about/about.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fas fa-user w-4 sm:w-5 text-gray-300"></i>
-          <span>About</span>
+          <i class="fas fa-user-tie w-5 text-slate-500"></i>
+          <span>About &amp; Credentials</span>
+        </a>
+        <a
+          href="../about/about2.html"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
+        >
+          <i class="fas fa-layer-group w-5 text-slate-500"></i>
+          <span>How I Work</span>
         </a>
         <a
           href="https://github.com/MuhammadAhsan-RPL"
           target="_blank"
-          class="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5"
         >
-          <i class="fab fa-github w-4 sm:w-5 text-gray-500"></i>
-          <span>GitHub</span>
+          <i class="fab fa-github w-5 text-slate-500"></i>
+          <span>GitHub Profile</span>
         </a>
 
-        <div class="my-2 sm:my-3 h-px bg-gray-800"></div>
+        <div class="my-3 h-px bg-white/[0.08]"></div>
 
-        <!-- Contact Button di Mobile -->
         <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="flex items-center justify-center gap-2 mt-1 sm:mt-2 px-4 py-2.5 sm:py-3 btn-primary rounded-full text-white text-sm sm:text-base font-medium"
+          href="../index.html#contact"
+          class="flex items-center justify-center gap-2 px-4 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
         >
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
         </a>
       </div>
     </div>
 
-    <!-- Overlay - LEBIH GELAP & BLUR UNTUK MENUTUPI KONTEN BELAKANG -->
     <div
       id="mobileMenuOverlay"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
     ></div>
 
-    <style>
-      @media (max-width: 767px) {
-        body.menu-open {
-          overflow: hidden;
-        }
-      }
-      /* Tambahan agar panel tidak terlihat di luar layar */
-      #mobileMenuPanel {
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    </style>
-
     <script>
-      // Mobile Menu Elements
       const menuToggle = document.getElementById("menuToggle");
       const menuPanel = document.getElementById("mobileMenuPanel");
       const menuOverlay = document.getElementById("mobileMenuOverlay");
@@ -403,1087 +379,827 @@
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
 
-      // Tutup menu saat klik link di dalam menu mobile
-      const mobileLinks = document.querySelectorAll("#mobileMenuPanel a");
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          closeMenu();
-        });
+      document.querySelectorAll("#mobileMenuPanel a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
       });
 
-      // Tutup menu saat resize ke desktop
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-          closeMenu();
+        if (window.innerWidth >= 768) closeMenu();
+      });
+
+      window.addEventListener("scroll", () => {
+        const backToTop = document.getElementById("backToTop");
+        if (!backToTop) return;
+        if (window.scrollY > 400) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
         }
       });
     </script>
 
-    <!-- Hero -->
-    <section class="relative px-6 pt-32 pb-12">
+    <!-- Hero Header -->
+    <section class="relative px-4 sm:px-6 pt-32 pb-10">
       <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-blue-500 text-xs font-semibold uppercase tracking-wider"
-          >my work</span
-        >
-        <h1 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">
-          Things I've Built
-        </h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-sm">
-          A collection of web applications and digital products built through
-          academic projects, freelance work, and independent exploration. Each
-          project reflects my approach to problem solving, user experience, and
-          modern web development.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3 mt-5">
+        <div class="inline-flex items-center gap-2.5 mb-3">
+          <span class="w-6 h-px bg-blue-500"></span>
           <span
-            class="inline-flex items-center gap-1.5 text-xs bg-yellow-500/10 text-yellow-500 px-3 py-1 rounded-full"
-            ><i class="fas fa-graduation-cap text-[10px]"></i> Academic</span
+            class="text-blue-400 text-xs font-mono font-semibold uppercase tracking-[0.2em]"
+            >Complete Works Archive</span
           >
-          <span
-            class="inline-flex items-center gap-1.5 text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full"
-            ><i class="fas fa-briefcase text-[10px]"></i> Independent</span
-          >
+          <span class="w-6 h-px bg-blue-500"></span>
         </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 mb-4 tracking-tight">
+          Projects &amp; Case Studies
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          A curated archive of full-stack web applications, frontend
+          architectures, and product designs built through academic engineering
+          programs and independent initiatives.
+        </p>
       </div>
     </section>
 
-    <!-- Filter -->
-    <section class="px-6 py-4">
+    <!-- Filter Controls -->
+    <section class="px-4 sm:px-6 py-4">
       <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
         <button
-          onclick="filterProjects('all')"
-          class="filter-btn active bg-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-xs font-medium transition"
+          type="button"
+          onclick="filterProjects('all', this)"
+          class="filter-btn active bg-blue-600 text-white border border-blue-500 px-4 py-2 rounded-xl text-xs font-semibold transition"
         >
-          All
+          All Projects (9)
         </button>
         <button
-          onclick="filterProjects('fullstack')"
-          class="filter-btn bg-gray-800 text-gray-400 hover:bg-gray-700 px-4 py-1.5 rounded-full text-xs transition"
+          type="button"
+          onclick="filterProjects('fullstack', this)"
+          class="filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition"
         >
-          Full‑stack
+          Full-Stack Systems
         </button>
         <button
-          onclick="filterProjects('frontend')"
-          class="filter-btn bg-gray-800 text-gray-400 hover:bg-gray-700 px-4 py-1.5 rounded-full text-xs transition"
+          type="button"
+          onclick="filterProjects('frontend', this)"
+          class="filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition"
         >
-          Frontend
+          Frontend Architecture
         </button>
         <button
-          onclick="filterProjects('school')"
-          class="filter-btn bg-gray-800 text-gray-400 hover:bg-gray-700 px-4 py-1.5 rounded-full text-xs transition"
+          type="button"
+          onclick="filterProjects('design', this)"
+          class="filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition"
         >
-          📚 Academic
+          UI/UX &amp; Motion
         </button>
         <button
-          onclick="filterProjects('personal')"
-          class="filter-btn bg-gray-800 text-gray-400 hover:bg-gray-700 px-4 py-1.5 rounded-full text-xs transition"
+          type="button"
+          onclick="filterProjects('school', this)"
+          class="filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition"
         >
-          💼 Independent
+          Academic Projects
+        </button>
+        <button
+          type="button"
+          onclick="filterProjects('personal', this)"
+          class="filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition"
+        >
+          Independent Work
         </button>
       </div>
     </section>
 
     <script>
-      // ========== FILTER PROJECTS ==========
-      function filterProjects(category) {
+      function filterProjects(category, clickedBtn) {
         const projects = document.querySelectorAll(".project-card");
         const buttons = document.querySelectorAll(".filter-btn");
 
-        // Update active button style
         buttons.forEach((btn) => {
-          btn.classList.remove("bg-blue-500/20", "text-blue-400");
-          btn.classList.add("bg-gray-800", "text-gray-400");
+          btn.className =
+            "filter-btn bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 px-4 py-2 rounded-xl text-xs font-medium transition";
         });
 
-        // Add active class ke button yang diklik
-        if (event && event.target) {
-          event.target.classList.add("bg-blue-500/20", "text-blue-400");
-          event.target.classList.remove("bg-gray-800", "text-gray-400");
+        const targetBtn = clickedBtn || (window.event && window.event.target);
+        if (targetBtn) {
+          targetBtn.className =
+            "filter-btn active bg-blue-600 text-white border border-blue-500 px-4 py-2 rounded-xl text-xs font-semibold transition";
         }
 
-        // Filter projects
         projects.forEach((project) => {
-          const categories = project.dataset.category;
-          if (category === "all") {
-            project.style.display = "block";
-          } else if (categories && categories.includes(category)) {
-            project.style.display = "block";
+          const categories = project.dataset.category || "";
+          if (category === "all" || categories.includes(category)) {
+            project.style.display = "flex";
           } else {
             project.style.display = "none";
           }
         });
       }
     </script>
+
     <!-- Projects Grid -->
-    <section class="px-6 py-8 pb-24">
+    <section class="px-4 sm:px-6 py-8 pb-20">
       <div class="max-w-6xl mx-auto">
         <div
-          class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"
           id="projectsContainer"
         >
-          <!-- PROJECT 1: Tech Store E-Commerce -->
-          <a
-            href="../project/tech-store.html"
-            class="group card-project project-card rounded-xl overflow-hidden block relative"
-            data-category="frontend school"
-          >
-            <div class="relative h-44 overflow-hidden">
-              <img
-                src="../foto/techstore.png"
-                alt="Tech Store"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent opacity-60"
-              ></div>
-
-              <!-- Lingkaran VIEW yang cakep -->
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i class="fas fa-eye text-white text-xl"></i>
-                </div>
-              </div>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2 flex-wrap">
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Frontend</span
-                >
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Academic</span
-                >
-              </div>
-              <h3
-                class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Tech Store E‑Commerce
-              </h3>
-              <p class="text-gray-400 text-xs">
-                A responsive e‑commerce interface for tech products. Built to
-                practice modern UI and product layouts.
-              </p>
-              <!-- Tech Stack Tags -->
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >HTML5</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >Tailwind</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >JavaScript</span
-                >
-              </div>
-            </div>
-          </a>
-
-          <!-- PROJECT: E‑Library Platform  -->
+          <!-- 1. E-Library Platform (FEATURED) -->
           <a
             href="../project/ebook.html"
-            class="group relative block rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+            class="group card-project-featured project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
             data-category="fullstack school"
           >
-            <!-- Glow Border -->
-            <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <!-- Banner FEATURED -->
-            <div
-              class="absolute top-3 left-1/2 transform -translate-x-1/2 z-20 w-[90%] sm:w-[85%]"
-            >
-              <div
-                class="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white text-[10px] sm:text-[11px] font-black py-1.5 sm:py-2 px-4 rounded-full shadow-2xl flex items-center justify-center gap-1 sm:gap-2 animate-pulse"
-              >
-                <i class="fas fa-crown text-[10px] sm:text-sm"></i>
-                <span>✦ FEATURED PROJECT ✦</span>
-                <i class="fas fa-fire text-[10px] sm:text-sm"></i>
-              </div>
-              <div
-                class="absolute inset-0 rounded-full bg-yellow-400 blur-md opacity-60 -z-10"
-              ></div>
-            </div>
-
-            <!-- Main Card -->
-            <div
-              class="relative bg-gradient-to-br from-[#111115] to-[#0A0A0F] rounded-xl overflow-hidden border border-white/10 backdrop-blur-sm"
-            >
-              <div class="relative h-44 overflow-hidden">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
                 <img
                   src="../foto/ebook.png"
-                  alt="E-Book Platform"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="E-Library Platform"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
                 ></div>
 
-                <!-- Lingkaran VIEW -->
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                >
-                  <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider rounded-md bg-black/75 text-amber-400 border border-amber-500/40 backdrop-blur-md flex items-center gap-1.5"
                   >
-                    <i class="fas fa-eye text-white text-lg sm:text-xl"></i>
-                  </div>
+                    <i class="fas fa-crown text-[9px]"></i> Featured
+                  </span>
                 </div>
+
+                <button
+                  type="button"
+                  class="question-icon absolute top-3.5 right-3.5 z-20 w-7 h-7 rounded-lg bg-black/75 border border-white/15 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 flex items-center justify-center transition backdrop-blur-md"
+                  data-project="ebook"
+                  title="Why is this a featured project?"
+                >
+                  <i class="fas fa-info text-[10px]"></i>
+                </button>
               </div>
-              <div class="p-5">
-                <div class="flex gap-2 mb-2 flex-wrap">
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
                   <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full border border-blue-500/30"
-                    >Full‑stack</span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Full-Stack</span
                   >
                   <span
-                    class="text-[10px] text-yellow-500 bg-yellow-500/20 px-2 py-0.5 rounded-full border border-yellow-500/30"
+                    class="text-[10px] font-medium text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-md"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-300"
+                  class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors"
                 >
-                  E‑Library Platform
+                  E-Library Platform
                 </h3>
-                <p class="text-gray-400 text-xs">
-                  Digital library with user authentication, book catalog, and
-                  borrowing system.
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Full-stack digital library system featuring multi-role
+                  authentication, structured book catalog, circulation tracking,
+                  and administrative reporting.
                 </p>
+              </div>
+            </div>
 
-                <!-- TECH STACK TAGS -->
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  <span
-                    class="text-[9px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20"
-                    >Laravel</span
-                  >
-                  <span
-                    class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20"
-                    >PHP</span
-                  >
-                  <span
-                    class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20"
-                    >MySQL</span
-                  >
-                  <span
-                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
-                    >Tailwind</span
-                  >
-                  <span
-                    class="text-[9px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20"
-                    >Alpine.js</span
-                  >
-                </div>
-
-                <!-- FEATURED BADGE + QUESTION ICON -->
-                <div class="mt-3 flex items-center gap-2">
-                  <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full flex items-center gap-1 border border-blue-500/30"
-                  >
-                    <i class="fas fa-star text-[8px] text-blue-300"></i>
-                    <span class="text-blue-300 font-medium"
-                      >⭐ Featured Project</span
-                    >
-                    <i class="fas fa-fire text-[8px] text-blue-300"></i>
-                  </span>
-                  <!-- Ikon tanya -->
-                  <button
-                    type="button"
-                    class="question-icon text-gray-400 hover:text-blue-400 transition-all w-5 h-5 rounded-full bg-gray-800/50 flex items-center justify-center focus:outline-none"
-                    data-project="ebook"
-                  >
-                    <i class="fas fa-question text-[10px]"></i>
-                  </button>
-                </div>
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Laravel 10</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">PHP 8.2</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">MySQL</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Alpine.js</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-amber-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
               </div>
             </div>
           </a>
 
-          <!-- PROJECT 2: OneSchool E-Report -->
-          <a
-            href="../project/oneschool.html"
-            class="group card-project project-card rounded-xl overflow-hidden block relative"
-            data-category="fullstack school"
-          >
-            <div class="relative h-44 overflow-hidden">
-              <img
-                src="../foto/ERepor.png"
-                alt="OneSchool"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent opacity-60"
-              ></div>
-
-              <!-- Lingkaran VIEW yang cakep -->
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i class="fas fa-eye text-white text-xl"></i>
-                </div>
-              </div>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2 flex-wrap">
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Full‑stack</span
-                >
-                <span
-                  class="text-[10px] text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded"
-                  >Academic</span
-                >
-              </div>
-              <h3
-                class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                OneSchool E‑Report
-              </h3>
-              <p class="text-gray-400 text-xs">
-                Real‑time reporting for schools. Cut response time from days to
-                hours. Won "Best Web Project" at school.
-              </p>
-              <!-- Tech Stack Tags -->
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >HTML5</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >CSS3</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >JavaScript</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >Firebase</span
-                >
-              </div>
-            </div>
-          </a>
-
-          <!-- PROJECT: Payroll Management (Featured + Question Icon) -->
+          <!-- 2. Payroll Management System (FEATURED) -->
           <a
             href="../project/payroll.html"
-            class="group relative block rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+            class="group card-project-featured project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
             data-category="fullstack school"
           >
-            <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <div
-              class="absolute top-3 left-1/2 transform -translate-x-1/2 z-20 w-[90%] sm:w-[85%]"
-            >
-              <div
-                class="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white text-[10px] sm:text-[11px] font-black py-1.5 sm:py-2 px-4 rounded-full shadow-2xl flex items-center justify-center gap-1 sm:gap-2 animate-pulse"
-              >
-                <i class="fas fa-crown text-[10px] sm:text-sm"></i>
-                <span>✦ FEATURED PROJECT ✦</span>
-                <i class="fas fa-fire text-[10px] sm:text-sm"></i>
-              </div>
-              <div
-                class="absolute inset-0 rounded-full bg-yellow-400 blur-md opacity-60 -z-10"
-              ></div>
-            </div>
-
-            <div
-              class="relative bg-gradient-to-br from-[#111115] to-[#0A0A0F] rounded-xl overflow-hidden border border-white/10 backdrop-blur-sm"
-            >
-              <div class="relative h-44 overflow-hidden">
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
                 <img
                   src="../foto/payroll.png"
-                  alt="Payroll"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Payroll Management System"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
                 ></div>
 
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                >
-                  <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider rounded-md bg-black/75 text-amber-400 border border-amber-500/40 backdrop-blur-md flex items-center gap-1.5"
                   >
-                    <i class="fas fa-eye text-white text-lg sm:text-xl"></i>
-                  </div>
+                    <i class="fas fa-crown text-[9px]"></i> Featured
+                  </span>
                 </div>
+
+                <button
+                  type="button"
+                  class="question-icon absolute top-3.5 right-3.5 z-20 w-7 h-7 rounded-lg bg-black/75 border border-white/15 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 flex items-center justify-center transition backdrop-blur-md"
+                  data-project="payroll"
+                  title="Why is this a featured project?"
+                >
+                  <i class="fas fa-info text-[10px]"></i>
+                </button>
               </div>
-              <div class="p-5">
-                <div class="flex gap-2 mb-2 flex-wrap">
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
                   <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full border border-blue-500/30"
-                    >Full‑stack</span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Full-Stack</span
                   >
                   <span
-                    class="text-[10px] text-yellow-500 bg-yellow-500/20 px-2 py-0.5 rounded-full border border-yellow-500/30"
+                    class="text-[10px] font-medium text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-md"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-300"
+                  class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors"
                 >
-                  Payroll Management
+                  Payroll Management System
                 </h3>
-                <p class="text-gray-400 text-xs">
-                  Employee management system with attendance tracking and
-                  automated salary calculation.
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Integrated HR &amp; payroll platform with role-based access,
+                  employee attendance monitoring, automated salary computation,
+                  and digital slip generation.
                 </p>
+              </div>
+            </div>
 
-                <!-- TECH STACK TAGS -->
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  <span
-                    class="text-[9px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20"
-                    >Laravel</span
-                  >
-                  <span
-                    class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20"
-                    >PHP</span
-                  >
-                  <span
-                    class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20"
-                    >MySQL</span
-                  >
-                  <span
-                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
-                    >Tailwind</span
-                  >
-                </div>
-
-                <!-- FEATURED BADGE + QUESTION ICON -->
-                <div class="mt-3 flex items-center gap-2">
-                  <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full flex items-center gap-1 border border-blue-500/30"
-                  >
-                    <i class="fas fa-star text-[8px] text-blue-300"></i>
-                    <span class="text-blue-300 font-medium"
-                      >⭐ Featured Project</span
-                    >
-                    <i class="fas fa-fire text-[8px] text-blue-300"></i>
-                  </span>
-                  <!-- Ikon tanya -->
-                  <button
-                    type="button"
-                    class="question-icon text-gray-400 hover:text-blue-400 transition-all w-5 h-5 rounded-full bg-gray-800/50 flex items-center justify-center focus:outline-none"
-                    data-project="payroll"
-                  >
-                    <i class="fas fa-question text-[10px]"></i>
-                  </button>
-                </div>
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Laravel 10</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">PHP 8.2</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">MySQL</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-amber-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
               </div>
             </div>
           </a>
 
-          <!-- PROJECT 3: M-Ahsan Psychology -->
-          <a
-            href="../project/psychology.html"
-            class="group card-project project-card rounded-xl overflow-hidden block relative"
-            data-category="frontend personal"
-          >
-            <div class="relative h-44 overflow-hidden">
-              <img
-                src="../foto/Psikolog.png"
-                alt="Psychology"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent opacity-60"
-              ></div>
-
-              <!-- Lingkaran VIEW yang cakep -->
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i class="fas fa-eye text-white text-xl"></i>
-                </div>
-              </div>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2 flex-wrap">
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Frontend</span
-                >
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Independent</span
-                >
-              </div>
-              <h3
-                class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                M‑Ahsan Psychology
-              </h3>
-              <p class="text-gray-400 text-xs">
-                A professional website for a psychology practice. Clean, calm,
-                and built with trust in mind.
-              </p>
-              <!-- Tech Stack Tags -->
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >HTML5</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >CSS3</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >JavaScript</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >Tailwind</span
-                >
-              </div>
-            </div>
-          </a>
-
-          <!-- PROJECT 8: Notesku - Notepad App (FEATURED) -->
+          <!-- 3. Notesku – Notepad App (FEATURED) -->
           <a
             href="../project/notesku.html"
-            class="group relative block rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
-            data-category="fullstack school"
+            class="group card-project-featured project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="fullstack school personal"
           >
-            <!-- Glow Border -->
-            <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500"
-            ></div>
-
-            <!-- Banner FEATURED -->
-            <div
-              class="absolute top-3 left-1/2 transform -translate-x-1/2 z-20 w-[90%] sm:w-[85%]"
-            >
-              <div
-                class="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white text-[10px] sm:text-[11px] font-black py-1.5 sm:py-2 px-4 rounded-full shadow-2xl flex items-center justify-center gap-1 sm:gap-2 animate-pulse"
-              >
-                <i class="fas fa-crown text-[10px] sm:text-sm"></i>
-                <span>✦ FEATURED PROJECT ✦</span>
-                <i class="fas fa-fire text-[10px] sm:text-sm"></i>
-              </div>
-              <div
-                class="absolute inset-0 rounded-full bg-yellow-400 blur-md opacity-60 -z-10"
-              ></div>
-            </div>
-
-            <!-- Main Card -->
-            <div
-              class="relative bg-gradient-to-br from-[#111115] to-[#0A0A0F] rounded-xl overflow-hidden border border-white/10 backdrop-blur-sm"
-            >
-              <div class="relative h-44 overflow-hidden">
-                <!-- GANTI src dengan screenshot asli Notesku nanti -->
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
                 <img
                   src="../foto/notesku-preview.png"
                   alt="Notesku App"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onerror="
                     this.src =
-                      'https://placehold.co/600x400/1a1a2e/8B5CF6?text=Notesku+App'
+                      'https://placehold.co/600x400/111420/60A5FA?text=Notesku+App'
                   "
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-[#111115]/60 to-transparent opacity-80"
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
                 ></div>
 
-                <!-- Lingkaran VIEW -->
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                >
-                  <div
-                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
+                <div class="absolute top-3.5 left-3.5 flex items-center gap-1.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider rounded-md bg-black/75 text-amber-400 border border-amber-500/40 backdrop-blur-md flex items-center gap-1.5"
                   >
-                    <i class="fas fa-eye text-white text-lg sm:text-xl"></i>
-                  </div>
+                    <i class="fas fa-crown text-[9px]"></i> Featured
+                  </span>
+                </div>
+
+                <button
+                  type="button"
+                  class="question-icon absolute top-3.5 right-3.5 z-20 w-7 h-7 rounded-lg bg-black/75 border border-white/15 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 flex items-center justify-center transition backdrop-blur-md"
+                  data-project="notesku"
+                  title="Why is this a featured project?"
+                >
+                  <i class="fas fa-info text-[10px]"></i>
+                </button>
+              </div>
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                  <span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Full-Stack</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md"
+                    >Productivity</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors"
+                >
+                  Notesku – Cloud Notepad App
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Personal note-taking application with private user workspaces,
+                  instant search filtering, note archiving, and responsive CRUD
+                  workflows.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Laravel 10</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">PHP 8.2</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">MySQL</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Alpine.js</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-amber-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- 4. OneSchool E-Report -->
+          <a
+            href="../project/oneschool.html"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="fullstack school"
+          >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img
+                  src="../foto/ERepor.png"
+                  alt="OneSchool E-Report"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
+                ></div>
+                <div class="absolute top-3.5 left-3.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-yellow-400 border border-yellow-500/30 backdrop-blur-md flex items-center gap-1.5"
+                  >
+                    <i class="fas fa-trophy text-[9px]"></i> Best Web Project
+                  </span>
                 </div>
               </div>
-              <div class="p-5">
-                <div class="flex gap-2 mb-2 flex-wrap">
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
                   <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full border border-blue-500/30"
-                    >Full‑stack</span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Full-Stack</span
                   >
                   <span
-                    class="text-[10px] text-yellow-500 bg-yellow-500/20 px-2 py-0.5 rounded-full border border-yellow-500/30"
+                    class="text-[10px] font-medium text-slate-300 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-md"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-300"
+                  class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
                 >
-                  Notesku – Notepad App
+                  OneSchool E-Report
                 </h3>
-                <p class="text-gray-400 text-xs">
-                  A modern note‑taking application to create, organize, archive,
-                  and manage notes efficiently.
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Real-time academic reporting platform powered by Firebase.
+                  Streamlined school communication and earned the "Best Web
+                  Project" school award.
                 </p>
+              </div>
+            </div>
 
-                <!-- TECH STACK TAGS (sama seperti project featured lain) -->
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  <span
-                    class="text-[9px] text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20"
-                    >Laravel</span
-                  >
-                  <span
-                    class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20"
-                    >PHP</span
-                  >
-                  <span
-                    class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20"
-                    >MySQL</span
-                  >
-                  <span
-                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
-                    >Tailwind</span
-                  >
-                  <span
-                    class="text-[9px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20"
-                    >Alpine.js</span
-                  >
-                </div>
-
-                <!-- FEATURED BADGE + QUESTION ICON -->
-                <div class="mt-3 flex items-center gap-2">
-                  <span
-                    class="text-[10px] text-blue-400 bg-blue-500/20 px-2 py-0.5 rounded-full flex items-center gap-1 border border-blue-500/30"
-                  >
-                    <i class="fas fa-star text-[8px] text-blue-300"></i>
-                    <span class="text-blue-300 font-medium"
-                      >⭐ Featured Project</span
-                    >
-                    <i class="fas fa-fire text-[8px] text-blue-300"></i>
-                  </span>
-                  <!-- Ikon tanya -->
-                  <button
-                    type="button"
-                    class="question-icon text-gray-400 hover:text-blue-400 transition-all w-5 h-5 rounded-full bg-gray-800/50 flex items-center justify-center focus:outline-none"
-                    data-project="notesku"
-                  >
-                    <i class="fas fa-question text-[10px]"></i>
-                  </button>
-                </div>
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">HTML5</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind CSS</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">JavaScript</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Firebase</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-blue-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
               </div>
             </div>
           </a>
 
-          <!-- PROJECT 6: Prime Edge Digital -->
+          <!-- 5. Prime Edge Digital -->
           <a
             href="../project/primeedge.html"
-            class="group card-project project-card rounded-xl overflow-hidden block relative"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
             data-category="frontend school"
           >
-            <div class="relative h-44 overflow-hidden">
-              <img
-                src="../foto/primeEdge.png"
-                alt="Prime Edge"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent opacity-60"
-              ></div>
-
-              <!-- Lingkaran VIEW yang cakep -->
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img
+                  src="../foto/primeEdge.png"
+                  alt="Prime Edge Digital"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <div
-                  class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i class="fas fa-eye text-white text-xl"></i>
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
+                ></div>
+                <div class="absolute top-3.5 left-3.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-emerald-400 border border-emerald-500/30 backdrop-blur-md"
+                  >
+                    Live Demo
+                  </span>
                 </div>
               </div>
-            </div>
-            <div class="p-5">
-              <div class="flex gap-2 mb-2 flex-wrap">
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Frontend</span
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                  <span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Frontend</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-slate-300 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-md"
+                    >Corporate</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
                 >
-                <span
-                  class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded"
-                  >Academic</span
-                >
-                <span
-                  class="text-[10px] text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded"
-                  >Corporate</span
-                >
+                  Prime Edge Digital
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Modern corporate web platform for a digital agency, structured
+                  to present core services, portfolio highlights, and client
+                  conversion funnels.
+                </p>
               </div>
-              <h3
-                class="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition"
-              >
-                Prime Edge Digital
-              </h3>
-              <p class="text-gray-400 text-xs">
-                Corporate website for a digital agency, designed to showcase
-                services and create a professional online presence.
-              </p>
-              <!-- Tech Stack Tags: Proyek Prime Edge Digital (Gaya Monokrom & Lega) -->
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >HTML5</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >CSS3</span
-                >
-                <span
-                  class="text-[10px] font-medium text-gray-300 bg-white/5 px-2.5 py-1 rounded border border-white/10"
-                  >JavaScript</span
-                >
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">HTML5</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">CSS3</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">JavaScript</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Responsive UI</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-blue-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
               </div>
             </div>
           </a>
 
-          <!-- PROJECT 7: Qyta - Food App UI/UX Design (Academic) -->
-          <div
-            class="group card-project project-card rounded-xl overflow-hidden block relative bg-gradient-to-br from-[#111115] to-[#0D0D12] border border-gray-800 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30"
+          <!-- 6. M-Ahsan Psychology -->
+          <a
+            href="../project/psychology.html"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="frontend personal"
           >
-            <a href="../project/qytauiux.html" target="_blank" class="block">
-              <div
-                class="relative h-44 overflow-hidden bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-purple-900/40"
-                data-category="fullstack school"
-              >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img
+                  src="../foto/Psikolog.png"
+                  alt="M-Ahsan Psychology"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
+                ></div>
+                <div class="absolute top-3.5 left-3.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-emerald-400 border border-emerald-500/30 backdrop-blur-md"
+                  >
+                    Live Demo
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                  <span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Frontend</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md"
+                    >Independent</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
+                >
+                  M-Ahsan Psychology
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Multi-page clinical psychology website engineered for clarity,
+                  accessibility, and patient trust—featuring practitioner
+                  profiles and consultation booking.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">HTML5</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">CSS3</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">JavaScript</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-blue-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- 7. Tech Store E-Commerce -->
+          <a
+            href="../project/tech-store.html"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="frontend school"
+          >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img
+                  src="../foto/techstore.png"
+                  alt="Tech Store E-Commerce"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
+                ></div>
+                <div class="absolute top-3.5 left-3.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-emerald-400 border border-emerald-500/30 backdrop-blur-md"
+                  >
+                    Live Demo
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                  <span
+                    class="text-[10px] font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-0.5 rounded-md"
+                    >Frontend</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-slate-300 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-md"
+                    >Academic</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
+                >
+                  Tech Store E-Commerce
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Responsive e-commerce storefront for technology products,
+                  featuring structured catalog grids, interactive product cards,
+                  and mobile-first navigation.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">HTML5</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Tailwind CSS</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">JavaScript</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-blue-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
+
+          <!-- 8. Qyta - Food App UI/UX Design -->
+          <a
+            href="../project/qytauiux.html"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="design school"
+          >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
                 <img
                   src="../foto/qyta-preview.png"
                   alt="Qyta Food App UI/UX Design"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onerror="
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'flex';
+                    this.src =
+                      'https://placehold.co/600x400/111420/A855F7?text=Qyta+UI%2FUX'
                   "
                 />
                 <div
-                  class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-purple-900/40"
-                  style="display: none"
-                >
-                  <div class="text-center">
-                    <i
-                      class="fas fa-utensils text-5xl text-purple-400 mb-2 block"
-                    ></i>
-                    <i
-                      class="fas fa-mobile-alt text-3xl text-pink-400 absolute -bottom-2 -right-4 opacity-70"
-                    ></i>
-                    <p class="text-purple-400 text-xs mt-3 tracking-wider">
-                      ✨ UI/UX DESIGN ✨
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                >
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl"
-                  ></div>
-                </div>
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-transparent to-transparent opacity-80"
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
                 ></div>
-
-                <!-- Lingkaran VIEW -->
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
+                <div class="absolute top-3.5 left-3.5">
+                  <span
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-purple-400 border border-purple-500/30 backdrop-blur-md"
                   >
-                    <i
-                      class="fas fa-arrow-right text-white text-xl group-hover:translate-x-0.5 transition"
-                    ></i>
-                  </div>
+                    Figma Prototype
+                  </span>
                 </div>
               </div>
 
-              <div class="p-5">
-                <!-- Badge -->
-                <div class="flex gap-2 mb-2 flex-wrap">
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
                   <span
-                    class="text-[10px] text-purple-400 bg-purple-500/20 px-2 py-0.5 rounded-full border border-purple-500/30 group-hover:border-purple-400 transition"
-                    >🎨 UI/UX Design</span
-                  >
-                  <span
-                    class="text-[10px] text-pink-400 bg-pink-500/20 px-2 py-0.5 rounded-full border border-pink-500/30 group-hover:border-pink-400 transition"
-                    >Figma</span
-                  >
-                  <span
-                    class="text-[10px] text-yellow-500 bg-yellow-500/20 px-2 py-0.5 rounded-full border border-yellow-500/30 group-hover:border-yellow-400 transition"
-                    >Academic</span
-                  >
-                </div>
-                <h3
-                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300"
-                >
-                  Qyta — Food App UI/UX
-                </h3>
-                <p class="text-gray-400 text-xs leading-relaxed">
-                  Modern food delivery app design built in Figma. Focused on
-                  user experience, clean visuals, and intuitive navigation.
-                </p>
-
-                <!-- Tech Stack Tags -->
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  <span
-                    class="text-[9px] text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-500/20"
-                    >Figma</span
-                  >
-                  <span
-                    class="text-[9px] text-pink-400 bg-pink-500/10 px-1.5 py-0.5 rounded border border-pink-500/20"
+                    class="text-[10px] font-medium text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2.5 py-0.5 rounded-md"
                     >UI/UX Design</span
                   >
                   <span
-                    class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20"
-                    >Wireframing</span
-                  >
-                  <span
-                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
-                    >Prototyping</span
-                  >
-                  <span
-                    class="text-[9px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20"
-                    >Design Systems</span
-                  >
-                </div>
-
-                <!-- Extra label dengan icon -->
-                <div class="mt-3 flex items-center gap-3">
-                  <span
-                    class="text-[10px] text-gray-500 flex items-center gap-1 group-hover:text-purple-400 transition"
-                  >
-                    <i
-                      class="fas fa-paint-brush text-purple-400 text-[10px]"
-                    ></i>
-                    UI/UX
-                  </span>
-                  <span
-                    class="text-[10px] text-gray-500 flex items-center gap-1 group-hover:text-pink-400 transition"
-                  >
-                    <i class="fas fa-mobile-alt text-pink-400 text-[10px]"></i>
-                    Mobile App
-                  </span>
-                  <span
-                    class="text-[10px] text-gray-500 flex items-center gap-1 group-hover:text-emerald-400 transition"
-                  >
-                    <i class="fas fa-rocket text-emerald-400 text-[10px]"></i>
-                    Food Delivery
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- PROJECT 8: Senyum adalah Sedekah - Poster & Animation -->
-          <div
-            class="group card-project project-card rounded-xl overflow-hidden block relative bg-gradient-to-br from-[#111115] to-[#0D0D12] border border-gray-800 hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/30"
-          >
-            <a
-              href="../project/poster-animation.html"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="relative h-44 overflow-hidden bg-gradient-to-br from-amber-900/40 via-orange-900/30 to-red-900/40"
-              >
-                <img
-                  src="../foto/poster-senyum.png"
-                  alt="A Smile is Charity"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  onerror="
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'flex';
-                  "
-                />
-                <div
-                  class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-amber-900/40 via-orange-900/30 to-red-900/40"
-                  style="display: none"
-                >
-                  <div class="text-center">
-                    <i
-                      class="fas fa-smile text-5xl text-amber-400 mb-2 block"
-                    ></i>
-                    <p class="text-amber-400 text-xs mt-3 tracking-wider">
-                      ✨ POSTER & ANIMATION ✨
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                >
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-xl"
-                  ></div>
-                </div>
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#111115] via-transparent to-transparent opacity-80"
-                ></div>
-
-                <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
-                  >
-                    <i
-                      class="fas fa-arrow-right text-white text-xl group-hover:translate-x-0.5 transition"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-5">
-                <div class="flex gap-2 mb-2 flex-wrap">
-                  <span
-                    class="text-[10px] text-amber-400 bg-amber-500/20 px-2 py-0.5 rounded-full border border-amber-500/30"
-                    >🎨 Poster Design</span
-                  >
-                  <span
-                    class="text-[10px] text-orange-400 bg-orange-500/20 px-2 py-0.5 rounded-full border border-orange-500/30"
-                    >🎬 Animation</span
-                  >
-                  <span
-                    class="text-[10px] text-yellow-500 bg-yellow-500/20 px-2 py-0.5 rounded-full border border-yellow-500/30"
+                    class="text-[10px] font-medium text-slate-300 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-md"
                     >Academic</span
                   >
                 </div>
                 <h3
-                  class="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:to-orange-400 group-hover:bg-clip-text transition-all duration-300"
+                  class="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors"
                 >
-                  A Smile is Charity
+                  Qyta — Food App UI/UX
                 </h3>
-                <p class="text-gray-400 text-xs leading-relaxed">
-                  Islamic poster and motion animation inspired by the hadith:
-                  <span class="text-amber-400 italic"
-                    >"Your smile in the presence of your brother is
-                    charity."</span
-                  >
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  End-to-end mobile food delivery interface designed in Figma,
+                  focusing on intuitive menu discovery, cart ergonomics, and
+                  interactive prototyping.
                 </p>
+              </div>
+            </div>
 
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  <span
-                    class="text-[9px] text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20"
-                    >Photoshop</span
-                  >
-                  <span
-                    class="text-[9px] text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20"
-                    >After Effects</span
-                  >
-                  <span
-                    class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20"
-                    >Typography</span
-                  >
-                </div>
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Figma</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Mobile UI/UX</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Prototyping</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Design System</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-purple-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
 
-                <div class="mt-3 flex items-center gap-3">
+          <!-- 9. A Smile is Charity - Poster & Animation -->
+          <a
+            href="../project/poster-animation.html"
+            class="group card-project project-card rounded-2xl overflow-hidden flex flex-col justify-between relative"
+            data-category="design school"
+          >
+            <div>
+              <div class="relative h-48 overflow-hidden bg-slate-900">
+                <img
+                  src="../foto/poster-senyum.png"
+                  alt="A Smile is Charity"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/600x400/111420/F59E0B?text=A+Smile+is+Charity'
+                  "
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#111420] via-transparent to-transparent opacity-90"
+                ></div>
+                <div class="absolute top-3.5 left-3.5">
                   <span
-                    class="text-[10px] text-gray-500 flex items-center gap-1 group-hover:text-amber-400 transition"
+                    class="px-2.5 py-1 text-[10px] font-mono font-semibold rounded-md bg-black/75 text-amber-400 border border-amber-500/30 backdrop-blur-md"
                   >
-                    <i
-                      class="fas fa-paint-brush text-amber-400 text-[10px]"
-                    ></i>
-                    Poster
-                  </span>
-                  <span
-                    class="text-[10px] text-gray-500 flex items-center gap-1 group-hover:text-orange-400 transition"
-                  >
-                    <i class="fas fa-film text-orange-400 text-[10px]"></i>
-                    Animation
+                    Visual &amp; Motion
                   </span>
                 </div>
               </div>
-            </a>
-          </div>
+
+              <div class="p-6 pb-4">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                  <span
+                    class="text-[10px] font-medium text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-md"
+                    >Visual Design</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-slate-300 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-md"
+                    >Academic</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors"
+                >
+                  A Smile is Charity
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Minimalist typographic poster and gentle motion graphics piece
+                  inspired by the prophetic tradition: "Your smile in the
+                  presence of your brother is charity."
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-3 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Figma</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Typography</span>
+                <span class="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">Motion Design</span>
+              </div>
+              <div class="flex items-center justify-between text-xs font-semibold text-amber-400">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="px-6 py-12">
+    <!-- Portfolio Metrics Summary -->
+    <section class="px-4 sm:px-6 py-10">
       <div
-        class="max-w-4xl mx-auto bg-darkCard rounded-2xl p-8 border border-gray-800"
+        class="max-w-5xl mx-auto bg-[#0C0E16] rounded-2xl p-8 border border-white/[0.08]"
       >
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <div class="text-2xl font-bold text-white">9</div>
-            <div class="text-gray-500 text-xs mt-1">Total Projects</div>
+            <div class="text-3xl font-extrabold text-white font-heading">9</div>
+            <div class="text-slate-400 text-xs mt-1 font-medium">Total Projects</div>
           </div>
           <div>
-            <div class="text-2xl font-bold text-yellow-500">8</div>
-            <div class="text-gray-500 text-xs mt-1">Academic</div>
+            <div class="text-3xl font-extrabold text-blue-400 font-heading">4</div>
+            <div class="text-slate-400 text-xs mt-1 font-medium">Full-Stack Systems</div>
           </div>
           <div>
-            <div class="text-2xl font-bold text-blue-400">1</div>
-            <div class="text-gray-500 text-xs mt-1">Independent</div>
+            <div class="text-3xl font-extrabold text-emerald-400 font-heading">3</div>
+            <div class="text-slate-400 text-xs mt-1 font-medium">Frontend Platforms</div>
           </div>
           <div>
-            <div class="text-2xl font-bold text-white">9</div>
-            <div class="text-gray-500 text-xs mt-1">Live Demos</div>
+            <div class="text-3xl font-extrabold text-purple-400 font-heading">2</div>
+            <div class="text-slate-400 text-xs mt-1 font-medium">UI/UX &amp; Motion</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Info -->
-    <section class="px-6 py-8">
-      <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-5">
+    <!-- Project Context Info -->
+    <section class="px-4 sm:px-6 py-8">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
         <div
-          class="bg-yellow-500/5 border border-yellow-500/20 rounded-xl p-5 text-center"
+          class="bg-[#0C0E16] border border-white/[0.08] rounded-2xl p-6 flex items-start gap-4"
         >
-          <i class="fas fa-graduation-cap text-yellow-500 text-2xl mb-3"></i>
-          <h3 class="text-white font-semibold mb-2">Academic</h3>
-          <p class="text-gray-400 text-xs">
-            Built through academic projects with a focus on full-stack
-            development, database design, and modern web applications.
-          </p>
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+            <i class="fas fa-graduation-cap text-amber-400 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">Academic Engineering Projects</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Developed as part of structured software engineering coursework at
+              IDN Boarding School—focusing on relational database design, MVC
+              architecture, role-based authentication, and full-stack delivery.
+            </p>
+          </div>
         </div>
+
         <div
-          class="bg-blue-500/5 border border-blue-500/20 rounded-xl p-5 text-center"
+          class="bg-[#0C0E16] border border-white/[0.08] rounded-2xl p-6 flex items-start gap-4"
         >
-          <i class="fas fa-briefcase text-blue-400 text-2xl mb-3"></i>
-          <h3 class="text-white font-semibold mb-2">Independent</h3>
-          <p class="text-gray-400 text-xs">
-            Built through self-driven and freelance projects with a focus on
-            thoughtful design, user experience, and modern web technologies.
-          </p>
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+            <i class="fas fa-briefcase text-blue-400 text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">Independent &amp; Client Initiatives</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Self-initiated and client-oriented digital products built to
+              refine real-world usability, responsive performance, and clean
+              frontend architecture.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- GitHub -->
-    <section class="px-6 py-12">
+    <!-- GitHub Banner -->
+    <section class="px-4 sm:px-6 py-12 pb-20">
       <div
-        class="max-w-3xl mx-auto text-center bg-gradient-to-r from-blue-600/10 to-emerald-600/10 rounded-2xl p-8 border border-blue-500/20"
+        class="max-w-5xl mx-auto text-center bg-gradient-to-br from-blue-600/10 via-[#0C0E16] to-emerald-600/10 rounded-2xl p-8 sm:p-10 border border-blue-500/20"
       >
-        <i class="fab fa-github text-4xl text-blue-400 mb-4"></i>
-        <h3 class="text-xl font-bold text-white mb-2">All code is open</h3>
-        <p class="text-gray-400 text-sm mb-5">
-          Every project is on GitHub. Feel free to look around, learn, or reach
-          out if something catches your eye.
+        <div class="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mx-auto mb-4">
+          <i class="fab fa-github text-2xl text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">Explore My Open-Source Repositories</h3>
+        <p class="text-slate-400 text-sm mb-6 max-w-xl mx-auto">
+          Source code, commit histories, and documentation for my projects are
+          available on GitHub.
         </p>
         <a
           href="https://github.com/MuhammadAhsan-RPL"
           target="_blank"
-          class="inline-flex items-center gap-2 px-5 py-2.5 btn-primary rounded-lg text-white text-sm font-medium"
-          ><i class="fab fa-github"></i> Visit GitHub
-          <i class="fas fa-arrow-right text-xs"></i
-        ></a>
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+        >
+          <i class="fab fa-github"></i>
+          <span>Visit GitHub (@MuhammadAhsan-RPL)</span>
+          <i class="fas fa-arrow-right text-xs"></i>
+        </a>
       </div>
     </section>
 
@@ -1491,141 +1207,58 @@
       class="back-to-top"
       id="backToTop"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      title="Back to top"
     >
       <i class="fas fa-arrow-up text-white text-sm"></i>
     </div>
 
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
-        debugging.
+    <footer class="py-10 px-4 sm:px-6 text-center border-t border-white/[0.07] bg-[#05060A]">
+      <p class="text-slate-500 text-xs">
+        © 2026 Muhammad Ahsan. Engineered with precision, clean architecture, and attention to detail.
       </p>
     </footer>
 
-    <!-- Modal untuk penjelasan featured project -->
+    <!-- Modal untuk penjelasan Featured Project -->
     <div
       id="featuredModal"
-      class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/70 backdrop-blur-sm transition-all duration-300"
+      class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/75 backdrop-blur-sm transition-all duration-300"
     >
       <div
-        class="bg-gradient-to-br from-[#111115] to-[#0D0D12] rounded-2xl max-w-md w-full mx-4 border border-gray-700 shadow-2xl transform transition-all scale-95 opacity-0"
+        class="bg-[#0E111B] rounded-2xl max-w-md w-full mx-4 border border-white/15 shadow-2xl transform transition-all scale-95 opacity-0"
         id="modalContent"
       >
         <div class="p-6">
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center gap-2">
-              <i class="fas fa-crown text-amber-500 text-lg"></i>
-              <h3 class="text-xl font-bold text-white">Featured Project</h3>
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center">
+                <i class="fas fa-crown text-amber-400 text-xs"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white">Featured System Highlight</h3>
             </div>
             <button
               id="closeModalBtn"
-              class="text-gray-400 hover:text-white transition"
+              class="text-slate-400 hover:text-white transition w-8 h-8 rounded-lg hover:bg-white/5 flex items-center justify-center"
             >
-              <i class="fas fa-times text-xl"></i>
+              <i class="fas fa-times"></i>
             </button>
           </div>
           <div
             id="modalMessage"
-            class="text-gray-300 text-sm leading-relaxed space-y-2"
-          >
-            <!-- Pesan akan diisi oleh JavaScript -->
-          </div>
+            class="text-slate-300 text-sm leading-relaxed space-y-2"
+          ></div>
           <div class="mt-6 flex justify-end">
             <button
               id="modalCloseBtn"
-              class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm transition"
+              class="px-5 py-2 btn-primary rounded-lg text-white text-xs font-semibold transition"
             >
-              Got it
+              Understood
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <style>
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes loadingBar {
-        0% {
-          width: 0%;
-        }
-        50% {
-          width: 70%;
-        }
-        100% {
-          width: 100%;
-        }
-      }
-
-      .animate-fadeInUp {
-        animation: fadeInUp 0.6s ease-out forwards;
-      }
-
-      .animate-loadingBar {
-        animation: loadingBar 1.5s ease-in-out forwards;
-      }
-    </style>
-
-    <!-- ========== GSAP ANIMATIONS ========== -->
     <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const nav = document.getElementById("navbar");
-        if (window.scrollY > 50) {
-          nav.classList.add(
-            "glass-premium",
-            "border-b",
-            "border-indigo-500/10",
-          );
-        } else {
-          nav.classList.remove(
-            "glass-premium",
-            "border-b",
-            "border-indigo-500/10",
-          );
-        }
-      });
-
-      // Fade animations
-      gsap.utils.toArray("section").forEach((section, i) => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-          opacity: 0,
-          y: 50,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-      });
-
-      // Hero text animation
-      gsap.from("h1 span", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        ease: "back.out(1.2)",
-      });
-    </script>
-
-    <script>
-      // ------------------------------
-      // Modal untuk menampilkan alasan proyek featured
-      // ------------------------------
       (function () {
         const modal = document.getElementById("featuredModal");
         const modalContent = document.getElementById("modalContent");
@@ -1634,22 +1267,18 @@
           "#closeModalBtn, #modalCloseBtn",
         );
 
-        // Jika modal tidak ditemukan, hentikan eksekusi
         if (!modal) return;
 
-        // Fungsi untuk menampilkan modal dengan pesan tertentu
         function openModal(messageHTML) {
           modalMessage.innerHTML = messageHTML;
           modal.classList.remove("hidden");
           modal.classList.add("flex");
-          // Efek animasi masuk
           setTimeout(() => {
             modalContent.classList.remove("scale-95", "opacity-0");
             modalContent.classList.add("scale-100", "opacity-100");
           }, 10);
         }
 
-        // Fungsi untuk menutup modal dengan animasi
         function closeModal() {
           modalContent.classList.remove("scale-100", "opacity-100");
           modalContent.classList.add("scale-95", "opacity-0");
@@ -1659,16 +1288,13 @@
           }, 200);
         }
 
-        // Pasang event listener untuk tombol-tombol close
         closeButtons.forEach((btn) =>
           btn.addEventListener("click", closeModal),
         );
-        // Tutup modal jika klik di luar area konten modal
         modal.addEventListener("click", (e) => {
           if (e.target === modal) closeModal();
         });
 
-        // Pasang listener untuk setiap ikon tanda tanya
         document.querySelectorAll(".question-icon").forEach((icon) => {
           icon.addEventListener("click", (e) => {
             e.preventDefault();
@@ -1676,47 +1302,45 @@
             const projectKey = icon.getAttribute("data-project");
             let explanation = "";
 
-            // Pilih pesan berdasarkan proyek
             switch (projectKey) {
               case "payroll":
                 explanation = `
-              <p class="mb-2">✨ <strong class="text-amber-400">Why is this a featured project?</strong></p>
-              <ul class="list-disc list-inside space-y-1 text-gray-400">
-                <li>Complete employee management system</li>
-                <li>Role‑based authentication (Admin / Employee)</li>
-                <li>Attendance tracking & automated payroll</li>
-                <li>Monthly reports and digital salary slips</li>
-              </ul>
-              <p class="mt-3 text-blue-300 text-xs">📊 Built to explore payroll automation and employee management workflows.</p>
-            `;
+                  <p class="mb-2 font-semibold text-amber-400">Why Payroll Management is a Featured System:</p>
+                  <ul class="list-disc list-inside space-y-1.5 text-slate-300 text-xs">
+                    <li>End-to-end employee &amp; HR data management architecture</li>
+                    <li>Role-based access control (Administrator vs. Employee)</li>
+                    <li>Automated salary computation linked to attendance logs</li>
+                    <li>Monthly financial reporting and digital payslip export</li>
+                  </ul>
+                  <p class="mt-3 text-blue-400 text-xs font-medium">Demonstrates complex relational database design and business logic automation in Laravel.</p>
+                `;
                 break;
               case "ebook":
                 explanation = `
-              <p class="mb-2">✨ <strong class="text-amber-400">Why is this a featured project?</strong></p>
-              <ul class="list-disc list-inside space-y-1 text-gray-400">
-                <li>Full‑stack digital library system</li>
-                <li>Secure authentication & role management</li>
-                <li>Book catalog, borrowing, and returning</li>
-                <li>Responsive UI with Tailwind & Alpine.js</li>
-              </ul>
-              <p class="mt-3 text-blue-300 text-xs">📚 A full-stack project focused on digital library management and book borrowing workflows.</p>
-            `;
+                  <p class="mb-2 font-semibold text-amber-400">Why E-Library Platform is a Featured System:</p>
+                  <ul class="list-disc list-inside space-y-1.5 text-slate-300 text-xs">
+                    <li>Full-stack digital library management system</li>
+                    <li>Multi-role authentication &amp; authorization workflows</li>
+                    <li>Structured book cataloging, borrowing, and return tracking</li>
+                    <li>Responsive interface built with Tailwind CSS &amp; Alpine.js</li>
+                  </ul>
+                  <p class="mt-3 text-blue-400 text-xs font-medium">Showcases clean MVC architecture and multi-table relational integrity.</p>
+                `;
                 break;
               case "notesku":
                 explanation = `
-              <p class="mb-2">✨ <strong class="text-amber-400">Why is this a featured project?</strong></p>
-              <ul class="list-disc list-inside space-y-1 text-gray-400">
-                <li>Complete note‑taking application (CRUD)</li>
-                <li>User authentication & personal notes</li>
-                <li>Archive and restore functionality</li>
-                <li>Interactive UI with Alpine.js + Tailwind</li>
-                <li>Full‑stack Laravel & MySQL implementation</li>
-              </ul>
-              <p class="mt-3 text-blue-300 text-xs">📝 A practical tool that showcases end‑to‑end development skills.</p>
-            `;
+                  <p class="mb-2 font-semibold text-amber-400">Why Notesku is a Featured System:</p>
+                  <ul class="list-disc list-inside space-y-1.5 text-slate-300 text-xs">
+                    <li>Complete cloud note-taking application with full CRUD</li>
+                    <li>Secure per-user authentication and private workspaces</li>
+                    <li>Note archiving, restoration, and real-time search filtering</li>
+                    <li>Built with Laravel 10, MySQL, Tailwind CSS, and Alpine.js</li>
+                  </ul>
+                  <p class="mt-3 text-blue-400 text-xs font-medium">Highlights practical product thinking and polished user experience.</p>
+                `;
                 break;
               default:
-                explanation = `<p class="text-gray-400">✨ Featured because it solves real problems with clean, maintainable code.</p>`;
+                explanation = `<p class="text-slate-300">Featured for its comprehensive full-stack architecture and real-world problem solving.</p>`;
             }
             openModal(explanation);
           });

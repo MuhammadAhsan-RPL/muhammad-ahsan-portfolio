@@ -2,7 +2,7 @@
 .cursor-dot {
   width: 6px;
   height: 6px;
-  background: #60A5FA;
+  background: #60a5fa;
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -11,13 +11,13 @@
   z-index: 99999;
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.7);
 }
 
 .cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(96, 165, 250, 0.6);
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(96, 165, 250, 0.5);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -25,37 +25,42 @@
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  box-shadow: 0 0 12px rgba(96, 165, 250, 0.2);
+  transition: width 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              height 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.15);
 }
 
 /* Hanya tampilkan cursor custom di layar desktop (>= 1024px) */
 @media (min-width: 1024px) {
-  .cursor-dot, .cursor-ring {
+  .cursor-dot,
+  .cursor-ring {
     display: block;
   }
-  
-  /* Sembunyikan cursor default di desktop saja */
+
   * {
     cursor: none !important;
   }
-  
-  html, body {
+
+  html,
+  body {
     cursor: none !important;
   }
-  
-  input, textarea {
+
+  input,
+  textarea {
     cursor: text !important;
   }
 }
 
 /* Di tablet dan HP, sembunyikan cursor custom */
 @media (max-width: 1023px) {
-  .cursor-dot, .cursor-ring {
+  .cursor-dot,
+  .cursor-ring {
     display: none !important;
   }
-  
-  /* Kembalikan cursor default di HP */
+
   * {
     cursor: auto !important;
   }

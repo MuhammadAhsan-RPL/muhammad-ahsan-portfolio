@@ -1,282 +1,266 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poster & Animation | Muhammad Ahsan</title>
+    <title>Poster & Motion Animation — Case Study | Muhammad Ahsan</title>
     <meta
       name="description"
-      content="Creative motion graphics and poster animation project focused on visual storytelling, smooth transitions, and engaging digital design."
+      content="Islamic poster design and kinetic motion animation project inspired by the hadith 'A Smile is Charity'—exploring minimalist typography, balanced earthy palettes, and gentle digital motion."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <style>
-      body {
-        background: #0a0a0f;
-        font-family: "Inter", sans-serif;
-      }
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #111115;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3b82f6;
-        border-radius: 10px;
-      }
-      .card-detail {
-        background: #111115;
-        border: 1px solid #1e1e2a;
-        border-radius: 1.5rem;
-      }
-      .btn-primary {
-        background: #3b82f6;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background: #2563eb;
-        transform: translateY(-2px);
-      }
-      .badge-tech {
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        border-radius: 20px;
-        padding: 4px 10px;
-        font-size: 11px;
-        color: #9ca3af;
-      }
-      .glow-bg {
-        position: fixed;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.08) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        filter: blur(60px);
-        pointer-events: none;
-        z-index: 0;
-      }
-      .gradient-border {
-        border-image: linear-gradient(135deg, #f59e0b, #ef4444, #3b82f6) 1;
-        border-image-slice: 1;
-      }
-      .feature-card {
-        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      }
-      .feature-card:hover {
-        transform: translateY(-6px);
-        border-color: #f59e0b;
-        box-shadow: 0 20px 40px -20px rgba(245, 158, 11, 0.3);
-      }
-      .badge-premium {
-        background: linear-gradient(
-          135deg,
-          rgba(245, 158, 11, 0.15),
-          rgba(239, 68, 68, 0.15)
-        );
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        border-radius: 20px;
-        padding: 4px 14px;
-        font-size: 11px;
-        color: #d1d5db;
-        transition: all 0.2s ease;
-      }
-      .badge-premium:hover {
-        border-color: #f59e0b;
-        transform: translateY(-2px);
-      }
-      .badge-school {
-        background: rgba(245, 158, 11, 0.15);
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        color: #f59e0b;
-      }
-
-      .grid-pattern-sv {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      
-    </style>
-  </head>
-  <body class="relative grid-pattern-sv">
     <link rel="stylesheet" href="./cursor.css" />
     <script src="./cursor.js" defer></script>
     <link rel="stylesheet" href="./animations.css" />
     <script src="./animations.js" defer></script>
 
-    <div class="glow-bg top-20 left-10"></div>
-    <div
-      class="glow-bg bottom-20 right-10"
-      style="
-        background: radial-gradient(
-          circle,
-          rgba(16, 185, 129, 0.05) 0%,
-          transparent 70%
-        );
-      "
-    ></div>
-
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 py-4 px-6 transition-all duration-300 bg-black/80 backdrop-blur-md border-b border-gray-800"
-      id="navbar"
-    >
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <a
-          href="../index.html"
-          class="text-2xl font-bold tracking-tight group shrink-0"
-        >
-          <span class="text-white">ahsan</span
-          ><span class="text-indigo-500">.</span
-          ><span
-            class="text-sm text-gray-500 font-normal ml-1 group-hover:text-indigo-400 transition"
-            >dev</span
-          >
-        </a>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="../index.html"
-            class="text-gray-400 hover:text-white transition text-sm"
-            >Home</a
-          >
-          <a
-            href="../allprojects/project.html"
-            class="text-blue-500 hover:text-white transition text-sm font-medium"
-            >Projects</a
-          >
-          <a
-            href="../about/about.html"
-            class="text-gray-400 hover:text-blue-400 transition text-sm"
-            >About</a
-          >
-          <a
-            href="https://github.com/MuhammadAhsan-RPL"
-            target="_blank"
-            class="text-gray-400 hover:text-white transition text-sm"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-
-        <!-- Contact Button Desktop -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="hidden md:inline-block px-4 py-2 btn-primary rounded-full text-white text-sm font-medium hover:scale-105 transition"
-          >Contact</a
-        >
-
-        <!-- Mobile Menu Button (Hamburger) - DIPERKECIL & RAPI -->
-        <button
-          id="menuToggle"
-          class="md:hidden text-white focus:outline-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-          aria-label="Menu"
-        >
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Panel - HITAM PEKAT (PAKAI INLINE STYLE) -->
-    <div
-      id="mobileMenuPanel"
-      class="fixed top-0 right-0 w-[70%] max-w-[260px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden"
-      style="
-        background: #000000 !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
-      "
-    >
-      <!-- Header -->
-      <div
-        class="flex justify-between items-center p-4 sm:p-5 border-b border-gray-800"
-      >
-        <span class="text-white font-bold text-base sm:text-lg">Menu</span>
-        <button
-          id="closeMobileMenu"
-          class="text-gray-400 hover:text-white text-xl sm:text-2xl w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <!-- Menu Items -->
-      <div class="flex flex-col p-4 sm:p-5 gap-2 sm:gap-3">
-        <a
-          href="../index.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-home w-4 sm:w-5 text-gray-500"></i>
-          <span>Home</span>
-        </a>
-        <a
-          href="../allprojects/project.html"
-          class="flex items-center gap-3 text-blue-500 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-folder w-4 sm:w-5 text-blue-500"></i>
-          <span>Projects</span>
-        </a>
-        <a
-          href="../about/about.html"
-          class="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fas fa-user w-4 sm:w-5 text-gray-300"></i>
-          <span>About</span>
-        </a>
-        <a
-          href="https://github.com/MuhammadAhsan-RPL"
-          target="_blank"
-          class="flex items-center gap-3 text-gray-300 hover:text-white transition text-sm sm:text-base py-2 px-3 rounded-lg hover:bg-white/5"
-        >
-          <i class="fab fa-github w-4 sm:w-5 text-gray-500"></i>
-          <span>GitHub</span>
-        </a>
-
-        <div class="my-2 sm:my-3 h-px bg-gray-800"></div>
-
-        <!-- Contact Button di Mobile -->
-        <a
-          href="mailto:siahsantv@gmail.com"
-          target="_blank"
-          class="flex items-center justify-center gap-2 mt-1 sm:mt-2 px-4 py-2.5 sm:py-3 btn-primary rounded-full text-white text-sm sm:text-base font-medium"
-        >
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Overlay - LEBIH GELAP & BLUR UNTUK MENUTUPI KONTEN BELAKANG -->
-    <div
-      id="mobileMenuOverlay"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
-    ></div>
-
     <style>
+      body {
+        background: #06070b;
+        color: #f8fafc;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, .font-display {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .font-mono-code {
+        font-family: "JetBrains Mono", monospace;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #06070b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 8px;
+      }
+      .card-detail {
+        background: linear-gradient(165deg, rgba(17, 20, 32, 0.92) 0%, rgba(11, 13, 20, 0.96) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+      }
+      .sub-card {
+        background: rgba(15, 18, 28, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 1rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .sub-card:hover {
+        border-color: rgba(245, 158, 11, 0.35);
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        border: 1px solid rgba(251, 191, 36, 0.35);
+        box-shadow: 0 8px 24px -6px rgba(217, 119, 6, 0.45);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.6);
+      }
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-outline:hover {
+        background: rgba(245, 158, 11, 0.08);
+        border-color: rgba(245, 158, 11, 0.4);
+        transform: translateY(-2px);
+      }
+      .badge-tech {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 0.5rem;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        color: #cbd5e1;
+        transition: all 0.2s ease;
+      }
+      .badge-tech:hover {
+        border-color: rgba(245, 158, 11, 0.4);
+        color: #fbbf24;
+        background: rgba(245, 158, 11, 0.08);
+      }
+      .glow-bg {
+        position: fixed;
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(70px);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .grid-pattern-sv {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
       @media (max-width: 767px) {
         body.menu-open {
           overflow: hidden;
         }
       }
-      /* Tambahan agar panel tidak terlihat di luar layar */
-      #mobileMenuPanel {
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-      }
     </style>
+  </head>
+  <body class="relative grid-pattern-sv selection:bg-amber-600 selection:text-white">
+    <div class="glow-bg top-16 left-10"></div>
+    <div
+      class="glow-bg bottom-16 right-10"
+      style="background: radial-gradient(circle, rgba(239, 68, 68, 0.05) 0%, transparent 70%);"
+    ></div>
+
+    <!-- ========== SIGNATURE FLOATING ISLAND NAVIGATION ========== -->
+    <header class="fixed top-4 left-0 w-full z-50 px-3 sm:px-6 pointer-events-none">
+      <nav
+        class="max-w-5xl mx-auto py-2.5 px-4 sm:px-6 rounded-2xl bg-[#08090f]/85 backdrop-blur-2xl border border-white/[0.1] shadow-2xl shadow-black/80 flex justify-between items-center pointer-events-auto transition-all duration-300"
+        id="navbar"
+      >
+        <!-- Signature Brand Mark -->
+        <a href="../index.html" class="flex items-center gap-2.5 group shrink-0">
+          <span
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-emerald-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono-code font-bold text-xs group-hover:scale-105 group-hover:border-blue-400 group-hover:text-white transition-all shadow-inner"
+            >MA</span
+          >
+          <span class="text-lg font-extrabold tracking-tight font-display text-white"
+            >ahsan<span class="text-blue-500">.</span
+            ><span
+              class="text-xs text-slate-400 font-mono-code font-normal ml-0.5 group-hover:text-blue-400 transition"
+              >dev</span
+            ></span
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-xl border border-white/[0.06]">
+          <a
+            href="../index.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Home</a
+          >
+          <a
+            href="../allprojects/project.html"
+            class="text-white bg-blue-600/20 text-blue-300 border border-blue-500/30 px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >All Projects</a
+          >
+          <a
+            href="../about/about.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >About</a
+          >
+          <a
+            href="../about/about2.html"
+            class="text-slate-300 hover:text-white hover:bg-white/[0.07] px-3.5 py-1.5 rounded-lg transition text-xs font-semibold tracking-wide"
+            >Process</a
+          >
+        </div>
+
+        <!-- Distinctive Action Dock Desktop -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="https://github.com/MuhammadAhsan-RPL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.06] border border-transparent hover:border-white/10"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github text-sm"></i>
+          </a>
+
+          <a
+            href="../cv/Muhammad-Ahsan-CV.pdf"
+            download
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition text-xs font-semibold"
+            aria-label="Download CV"
+          >
+            <i class="fas fa-arrow-down text-[10px] text-blue-400"></i>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="../index.html#contact"
+            class="px-4 py-1.5 btn-primary rounded-lg text-white text-xs font-semibold tracking-wide shadow-md shadow-blue-600/20"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden text-white text-lg focus:outline-none w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 transition"
+          aria-label="Open Menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Panel -->
+    <div
+      id="mobileMenuPanel"
+      class="fixed top-0 right-0 w-[75%] max-w-[280px] h-full z-50 transform translate-x-full transition-transform duration-300 ease-out md:hidden border-l border-white/10"
+      style="background: #080a10 !important; box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);"
+    >
+      <div class="flex justify-between items-center p-5 border-b border-white/10">
+        <span class="text-white font-display font-bold text-base">Navigation</span>
+        <button
+          id="closeMobileMenu"
+          class="text-slate-400 hover:text-white text-lg w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col p-5 gap-2">
+        <a href="../index.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-home w-5 text-slate-500"></i>
+          <span>Home</span>
+        </a>
+        <a href="../allprojects/project.html" class="flex items-center gap-3 text-blue-400 font-medium transition text-sm py-2.5 px-3 rounded-lg bg-blue-500/10">
+          <i class="fas fa-layer-group w-5 text-blue-400"></i>
+          <span>Projects</span>
+        </a>
+        <a href="../about/about.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-user w-5 text-slate-500"></i>
+          <span>About</span>
+        </a>
+        <a href="../about/about2.html" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fas fa-compass w-5 text-slate-500"></i>
+          <span>Process & Standards</span>
+        </a>
+        <a href="https://github.com/MuhammadAhsan-RPL" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-300 hover:text-white transition text-sm py-2.5 px-3 rounded-lg hover:bg-white/5">
+          <i class="fab fa-github w-5 text-slate-500"></i>
+          <span>GitHub</span>
+        </a>
+        <div class="my-3 h-px bg-white/10"></div>
+        <a href="mailto:siahsantv@gmail.com" class="flex items-center justify-center gap-2 px-4 py-2.5 btn-primary rounded-lg text-white text-sm font-semibold">
+          <i class="fas fa-envelope text-xs"></i>
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+
+    <div
+      id="mobileMenuOverlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+    ></div>
 
     <script>
       const menuToggleBtn = document.getElementById("menuToggle");
@@ -291,6 +275,7 @@
         document.body.style.overflow = "hidden";
         document.body.classList.add("menu-open");
       }
+
       function closeMobileMenu() {
         menuPanel.classList.add("translate-x-full");
         menuOverlay.classList.add("opacity-0", "invisible");
@@ -298,303 +283,288 @@
         document.body.style.overflow = "";
         document.body.classList.remove("menu-open");
       }
-      if (menuToggleBtn)
-        menuToggleBtn.addEventListener("click", openMobileMenu);
+
+      if (menuToggleBtn) menuToggleBtn.addEventListener("click", openMobileMenu);
       if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMobileMenu);
       if (menuOverlay) menuOverlay.addEventListener("click", closeMobileMenu);
+
       window.addEventListener("resize", () => {
         if (window.innerWidth >= 768) closeMobileMenu();
       });
     </script>
 
-    <!-- ========== HERO ========== -->
-    <section class="relative pt-32 pb-12 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <span
-          class="text-amber-400 text-xs font-semibold uppercase tracking-wider"
-          >design project</span
-        >
-        <h1 class="text-5xl md:text-6xl font-bold text-white mt-3 mb-4">
-          <span
-            class="bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent"
-            >A Smile is Charity</span
+    <!-- Case Study Header -->
+    <section class="relative pt-28 pb-10 px-6 z-10">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+          <a
+            href="../allprojects/project.html"
+            class="inline-flex items-center gap-2 text-xs font-mono-code text-slate-400 hover:text-amber-400 transition group"
           >
-          <span class="text-white block mt-2 text-2xl md:text-3xl"
-            >Islamic Poster & Motion Animation</span
-          >
-        </h1>
-        <div class="flex flex-wrap justify-center gap-2 mt-5">
-          <span class="badge-premium">🎨 Poster Design</span>
-          <span
-            class="badge-premium"
-            style="
-              border-color: rgba(239, 68, 68, 0.3);
-              background: linear-gradient(
-                135deg,
-                rgba(239, 68, 68, 0.15),
-                rgba(245, 158, 11, 0.15)
-              );
-            "
-            >🎬 Motion Animation</span
-          >
-          <span class="badge-premium badge-school">🏫 School Project</span>
-          <span
-            class="badge-premium"
-            style="border-color: rgba(59, 130, 246, 0.3)"
-            >🕌 Islamic Theme</span
-          >
+            <i class="fas fa-arrow-left text-[10px] group-hover:-translate-x-1 transition-transform"></i>
+            <span>ALL PROJECTS / CASE STUDY</span>
+          </a>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono-code bg-amber-500/10 text-amber-300 border border-amber-500/25">
+            <i class="fas fa-film text-[9px] text-amber-400"></i> Motion & Visual Communication
+          </span>
+        </div>
+
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-amber-500/10 text-amber-300 border border-amber-500/20">Graphic Design</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-orange-500/10 text-orange-300 border border-orange-500/20">Motion Graphics & Animation</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono-code bg-white/5 text-slate-300 border border-white/10">Academic Capstone</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            "A Smile is Charity" — Poster & Motion Animation
+          </h1>
+          <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+            A visual storytelling project combining minimalist typography, grounded Islamic aesthetics, and gentle kinetic motion to communicate a timeless moral message with warmth and reverence.
+          </p>
+        </div>
+
+        <!-- Executive Metadata Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 p-5 rounded-2xl bg-[#0c0f17]/90 border border-white/[0.07]">
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Role</p>
+            <p class="text-sm font-semibold text-white">Visual & Motion Designer</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Inspiration</p>
+            <p class="text-sm font-semibold text-amber-400">Prophetic Hadith</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-mono-code uppercase tracking-wider text-slate-500 mb-1">Disciplines</p>
+            <p class="text-sm font-semibold text-white">Typography, Motion, Palette</p>
+          </div>
+          <div class="flex items-center md:justify-end">
+            <a
+              href="https://embed.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566&embed-host=share"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 btn-primary rounded-xl text-white text-xs font-semibold w-full md:w-auto justify-center"
+            >
+              <i class="fas fa-play text-xs"></i>
+              <span>View Animation</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <section class="px-6 pb-24">
-      <div class="max-w-4xl mx-auto">
-        <!-- Preview Gambar -->
-        <div
-          class="rounded-2xl overflow-hidden border-2 border-transparent gradient-border glow-shadow mb-10"
-        >
+    <!-- Main Case Study Body -->
+    <section class="px-6 pb-24 relative z-10">
+      <div class="max-w-5xl mx-auto">
+        <!-- Browser Frame Preview -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#0b0d14] shadow-2xl mb-10">
+          <div class="px-4 py-3 bg-[#111420] border-b border-white/[0.07] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            </div>
+            <span class="text-[11px] font-mono-code text-slate-400">figma.com / poster-motion-showcase</span>
+            <span class="text-[11px] font-mono-code text-amber-400">Motion Prototype</span>
+          </div>
           <img
             src="../foto/poster-senyum.png"
-            alt="A Smile is Charity - Islamic Poster"
-            class="w-full"
-            onerror="
-              this.src =
-                'https://placehold.co/1200x600/1a1a2e/F59E0B?text=A+Smile+is+Charity'
-            "
+            alt="A Smile is Charity Poster Design"
+            class="w-full object-cover"
+            onerror="this.src='https://placehold.co/1200x600/111420/F59E0B?text=A+Smile+is+Charity'"
           />
         </div>
 
-        <div class="card-detail p-6 md:p-8 space-y-8 mb-8">
-          <!-- Overview -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-info-circle text-amber-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">Overview</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              "A Smile is Charity" is a poster and motion animation project I
-              created for a school assignment. The design is inspired by a
-              beautiful hadith of Prophet Muhammad ﷺ:
-              <span class="text-amber-400 italic"
-                >"Your smile in the presence of your brother is charity."</span
-              >
-              I wanted to turn this simple yet profound message into something
-              visual — something that feels warm, peaceful, and easy to share.
-              The project combines minimalist typography, earthy colors, and
-              gentle motion to make the message feel alive.
-            </p>
-          </div>
-
-          <!-- The Challenge -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-bolt text-orange-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">The Challenge</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              The main challenge was figuring out how to visually represent a
-              spiritual message without making it feel too serious or overly
-              decorative. I wanted the design to feel sincere and inviting, not
-              preachy. At the same time, I had to keep the layout clean and
-              minimal so the message would stand out clearly. The animation part
-              was also tricky — it needed to feel calm and subtle, not
-              distracting.
-            </p>
-          </div>
-
-          <!-- The Solution -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-lightbulb text-yellow-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">The Solution</h2>
-            </div>
-            <p class="text-gray-400 leading-relaxed">
-              I ended up with a clean, centered poster layout using a warm color
-              palette — soft beige, gold, and deep maroon. These colors felt
-              natural and gave the design a grounded, spiritual tone. For the
-              animation, I added a subtle drift effect to the text and
-              decorative elements. It's not flashy — just a gentle movement that
-              makes the poster feel alive when viewed on screen. The overall
-              approach was to keep things simple, respectful, and visually warm.
-            </p>
-          </div>
-
-          <!-- Key Features + Figma Prototype -->
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- Left: Key Features -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-amber-500 to-orange-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Key Features</h2>
+        <div class="card-detail p-6 sm:p-8 md:p-10 space-y-10 mb-10">
+          <!-- Executive Summary Grid -->
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
+                <i class="fas fa-compass text-sm"></i>
               </div>
-              <div class="grid grid-cols-1 gap-3">
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-pen-fancy text-amber-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Clean, minimalist typography with a warm color
-                    palette</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-film text-amber-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Gentle motion animation — fade and drift effects</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-hadith text-amber-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Authentic hadith text with clear source attribution</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-palette text-amber-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Islamic-inspired visual tone — warm and grounded</span
-                  >
-                </div>
-                <div
-                  class="feature-card flex items-start gap-3 p-3 rounded-xl bg-darkCard/50 border border-gray-800 hover:border-amber-500/50 transition-all"
-                >
-                  <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center flex-shrink-0"
-                  >
-                    <i class="fas fa-share-alt text-amber-400 text-sm"></i>
-                  </div>
-                  <span class="text-gray-300 text-sm"
-                    >Optimized for social media and digital sharing</span
-                  >
-                </div>
-              </div>
+              <h2 class="text-lg font-bold text-white mb-2">Project Overview</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Created as an academic motion design assignment, this project visually interprets the hadith: <span class="text-amber-300 italic font-serif">"Your smile in the presence of your brother is charity."</span> through disciplined composition and kinetic rhythm.
+              </p>
             </div>
 
-            <!-- Right: Figma Prototype -->
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <div
-                  class="w-1 h-6 bg-gradient-to-b from-orange-500 to-red-500 rounded-full"
-                ></div>
-                <h2 class="text-2xl font-bold text-white">Figma Prototype</h2>
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mb-4">
+                <i class="fas fa-triangle-exclamation text-sm"></i>
               </div>
-              <div
-                class="relative rounded-xl overflow-hidden border-2 border-transparent gradient-border glow-shadow bg-black/40 group"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
-                ></div>
-                <iframe
-                  class="w-full aspect-video"
-                  src="https://embed.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566&embed-host=share"
-                  allowfullscreen
-                ></iframe>
+              <h2 class="text-lg font-bold text-white mb-2">The Challenge</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Visualizing spiritual wisdom without resorting to cliché ornament or heavy decoration requires restraint. The challenge was ensuring the poster felt warm and sincere while keeping kinetic transitions calm rather than flashy.
+              </p>
+            </div>
+
+            <div class="sub-card p-6">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+                <i class="fas fa-check-double text-sm"></i>
               </div>
-              <p
-                class="text-gray-500 text-xs text-center mt-3 flex items-center justify-center gap-1"
-              >
-                <i class="fas fa-paint-brush text-amber-400 text-xs"></i>
-                Interactive Figma prototype — click around to explore the design
+              <h2 class="text-lg font-bold text-white mb-2">The Solution</h2>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                I curated an earthy palette—soft beige, desert amber, and deep garnet—coupled with centered serif typography and slow, breathing motion offsets that bring the static poster to life upon interaction.
               </p>
             </div>
           </div>
 
-          <!-- What I Learned -->
-          <div
-            class="relative rounded-2xl p-6 bg-gradient-to-br from-amber-500/5 to-red-500/5 border border-amber-500/20"
-          >
-            <div class="flex items-center gap-2 mb-3">
-              <i
-                class="fas fa-quote-left text-amber-400 text-sm opacity-50"
-              ></i>
-              <h2 class="text-2xl font-bold text-white">What I Learned</h2>
+          <div class="h-px bg-white/[0.07]"></div>
+
+          <!-- Key Features + Figma Embed -->
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-amber-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">Visual Design Pillars</h2>
+              </div>
+              <div class="grid grid-cols-1 gap-3">
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-pen-fancy text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Intentional Typographic Hierarchy</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Carefully kerned and paced typography ensuring the core hadith text takes focal precedence.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-film text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Subtle Kinetic Drift Effects</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Soft translation and opacity transitions delivering a calm, living feel on digital displays.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-book-open text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Source Attribution & Integrity</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Authentic narrative referencing with meticulous Arabic typographic balance.</p>
+                  </div>
+                </div>
+
+                <div class="sub-card flex items-start gap-3.5 p-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-share-nodes text-amber-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-white text-sm font-semibold">Multi-Format Deliverable</h3>
+                    <p class="text-slate-400 text-xs mt-0.5">Formatted for print-ready resolution as well as vertical formats for modern digital media.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="text-gray-400 leading-relaxed">
-              This project reminded me that design isn't just about making
-              things look good — it's about communicating a feeling. Creating
-              something inspired by Islamic values pushed me to think more
-              intentionally about color, typography, and motion. I also got to
-              practice my animation skills and explore how subtle motion can add
-              emotional depth to a static design. More than anything, this
-              project taught me that even a simple message — like a smile being
-              charity — can become something meaningful when you treat it with
-              care and respect.
+
+            <!-- Right: Figma Motion Embed -->
+            <div class="lg:col-span-6">
+              <div class="flex items-center gap-2.5 mb-5">
+                <span class="w-1.5 h-6 bg-orange-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white">Motion Prototype</h2>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/60">
+                <iframe
+                  class="w-full aspect-video"
+                  src="https://embed.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566&embed-host=share"
+                  title="A Smile is Charity Motion Prototype"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="text-slate-400 text-xs mt-3 flex items-center justify-between px-1">
+                <span class="flex items-center gap-1.5">
+                  <i class="fas fa-play text-amber-400"></i>
+                  Interactive motion prototype previewing subtle animation easing
+                </span>
+                <span class="font-mono-code text-[11px] text-slate-500">Figma Motion</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/[0.07]"></div>
+
+          <!-- Design Retrospective -->
+          <div class="sub-card p-6 md:p-8 border-l-4 border-l-amber-500">
+            <span class="text-xs font-mono-code uppercase tracking-wider text-amber-400 block mb-2">Design Retrospective</span>
+            <h2 class="text-2xl font-bold text-white mb-3">What I Learned</h2>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              This project reminded me that design is communication first and foremost. Handling a meaningful spiritual quote pushed me to exercise restraint: using fewer elements, tuning contrast with precision, and using motion not for entertainment, but to amplify the serenity of the underlying thought. It honed my sensitivity toward pacing, composition, and emotional nuance.
             </p>
           </div>
 
-          <!-- Tools Used -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <i class="fas fa-tools text-blue-400 text-sm"></i>
-              <h2 class="text-2xl font-bold text-white">Tools Used</h2>
+          <!-- Tech Stack & Action Bar -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-2">
+            <div>
+              <h3 class="text-xs font-mono-code uppercase tracking-wider text-slate-400 mb-3">Disciplines & Tools</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge-tech">Figma</span>
+                <span class="badge-tech">Typography</span>
+                <span class="badge-tech">Motion Graphics</span>
+                <span class="badge-tech">Color Grading</span>
+                <span class="badge-tech">Visual Storytelling</span>
+              </div>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="badge-premium">Figma</span>
-              <span class="badge-premium">Typography</span>
-              <span class="badge-premium">Motion Graphics</span>
-              <span class="badge-premium">Color Grading</span>
-            </div>
-          </div>
 
-          <!-- Buttons -->
-          <div class="pt-4 flex flex-wrap gap-4">
-            <a
-              href="https://www.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566"
-              target="_blank"
-              class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/30 transition"
-            >
-              <i class="fas fa-external-link-alt"></i> Open in Figma
-            </a>
-            <span
-              class="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 rounded-lg text-gray-400 text-sm cursor-not-allowed"
-              >Source File — Private</span
-            >
+            <div class="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="https://embed.figma.com/proto/zmOA4P1hWyOvHCW795uf2C/SCHOOL-PROJECT?node-id=4713-101&viewport=-2839%2C-1727%2C0.48&scaling=contain&content-scaling=fixed&page-id=3%3A2566"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-xl text-white text-sm font-semibold"
+              >
+                <i class="fas fa-external-link-alt text-xs"></i>
+                <span>Open in Figma</span>
+              </a>
+              <span class="inline-flex items-center gap-2 px-5 py-3 btn-outline rounded-xl text-slate-400 text-sm cursor-not-allowed">
+                <i class="fas fa-lock text-xs"></i>
+                <span>Source File: Academic</span>
+              </span>
+            </div>
           </div>
         </div>
 
-        <!-- Back to Projects -->
-        <div class="text-center mt-8">
+        <!-- Case Study Navigation -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
           <a
             href="../allprojects/project.html"
-            class="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+            class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition"
           >
-            <i class="fas fa-arrow-left text-xs"></i> Back to all projects
+            <i class="fas fa-arrow-left text-xs text-blue-400"></i>
+            <span>Back to All Projects</span>
           </a>
+          <div class="flex items-center gap-3">
+            <a
+              href="./qytauiux.html"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-outline text-xs font-medium text-slate-300 hover:text-white"
+            >
+              <i class="fas fa-arrow-left text-[10px] text-blue-400"></i>
+              <span>Prev: Qyta Food App UI/UX</span>
+            </a>
+            <a
+              href="../allprojects/project.html"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-outline text-xs font-medium text-slate-300 hover:text-white"
+            >
+              <span>Explore All Projects</span>
+              <i class="fas fa-layer-group text-[10px] text-blue-400"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="py-8 px-6 text-center border-t border-gray-800">
-      <p class="text-gray-500 text-xs">
-        © 2026 Muhammad Ahsan — built with coffee, curiosity, and a lot of
-        debugging.
-      </p>
+    <footer class="py-8 px-6 text-center border-t border-white/[0.07] bg-[#050609]">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Muhammad Ahsan. Engineered with precision and clarity.</p>
+        <div class="flex items-center gap-5">
+          <a href="../index.html" class="hover:text-slate-300 transition">Home</a>
+          <a href="../allprojects/project.html" class="hover:text-slate-300 transition">Projects</a>
+          <a href="../about/about.html" class="hover:text-slate-300 transition">About</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
